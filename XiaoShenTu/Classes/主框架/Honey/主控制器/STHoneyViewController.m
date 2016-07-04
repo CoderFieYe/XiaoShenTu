@@ -9,9 +9,10 @@
 #import "Masonry.h"
 
 #import "STHoneyViewController.h"
-#import "STHInfomationXView.h"
+
 #import "STHInfomation.h"
 #import "STHInfomationView.h"
+#import "STRedAndHomeView.h"
 
 
 #import "STHCollectionView.h"
@@ -38,10 +39,13 @@
 
 @property (nonatomic, strong) STHCollectionView *collectionView;
 
-@property (nonatomic, weak) UIButton *hongbaoBtn;
-@property (nonatomic, weak) UILabel *hongBaoLab;
-@property (nonatomic, weak) UIButton *btn;
-@property (nonatomic, weak) UILabel *homeLab;
+
+@property (nonatomic, strong) STRedAndHomeView *redAndHomeView;
+
+@property (nonatomic, weak) UIButton *cellBtn;
+//@property (nonatomic, weak) UILabel *hongBaoLab;
+//@property (nonatomic, weak) UIButton *btn;
+//@property (nonatomic, weak) UILabel *homeLab;
 
 
 
@@ -49,10 +53,10 @@
 
 @implementation STHoneyViewController
 
-static const CGFloat  KHeadH76  = 76;
-static const CGFloat  KHeadW76  = 76;
-static const CGFloat  kInterval20  = 20;
-static const CGFloat  KHeight136  = 136;
+static CGFloat  KHeadH76  = 76;
+static CGFloat  KHeadW76  = 76;
+static CGFloat  kInterval20  = 20;
+static CGFloat  KHeight136  = 136;
 
 
 //#define KScaleHeight(KHeadH76)   KScaleHeight(KHeadH76)
@@ -156,21 +160,6 @@ static const CGFloat  KHeight136  = 136;
     
     self.view.backgroundColor = [UIColor whiteColor];
     
-//    透明视图
-//    STHClearView *clearView = [[STHClearView alloc]init];
-//
-//  
-//    clearView.frame = CGRectMake(0, XScreenH - 2*(KScaleHeight(KHeadH76) +  KScaleHeight(kInterval20)), XScreenW, 174);
-//    
-//    clearView.backgroundColor = [UIColor orangeColor];
-//    
-////    [[UIApplication sharedApplication].keyWindow addSubview:clearView];
-//    [self.view addSubview:clearView];
-    
-    
-
-    
-    
     
 }
 
@@ -195,6 +184,7 @@ static const CGFloat  KHeight136  = 136;
 {
     [super viewDidAppear:animated];
     // Do any additional setup after loading the view, typically from a nib.
+    
 //      配置用户Key
     [MAMapServices sharedServices].apiKey = @"38059dad5bc19bddfa2c6c82c777c1cd";
     
@@ -206,14 +196,14 @@ static const CGFloat  KHeight136  = 136;
 //     定位图层
     _mapView.showsUserLocation = YES;
     [_mapView setUserTrackingMode: MAUserTrackingModeFollowWithHeading animated:YES];
-    //地图跟着位置移动   实现缩放的方法1
+    
+    //地图跟着位置移动   实现缩放的方法
 //    [_mapView setZoomLevel:16.1 animated:YES];
     [_mapView setZoomLevel:13.6 animated:YES];
 
     
     
 //    添加大头针  利用 for 循环
-
 #pragma mark  -- 红包上的标注
 //    MAPointAnnotation *pointAnnotation = [[MAPointAnnotation alloc] init];
 //    pointAnnotation.coordinate = CLLocationCoordinate2DMake(39.989631, 116.481018);
@@ -242,18 +232,27 @@ static const CGFloat  KHeight136  = 136;
 //    pointAnnotationC.subtitle = @"阜通东大街6号";
 //    
 //    [_mapView addAnnotation:pointAnnotationC];
-//    
     
 //     地理围栏
 //        [self getCurrentLocation];
-    
-    [self setFalseBtn];
-    [self setHeadCollectionView];
 
+    
+//    [self setFalseBtn];
+    [self setHeadCollectionView];
+    
+    UIButton *btn = [[UIButton alloc]init];
+    self.cellBtn = btn;
+    
+//  红包和家庭  👪  按钮
+    
+    STRedAndHomeView *redAndHomeView = [[STRedAndHomeView alloc]initWithFrame:CGRectMake(0, self.mapView.height -  49 - KScaleHeight(235) , KScaleWidth(100), KScaleHeight(235))];
+    
+    self.redAndHomeView = redAndHomeView;
+    [self.mapView addSubview:redAndHomeView];
+    
 }
 
 #pragma mark - Add Regions
-
 - (void)getCurrentLocation
 {
     __weak typeof(self) weakSelf = self;
@@ -436,120 +435,10 @@ updatingLocation:(BOOL)updatingLocation
     
 }
 
-
-
-#pragma mark - Action Handle
-
-- (void)configLocationManager
-{
-    self.locationManager = [[AMapLocationManager alloc] init];
-    
-    [self.locationManager setDelegate:self];
-    
-    [self.locationManager setDesiredAccuracy:kCLLocationAccuracyHundredMeters];
-    
-    [self.locationManager setPausesLocationUpdatesAutomatically:NO];
-    
-    [self.locationManager setAllowsBackgroundLocationUpdates:YES];
-}
-
-- (void)returnAction
-{
-    [self.regions enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        [self.locationManager stopMonitoringForRegion:(AMapLocationRegion *)obj];
-    }];
-    
-//    [super returnAction];
-}
-
-#pragma mark - AMapLocationManagerDelegate
-
-- (void)amapLocationManager:(AMapLocationManager *)manager didFailWithError:(NSError *)error
-{
-    NSLog(@"locationError:{%ld;%@}", (long)error.code, error.localizedDescription);
-}
-
-- (void)amapLocationManager:(AMapLocationManager *)manager didStartMonitoringForRegion:(AMapLocationRegion *)region
-{
-    NSLog(@"didStartMonitoringForRegion:%@", region);
-}
-
-- (void)amapLocationManager:(AMapLocationManager *)manager monitoringDidFailForRegion:(AMapLocationRegion *)region withError:(NSError *)error
-{
-    NSLog(@"monitoringDidFailForRegion:%@", error.localizedDescription);
-}
-
-//- (void)amapLocationManager:(AMapLocationManager *)manager didEnterRegion:(AMapLocationRegion *)region
-//{
-//    NSLog(@"didEnterRegion:%@", region);
-//}
-//
-//- (void)amapLocationManager:(AMapLocationManager *)manager didExitRegion:(AMapLocationRegion *)region
-//{
-//    NSLog(@"didExitRegion:%@", region);
-//}
-
-- (void)amapLocationManager:(AMapLocationManager *)manager didDetermineState:(AMapLocationRegionState)state forRegion:(AMapLocationRegion *)region
-{
-    NSLog(@"didDetermineState:%@; state:%ld", region, (long)state);
-}
-
-
-#pragma mark --红包及家庭设置图标及文字
-
-#define KhongbaoY     self.mapView.height - 49 - 38 -15 - 49 - 8
-#define KhongbaoLabY  self.mapView.height - 49 -15 - 38 - 20 - 3
-#define KHomeBtnY     self.mapView.height - 49 - 38 -15
-#define KhomeLabY     self.mapView.height - 49 -15 - 3
-
--(void)setFalseBtn{
-    
-    //    红包按钮
-    UIButton *redbtn  = [[UIButton alloc]initWithFrame:CGRectMake(10, KhongbaoY , KScaleHeight(KHeadH76), KScaleHeight(KHeadH76))];
-    self.hongbaoBtn = redbtn;
-    [redbtn setBackgroundImage:[UIImage imageNamed:@"hongbao"] forState:UIControlStateNormal];
-    //    btn.backgroundColor = XRandomColor;
-    [redbtn addTarget:self action:@selector(redbtnClick:) forControlEvents:UIControlEventTouchUpInside];
-    [self.mapView  addSubview:redbtn];
-    
-    //    家庭设置
-    UILabel *lab1 = [[UILabel alloc]init];
-    lab1.text = @"红包";
-    lab1.font = [UIFont systemFontOfSize:8];
-    lab1.textColor = [UIColor colorWithHexString:@"#ec4728"];
-    lab1.frame = CGRectMake(20, KhongbaoLabY , 40, 20);
-    self.hongBaoLab = lab1;
-    [self.mapView addSubview:lab1];
-    
-    //    假按钮
-    UIButton *btn  = [[UIButton alloc]initWithFrame:CGRectMake(10,KHomeBtnY, KScaleHeight(KHeadH76), KScaleHeight(KHeadH76))];
-    self.btn = btn;
-    [btn setBackgroundImage:[UIImage imageNamed:@"家庭图标"] forState:UIControlStateNormal];
-    [btn addTarget:self action:@selector(HomeBtnClick:) forControlEvents:UIControlEventTouchUpInside];
-    [self.mapView  addSubview:btn];
-    
-//    家庭设置
-    UILabel *lab = [[UILabel alloc]init];
-    lab.text = @"家庭设置";
-    lab.textAlignment = NSTextAlignmentCenter;
-    lab.font = [UIFont systemFontOfSize:8];
-    lab.textColor = [UIColor colorWithHexString:@"#000000"];
-//    lab.centerX = self.btn.centerX - lab.width/2;
-//    lab.y = self.btn.y + self.btn.height + KScaleHeight(6);
-    lab.frame = CGRectMake(KScaleWidth(20), self.btn.y + self.btn.height + KScaleHeight(6), 100, 20);
-    [lab sizeToFit];
-    self.homeLab = lab;
-//    [self.homeLab  mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.left.equalTo(self.btn.mas_left);
-////        make.centerY.equalTo(self.btn.mas_centerY);
-//        make.top.mas_equalTo(self.btn.mas_bottom).offset(10);
-//    }];
-    [self.mapView addSubview:lab];
-
-}
+#pragma mark   -------    滚动头像
 -(void)setHeadCollectionView{
 
-#pragma mark   -------    滚动头像
+
     UICollectionViewFlowLayout *flowLayouts = [[UICollectionViewFlowLayout alloc]init];
     
     flowLayouts.itemSize = CGSizeMake(38,38);
@@ -583,77 +472,30 @@ updatingLocation:(BOOL)updatingLocation
 }
 
 
-// 假按钮的点击方法
-- (void)CellClick:(UIButton *)sender{
-    self.btn.selected = ! sender.selected;
-    NSLog(@"按钮被点击");
-  
-    
-    if (sender.selected) {
-        self.detailView.hidden = NO;
-        
-        [UIView animateWithDuration:0.5 animations:^{
-            self.btn.y = KHomeBtnY  - KScaleHeight(KHeight136);
-            self.hongBaoLab.y = KhongbaoLabY - KScaleHeight(KHeight136);
-            self.hongbaoBtn.y = KhongbaoY -KScaleHeight(KHeight136);
-            self.homeLab.y = KhomeLabY - KScaleHeight(KHeight136);
-            self.collectionView.y =  kCollectionViewH  - KScaleHeight(KHeight136);
-        }];
-        
-        if (!self.detailView) {
+// cell 的点击方法
+- (void)CellClick {
 
-#pragma mark ----------- 个人详情视图
-            
-            STHInfomationView *view = [[STHInfomationView alloc]init];
-            
-            [self.view addSubview:view];
-            self.detailView = (STHInfomationView *)view;
-            self.detailView.hidden = YES;
-            self.detailView.frame = CGRectMake(0,self.mapView.height - 49, XScreenW, KScaleHeight(KHeight136));
-   
-            [self.mapView addSubview:view];
-        }
+    if (self.detailView == nil) {
+        self.detailView = [[STHInfomationView alloc]initWithFrame: CGRectMake(0,self.mapView.height - 49, XScreenW, KScaleHeight(KHeight136))];
+        
+        self.detailView.hidden = YES;
+        
+        [self.mapView addSubview: self.detailView];
         
         [UIView animateWithDuration:0.5 animations:^{
-            
             self.detailView.hidden = NO;
-            self.detailView.y =  self.mapView.height - 49 - KScaleHeight(KHeight136);
-      
-        }];
-    }else{
-        
-//        self.detailView.hidden = YES;
-        
-        [UIView animateWithDuration:0.5 animations:^{
+            self.redAndHomeView.y = self.mapView.height -  49 - KScaleHeight(235) -KScaleHeight(KHeight136);
+            self.collectionView.y =  kCollectionViewH  - KScaleHeight(KHeight136);
             
-            self.btn.y = KHomeBtnY;
-            self.hongBaoLab.y = KhongbaoLabY;
-            self.hongbaoBtn.y = KhongbaoY;
-            self.homeLab.y = KhomeLabY;
-            self.collectionView.y =  kCollectionViewH;
-            
+            self.detailView.y = self.mapView.height - 49 - KScaleHeight(KHeight136);
         }];
-    
-        [UIView animateWithDuration:0.5 animations:^{
-            
-            self.detailView.y =  self.mapView.height - 49;
-        
-        }];
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-             self.detailView.hidden = YES;
-            self.detailView = nil;
-        });
+ 
         
     }
     
 }
 
 
--(void)redbtnClick:(UIButton *)btn{
-
-    NSLog(@"发红包啦");
-
-}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -663,8 +505,66 @@ updatingLocation:(BOOL)updatingLocation
 #pragma mark -- 通知方法
 -(void)OpenPersonDetailNoti{
 
-    [self CellClick:self.btn];
+    NSLog(@"弹出详情");
 
+    [self CellClick];
+
+}
+
+#pragma mark - Action Handle
+
+- (void)configLocationManager
+{
+    self.locationManager = [[AMapLocationManager alloc] init];
+    
+    [self.locationManager setDelegate:self];
+    
+    [self.locationManager setDesiredAccuracy:kCLLocationAccuracyHundredMeters];
+    
+    [self.locationManager setPausesLocationUpdatesAutomatically:NO];
+    
+    [self.locationManager setAllowsBackgroundLocationUpdates:YES];
+}
+
+- (void)returnAction
+{
+    [self.regions enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [self.locationManager stopMonitoringForRegion:(AMapLocationRegion *)obj];
+    }];
+    
+    //    [super returnAction];
+}
+
+#pragma mark - AMapLocationManagerDelegate
+
+- (void)amapLocationManager:(AMapLocationManager *)manager didFailWithError:(NSError *)error
+{
+    NSLog(@"locationError:{%ld;%@}", (long)error.code, error.localizedDescription);
+}
+
+- (void)amapLocationManager:(AMapLocationManager *)manager didStartMonitoringForRegion:(AMapLocationRegion *)region
+{
+    NSLog(@"didStartMonitoringForRegion:%@", region);
+}
+
+- (void)amapLocationManager:(AMapLocationManager *)manager monitoringDidFailForRegion:(AMapLocationRegion *)region withError:(NSError *)error
+{
+    NSLog(@"monitoringDidFailForRegion:%@", error.localizedDescription);
+}
+
+//- (void)amapLocationManager:(AMapLocationManager *)manager didEnterRegion:(AMapLocationRegion *)region
+//{
+//    NSLog(@"didEnterRegion:%@", region);
+//}
+//
+//- (void)amapLocationManager:(AMapLocationManager *)manager didExitRegion:(AMapLocationRegion *)region
+//{
+//    NSLog(@"didExitRegion:%@", region);
+//}
+
+- (void)amapLocationManager:(AMapLocationManager *)manager didDetermineState:(AMapLocationRegionState)state forRegion:(AMapLocationRegion *)region
+{
+    NSLog(@"didDetermineState:%@; state:%ld", region, (long)state);
 }
 
 @end

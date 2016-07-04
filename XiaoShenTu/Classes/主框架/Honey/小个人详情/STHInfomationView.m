@@ -33,7 +33,6 @@
 @implementation STHInfomationView
 
 static CGFloat KInterval10 = 10 * 2;
-//static CGFloat KInterval15 = 15 * 2;
 static CGFloat KHeadW38  =  38 * 2;
 static CGFloat KHeadH35  =  35 * 2;
 
@@ -41,8 +40,7 @@ static CGFloat KHeadH35  =  35 * 2;
 
     self = [super initWithFrame:frame];
     
-//    self.bounds = CGRectMake(0, 0, XScreenW, KScaleHeight(136));
-    self.backgroundColor = [UIColor orangeColor];
+    self.backgroundColor = [UIColor whiteColor];
     
     [self setupUI];
 
@@ -53,7 +51,7 @@ static CGFloat KHeadH35  =  35 * 2;
     
     UIButton *ImgBtn = [[UIButton alloc]init];
     
-    [ImgBtn setBackgroundColor:[UIColor orangeColor]];
+//    [ImgBtn setBackgroundColor:[UIColor orangeColor]];
     [ImgBtn setImage:[UIImage imageNamed:@"家庭图标"] forState:UIControlStateNormal];
     self.ImgBtn = ImgBtn;
     [self addSubview:ImgBtn];
@@ -61,14 +59,14 @@ static CGFloat KHeadH35  =  35 * 2;
     UILabel *daBabyLab = [[UILabel alloc]init];
     daBabyLab.text = @"大宝贝";
     daBabyLab.textColor =  [UIColor colorWithHexString:@"#333333"];
-    daBabyLab.font = [UIFont systemFontOfSize:XScaleWidth(34)];
+    daBabyLab.font = [UIFont systemFontOfSize:KScaleWidth(34)];
     self.daBabyLab = daBabyLab;
     [self addSubview:daBabyLab];
     
     UILabel *versionLab = [[UILabel alloc]init];
     versionLab.text = @"T01版";
     versionLab.textColor = [UIColor colorWithHexString:@"#727272"];
-    versionLab.font = [UIFont systemFontOfSize:XScaleWidth(22)];
+    versionLab.font = [UIFont systemFontOfSize:KScaleWidth(22)];
     [versionLab sizeToFit];
     self.versionLab = versionLab;
     [self addSubview:versionLab];
@@ -76,7 +74,7 @@ static CGFloat KHeadH35  =  35 * 2;
     UILabel *upGradeLab = [[UILabel alloc]init];
     upGradeLab.text = @"升级";
     upGradeLab.textColor = [UIColor colorWithHexString:@"#f55b7a"];
-    upGradeLab.font = [UIFont systemFontOfSize:XScaleWidth(22)];
+    upGradeLab.font = [UIFont systemFontOfSize:KScaleWidth(22)];
     self.upGradeLab = upGradeLab;
     [self addSubview:upGradeLab];
     
@@ -113,71 +111,70 @@ static CGFloat KHeadH35  =  35 * 2;
 -(void)layoutSubviews{
 
     [self.ImgBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.mas_left).mas_offset(XScaleWidth(KInterval10));
-//        make.bottom.equalTo(self.mas_bottom).mas_offset(XScaleWidth(-KInterval15));
+        make.left.equalTo(self.mas_left).mas_offset(KScaleWidth(KInterval10));
         make.centerY.equalTo(self.mas_centerY);
-        make.width.mas_equalTo(XScaleWidth(KHeadW38));
-        make.height.mas_equalTo(XScaleWidth(KHeadW38));
+        make.width.mas_equalTo(KScaleWidth(KHeadW38));
+        make.height.mas_equalTo(KScaleWidth(KHeadW38));
 //
     }];
     
     [self.daBabyLab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.ImgBtn.mas_right).mas_equalTo(XScaleWidth(KInterval10));
+        make.left.equalTo(self.ImgBtn.mas_right).mas_equalTo(KScaleWidth(KInterval10));
         make.top.equalTo(self.ImgBtn.mas_top);
-//        make.width.mas_equalTo(XScaleWidth(150));
-//        make.height.mas_equalTo(XScaleWidth(44));
+//        make.width.mas_equalTo(KScaleWidth(150));
+//        make.height.mas_equalTo(KScaleWidth(44));
         
     }];
     
     [self.versionLab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.ImgBtn.mas_right).mas_offset(XScaleWidth(KInterval10));
+        make.left.equalTo(self.ImgBtn.mas_right).mas_offset(KScaleWidth(KInterval10));
         make.bottom.equalTo(self.ImgBtn.mas_bottom);
-//        make.width.mas_equalTo(XScaleWidth(60));
-//        make.height.mas_equalTo(XScaleWidth(44));
+//        make.width.mas_equalTo(KScaleWidth(60));
+//        make.height.mas_equalTo(KScaleWidth(44));
     }];
     
     [self.upGradeLab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.versionLab.mas_right).mas_offset(XScaleWidth(KInterval10));
+        make.left.equalTo(self.versionLab.mas_right).mas_offset(KScaleWidth(KInterval10));
         make.bottom.equalTo(self.ImgBtn.mas_bottom);
-//        make.width.mas_equalTo(XScaleWidth(60));
-//        make.height.mas_equalTo(XScaleWidth(44));
+//        make.width.mas_equalTo(KScaleWidth(60));
+//        make.height.mas_equalTo(KScaleWidth(44));
     }];
     
     [self.juliBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-       make.right.equalTo(self.mas_right).mas_offset(XScaleWidth(- KInterval10));
+       make.right.equalTo(self.mas_right).mas_offset(KScaleWidth(- KInterval10));
         make.centerY.mas_equalTo(self.mas_centerY);
-        make.width.mas_equalTo(XScaleWidth(KHeadW38));
-        make.height.mas_equalTo(XScaleWidth(KHeadH35));
+        make.width.mas_equalTo(KScaleWidth(KHeadW38));
+        make.height.mas_equalTo(KScaleWidth(KHeadH35));
     
     }];
     
     [self.emergencyBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.mas_equalTo(self.juliBtn.mas_left).mas_offset(-XScaleWidth(KInterval10));
+        make.right.mas_equalTo(self.juliBtn.mas_left).mas_offset(-KScaleWidth(KInterval10));
          make.centerY.mas_equalTo(self.mas_centerY);
-        make.width.mas_equalTo(XScaleWidth(KHeadW38));
-        make.height.mas_equalTo(XScaleWidth(KHeadH35));
+        make.width.mas_equalTo(KScaleWidth(KHeadW38));
+        make.height.mas_equalTo(KScaleWidth(KHeadH35));
         
     }];
 
     [self.superListenBtn mas_makeConstraints:^(MASConstraintMaker *make) {
          make.centerY.mas_equalTo(self.mas_centerY);
-        make.right.mas_equalTo(self.emergencyBtn.mas_left).mas_offset(-XScaleWidth(KInterval10));
-        make.width.mas_equalTo(XScaleWidth(KHeadW38));
-        make.height.mas_equalTo(XScaleWidth(KHeadH35));
+        make.right.mas_equalTo(self.emergencyBtn.mas_left).mas_offset(-KScaleWidth(KInterval10));
+        make.width.mas_equalTo(KScaleWidth(KHeadW38));
+        make.height.mas_equalTo(KScaleWidth(KHeadH35));
     }];
     
     [self.callBtn mas_makeConstraints:^(MASConstraintMaker *make) {
          make.centerY.mas_equalTo(self.mas_centerY);
-        make.right.mas_equalTo(self.superListenBtn.mas_left).mas_equalTo(-XScaleWidth(KInterval10));
-        make.width.mas_equalTo(XScaleWidth(KHeadW38));
-        make.height.mas_equalTo(XScaleWidth(KHeadH35));
+        make.right.mas_equalTo(self.superListenBtn.mas_left).mas_equalTo(-KScaleWidth(KInterval10));
+        make.width.mas_equalTo(KScaleWidth(KHeadW38));
+        make.height.mas_equalTo(KScaleWidth(KHeadH35));
     }];
 //
     [self.weiChatBtn mas_makeConstraints:^(MASConstraintMaker *make) {
          make.centerY.mas_equalTo(self.mas_centerY);
-        make.right.mas_equalTo(self.callBtn.mas_left).mas_equalTo(-XScaleWidth(KInterval10));
-        make.width.mas_equalTo(XScaleWidth(KHeadW38));
-        make.height.mas_equalTo(XScaleWidth(KHeadH35));
+        make.right.mas_equalTo(self.callBtn.mas_left).mas_equalTo(-KScaleWidth(KInterval10));
+        make.width.mas_equalTo(KScaleWidth(KHeadW38));
+        make.height.mas_equalTo(KScaleWidth(KHeadH35));
     }];
 
 }
