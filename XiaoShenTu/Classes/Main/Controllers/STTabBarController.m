@@ -44,12 +44,14 @@
     
     [self setupChildVc:[[STChatViewController alloc] init] title:@"微聊" image:@"tabBar_new_icon" selectedImage:@"tabBar_new_click_icon"];
     
+    [self setupChildVc:[[STPhotoViewController alloc] init] title:nil image:@"tabBar_new_icon" selectedImage:@"tabBar_publish_click_icon"];
+    
     [self setupChildVc:[[STWarningViewController alloc] init] title:@"预警" image:@"tabBar_friendTrends_icon" selectedImage:@"tabBar_friendTrends_click_icon"];
     
     [self setupChildVc:[[STFocusViewController alloc] init] title:@"关注" image:@"tabBar_me_icon" selectedImage:@"tabBar_me_click_icon"];
     
     // 更换tabBar
-    [self setValue:[[STTabBar alloc] init] forKeyPath:@"tabBar"];
+//    [self setValue:[[STTabBar alloc] init] forKeyPath:@"tabBar"];
 }
 
 /**

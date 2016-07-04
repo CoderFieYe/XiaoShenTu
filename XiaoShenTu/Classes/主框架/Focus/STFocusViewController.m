@@ -147,7 +147,7 @@
 //    [_scrollView addSubview:lab3];
 //
     
-    UIImageView *line = [[UIImageView alloc] initWithFrame:CGRectMake(0,_suspicious.bottom+50,WIDTH,1)];
+    UIImageView *line = [[UIImageView alloc] initWithFrame:CGRectMake(0,centerView.bottom+10,WIDTH,1)];
     line.backgroundColor = [UIColor colorWithHexString:@"#dfe0dd"];
     [_scrollView addSubview:line];
     
