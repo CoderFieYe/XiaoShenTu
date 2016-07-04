@@ -148,7 +148,6 @@
 		015E3D0B1D2113420014A991 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				015E3D0F1D2113420014A991 /* Guide(引导界面) */,
 				015E3D181D2113420014A991 /* Main */,
 				015E3D311D2113420014A991 /* 主框架 */,
 			);
@@ -187,7 +186,8 @@
 				015E3D141D2113420014A991 /* Others */,
 				015E3D151D2113420014A991 /* Views */,
 			);
-			path = "Guide(引导界面)";
+			name = "Guide(引导界面)";
+			path = "../Guide(引导界面)";
 			sourceTree = "<group>";
 		};
 		015E3D101D2113420014A991 /* Controllers */ = {
@@ -273,6 +273,7 @@
 		015E3D311D2113420014A991 /* 主框架 */ = {
 			isa = PBXGroup;
 			children = (
+				015E3D0F1D2113420014A991 /* Guide(引导界面) */,
 				DB4E71531D2A12B800B5938B /* Honey */,
 				015E3D321D2113420014A991 /* Chat */,
 				015E3D331D2113420014A991 /* Focus */,
@@ -610,6 +611,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB11048F1D22771400851EE6 /* STHPersonMessage.m in Sources */,
+				DB4AD5B91D23EB0F004BB8CD /* STHClearView.m in Sources */,
+				DB06DC131D24C71F0042B9F9 /* STHCollection.m in Sources */,
+				DBA924941D2219EF00667239 /* STHInfomationView.m in Sources */,
 				015E3D5B1D211ED20014A991 /* UIView+STExtension.m in Sources */,
 				015E3D4D1D2113B70014A991 /* STWarningViewController.m in Sources */,
 				015E3D4A1D21139F0014A991 /* STPhotoViewController.m in Sources */,
