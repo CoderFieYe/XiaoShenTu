@@ -52,8 +52,6 @@
 
 static CGFloat  KHeight136  = 136;
 
-static  CGFloat  KInterval62 = 62;
-#define kCollectionViewH  self.mapView.height - 49  - KInterval62;
 
 -(STHInfomation *)InfomationArrs{
 
@@ -168,8 +166,8 @@ static  CGFloat  KInterval62 = 62;
     [_mapView setUserTrackingMode: MAUserTrackingModeFollowWithHeading animated:YES];
     
     //地图跟着位置移动   实现缩放的方法  定位无法实现缩放
-    [_mapView setZoomLevel:16.1 animated:YES];
-//    [_mapView setZoomLevel:33.6 animated:YES];
+    [_mapView setZoomLevel:14.1 animated:YES];
+
 
     
     
@@ -200,7 +198,7 @@ static  CGFloat  KInterval62 = 62;
 
     
 //  红包和家庭  👪  按钮
-    
+  
     STRedAndHomeView *redAndHomeView = [[STRedAndHomeView alloc]initWithFrame:CGRectMake(0, self.mapView.height -  49 - KScaleHeight(235) , KScaleWidth(100), KScaleHeight(235))];
     
     self.redAndHomeView = redAndHomeView;
@@ -239,7 +237,7 @@ static  CGFloat  KInterval62 = 62;
 //                                                                                   identifier:@"circleRegion200"];
     
     AMapLocationCircleRegion *cirRegion300 = [[AMapLocationCircleRegion alloc] initWithCenter:coordinate
-                                                                                       radius:500000.0
+                                                                                       radius:300.0
                                                                                    identifier:@"circleRegion300"];
     
     //添加地理围栏
@@ -413,7 +411,7 @@ updatingLocation:(BOOL)updatingLocation
 
     UICollectionViewFlowLayout *flowLayouts = [[UICollectionViewFlowLayout alloc]init];
     
-    flowLayouts.itemSize = CGSizeMake(38,38);
+    flowLayouts.itemSize = CGSizeMake(KScaleWidth(76),KScaleWidth(76));
     
     flowLayouts.minimumLineSpacing = 10;
     //    flowLayouts.minimumInteritemSpacing = 15;
@@ -431,7 +429,7 @@ updatingLocation:(BOOL)updatingLocation
     
     //    6.设置组的内间距
     //    (CGFloat top, CGFloat left, CGFloat bottom, CGFloat right)
-    flowLayouts.sectionInset = UIEdgeInsetsMake(10, 8, 8, 70);
+    flowLayouts.sectionInset = UIEdgeInsetsMake(10, 8, 8, 60);
     
     //    collectionView.frame = CGRectMake(0, 400, 200, KScaleHeight(KHeight136));
     
@@ -458,7 +456,7 @@ updatingLocation:(BOOL)updatingLocation
         
         [UIView animateWithDuration:0.5 animations:^{
             self.detailView.hidden = NO;
-            self.redAndHomeView.y = self.mapView.height -  49 - KScaleHeight(235) -KScaleHeight(KHeight136);
+            self.redAndHomeView.y = self.mapView.height -  49 - KScaleHeight(235) - KScaleHeight(KHeight136);
             self.collectionView.y =  self.mapView.height - 49  - KScaleHeight(82 * 2) - KScaleHeight(KHeight136);
             
             self.detailView.y = self.mapView.height - 49 - KScaleHeight(KHeight136);
@@ -472,7 +470,7 @@ updatingLocation:(BOOL)updatingLocation
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
 }
 
 

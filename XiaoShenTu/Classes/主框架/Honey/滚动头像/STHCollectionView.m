@@ -25,7 +25,7 @@
     if (!_ImgNameArrs) {
 //        _ImgNameArrs = [NSMutableArray array];
     
-        _ImgNameArrs = [NSMutableArray arrayWithObjects:@"touxiang",@"touxiang",@"touxiang",@"touxiang",@"touxiang",@"touxiang",@"touxiang",@"touxiang",@"touxiang",@"jiaren",@"jiaren", nil];
+        _ImgNameArrs = [NSMutableArray arrayWithObjects:@"touxiang",@"touxiang",@"touxiang",@"touxiang",@"touxiang",@"touxiang",@"touxiang",@"touxiang",@"touxiang",@"touxiang",@"jiaren", nil];
     }
     
     return _ImgNameArrs;
@@ -84,7 +84,7 @@
     
     NSLog(@"👤cell被点击");
     
-    if (indexPath.item == self.ImgNameArrs.count - 2) {
+    if (indexPath.item == self.ImgNameArrs.count - 1) {
         
         NSLog(@"点击了 添加亲人 cell");
     }else{
