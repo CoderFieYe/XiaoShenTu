@@ -47,6 +47,15 @@
 //    _mapView.pausesLocationUpdatesAutomatically = NO;
 //    
 //    _mapView.allowsBackgroundLocationUpdates = YES;//iOS9以上系统必须配置
+    
+    [self setupView];
+    
+}
+
+-(void)setupView{
+    
+  
+
 }
 
 - (void)viewDidAppear:(BOOL)animated
