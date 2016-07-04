@@ -7,12 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		003767241D29F4A00064A5EB /* FocusCenterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 003767211D29F4A00064A5EB /* FocusCenterView.xib */; };
+		003767251D29F4A00064A5EB /* STFocusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 003767231D29F4A00064A5EB /* STFocusViewController.m */; };
+		0037672C1D29FF6A0064A5EB /* STchat.m in Sources */ = {isa = PBXBuildFile; fileRef = 003767271D29FF6A0064A5EB /* STchat.m */; };
+		0037672D1D29FF6A0064A5EB /* STchatCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 003767291D29FF6A0064A5EB /* STchatCell.m */; };
+		0037672E1D29FF6A0064A5EB /* STChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0037672B1D29FF6A0064A5EB /* STChatViewController.m */; };
 		015E3D381D2113420014A991 /* STGuideController.m in Sources */ = {isa = PBXBuildFile; fileRef = 015E3D121D2113420014A991 /* STGuideController.m */; };
 		015E3D391D2113420014A991 /* STGuideCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 015E3D171D2113420014A991 /* STGuideCell.m */; };
 		015E3D3A1D2113420014A991 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 015E3D1A1D2113420014A991 /* AppDelegate.m */; };
 		015E3D3B1D2113420014A991 /* STNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 015E3D1D1D2113420014A991 /* STNavigationController.m */; };
 		015E3D3C1D2113420014A991 /* STTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 015E3D1F1D2113420014A991 /* STTabBarController.m */; };
-		015E3D411D21137D0014A991 /* STChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 015E3D401D21137D0014A991 /* STChatViewController.m */; };
 		015E3D471D2113930014A991 /* STHoneyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 015E3D461D2113930014A991 /* STHoneyViewController.m */; };
 		015E3D4A1D21139F0014A991 /* STPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 015E3D491D21139F0014A991 /* STPhotoViewController.m */; };
 		015E3D4D1D2113B70014A991 /* STWarningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 015E3D4C1D2113B70014A991 /* STWarningViewController.m */; };
@@ -22,9 +26,7 @@
 		015E3D5C1D211ED20014A991 /* NSDate+STExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 015E3D5A1D211ED20014A991 /* NSDate+STExtension.m */; };
 		C7146FF376D10D087865999B /* libPods-XiaoShenTu.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A5A334EB665E4F83E579D62 /* libPods-XiaoShenTu.a */; };
 		DB06DC131D24C71F0042B9F9 /* STHCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = DB06DC121D24C71F0042B9F9 /* STHCollection.m */; };
-		DB06DC671D2528640042B9F9 /* STFocusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB06DC661D2528640042B9F9 /* STFocusViewController.m */; };
 		DB06DC6A1D2528C30042B9F9 /* UIView+Extend.m in Sources */ = {isa = PBXBuildFile; fileRef = DB06DC691D2528C30042B9F9 /* UIView+Extend.m */; };
-		DB06DC6C1D2530580042B9F9 /* FocusCenterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB06DC6B1D2530580042B9F9 /* FocusCenterView.xib */; };
 		DB11048C1D2268D400851EE6 /* STBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB11048B1D2268D400851EE6 /* STBaseViewController.m */; };
 		DB11048F1D22771400851EE6 /* STHPersonMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = DB11048E1D22771400851EE6 /* STHPersonMessage.m */; };
 		DB4AD5B61D23D6EC004BB8CD /* STHInfomation.m in Sources */ = {isa = PBXBuildFile; fileRef = DB4AD5B51D23D6EC004BB8CD /* STHInfomation.m */; };
@@ -93,6 +95,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		003767211D29F4A00064A5EB /* FocusCenterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FocusCenterView.xib; sourceTree = "<group>"; };
+		003767221D29F4A00064A5EB /* STFocusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STFocusViewController.h; sourceTree = "<group>"; };
+		003767231D29F4A00064A5EB /* STFocusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STFocusViewController.m; sourceTree = "<group>"; };
+		003767261D29FF6A0064A5EB /* STchat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STchat.h; sourceTree = "<group>"; };
+		003767271D29FF6A0064A5EB /* STchat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STchat.m; sourceTree = "<group>"; };
+		003767281D29FF6A0064A5EB /* STchatCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STchatCell.h; sourceTree = "<group>"; };
+		003767291D29FF6A0064A5EB /* STchatCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STchatCell.m; sourceTree = "<group>"; };
+		0037672A1D29FF6A0064A5EB /* STChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STChatViewController.h; sourceTree = "<group>"; };
+		0037672B1D29FF6A0064A5EB /* STChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STChatViewController.m; sourceTree = "<group>"; };
 		015E3D111D2113420014A991 /* STGuideController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STGuideController.h; sourceTree = "<group>"; };
 		015E3D121D2113420014A991 /* STGuideController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STGuideController.m; sourceTree = "<group>"; };
 		015E3D161D2113420014A991 /* STGuideCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STGuideCell.h; sourceTree = "<group>"; };
@@ -103,8 +114,6 @@
 		015E3D1D1D2113420014A991 /* STNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STNavigationController.m; sourceTree = "<group>"; };
 		015E3D1E1D2113420014A991 /* STTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STTabBarController.h; sourceTree = "<group>"; };
 		015E3D1F1D2113420014A991 /* STTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STTabBarController.m; sourceTree = "<group>"; };
-		015E3D3F1D21137D0014A991 /* STChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STChatViewController.h; sourceTree = "<group>"; };
-		015E3D401D21137D0014A991 /* STChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STChatViewController.m; sourceTree = "<group>"; };
 		015E3D451D2113930014A991 /* STHoneyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STHoneyViewController.h; sourceTree = "<group>"; };
 		015E3D461D2113930014A991 /* STHoneyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STHoneyViewController.m; sourceTree = "<group>"; };
 		015E3D481D21139F0014A991 /* STPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPhotoViewController.h; sourceTree = "<group>"; };
@@ -124,11 +133,8 @@
 		9045304AECE7243577F10411 /* Pods-XiaoShenTu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XiaoShenTu.release.xcconfig"; path = "Pods/Target Support Files/Pods-XiaoShenTu/Pods-XiaoShenTu.release.xcconfig"; sourceTree = "<group>"; };
 		DB06DC111D24C71F0042B9F9 /* STHCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STHCollection.h; sourceTree = "<group>"; };
 		DB06DC121D24C71F0042B9F9 /* STHCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STHCollection.m; sourceTree = "<group>"; };
-		DB06DC651D2528640042B9F9 /* STFocusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STFocusViewController.h; sourceTree = "<group>"; };
-		DB06DC661D2528640042B9F9 /* STFocusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STFocusViewController.m; sourceTree = "<group>"; };
 		DB06DC681D2528C30042B9F9 /* UIView+Extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extend.h"; sourceTree = "<group>"; };
 		DB06DC691D2528C30042B9F9 /* UIView+Extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extend.m"; sourceTree = "<group>"; };
-		DB06DC6B1D2530580042B9F9 /* FocusCenterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FocusCenterView.xib; sourceTree = "<group>"; };
 		DB11048A1D2268D400851EE6 /* STBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = STBaseViewController.h; path = ../STBaseViewController.h; sourceTree = "<group>"; };
 		DB11048B1D2268D400851EE6 /* STBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = STBaseViewController.m; path = ../STBaseViewController.m; sourceTree = "<group>"; };
 		DB11048D1D22771400851EE6 /* STHPersonMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STHPersonMessage.h; sourceTree = "<group>"; };
@@ -374,8 +380,12 @@
 		015E3D321D2113420014A991 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
-				015E3D3F1D21137D0014A991 /* STChatViewController.h */,
-				015E3D401D21137D0014A991 /* STChatViewController.m */,
+				003767261D29FF6A0064A5EB /* STchat.h */,
+				003767271D29FF6A0064A5EB /* STchat.m */,
+				003767281D29FF6A0064A5EB /* STchatCell.h */,
+				003767291D29FF6A0064A5EB /* STchatCell.m */,
+				0037672A1D29FF6A0064A5EB /* STChatViewController.h */,
+				0037672B1D29FF6A0064A5EB /* STChatViewController.m */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -383,9 +393,9 @@
 		015E3D331D2113420014A991 /* Focus */ = {
 			isa = PBXGroup;
 			children = (
-				DB06DC651D2528640042B9F9 /* STFocusViewController.h */,
-				DB06DC661D2528640042B9F9 /* STFocusViewController.m */,
-				DB06DC6B1D2530580042B9F9 /* FocusCenterView.xib */,
+				003767221D29F4A00064A5EB /* STFocusViewController.h */,
+				003767231D29F4A00064A5EB /* STFocusViewController.m */,
+				003767211D29F4A00064A5EB /* FocusCenterView.xib */,
 			);
 			path = Focus;
 			sourceTree = "<group>";
@@ -731,6 +741,7 @@
 				DB577D081D25F7DB005FE5E8 /* juli.png in Resources */,
 				DB577D1B1D25F7DB005FE5E8 /* 微聊@2x.png in Resources */,
 				DB577D201D25F7DB005FE5E8 /* 相机.png in Resources */,
+				003767241D29F4A00064A5EB /* FocusCenterView.xib in Resources */,
 				DB577D091D25F7DB005FE5E8 /* juli@2x.png in Resources */,
 				DB577D101D25F7DB005FE5E8 /* 个人中心@3x.png in Resources */,
 				DB577D001D25F7DB005FE5E8 /* dingwei@2x.png in Resources */,
@@ -743,7 +754,6 @@
 				DB577D261D25F7DB005FE5E8 /* 超能听.png in Resources */,
 				DB577D141D25F7DB005FE5E8 /* 家庭图标-拷贝.png in Resources */,
 				DB577D251D25F7DB005FE5E8 /* 紧急呼叫@3x.png in Resources */,
-				DB06DC6C1D2530580042B9F9 /* FocusCenterView.xib in Resources */,
 				DB577D0E1D25F7DB005FE5E8 /* 个人中心.png in Resources */,
 				DB577D1C1D25F7DB005FE5E8 /* 微聊@3x.png in Resources */,
 			);
@@ -805,6 +815,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB11048F1D22771400851EE6 /* STHPersonMessage.m in Sources */,
+				DBA924991D221A3300667239 /* UIButton+Utility.m in Sources */,
 				DB06DC671D2528640042B9F9 /* STFocusViewController.m in Sources */,
 				DB4AD5B91D23EB0F004BB8CD /* STHClearView.m in Sources */,
 				DB06DC131D24C71F0042B9F9 /* STHCollection.m in Sources */,
@@ -816,25 +827,28 @@
 				DB4AD5B61D23D6EC004BB8CD /* STHInfomation.m in Sources */,
 				015E3D4A1D21139F0014A991 /* STPhotoViewController.m in Sources */,
 				DBEA53131D277C5C008BB097 /* STRedAndHomeView.m in Sources */,
+				0037672C1D29FF6A0064A5EB /* STchat.m in Sources */,
 				015E3D3B1D2113420014A991 /* STNavigationController.m in Sources */,
 				DBA9248B1D22187500667239 /* STHCollectionView.m in Sources */,
 				DBCB254C1D224696000A85B3 /* STHInfomationXView.m in Sources */,
 				DBAF32211D23C73400D3CADC /* NSObject+STBasicColor.m in Sources */,
 				015E3D5C1D211ED20014A991 /* NSDate+STExtension.m in Sources */,
+				003767251D29F4A00064A5EB /* STFocusViewController.m in Sources */,
 				E778DF131D2A002A00FA5B7A /* HP_NString.m in Sources */,
 				DBE3DF941D26596A0001FEE5 /* SFHFKeychainUtils.m in Sources */,
 				015E3D3C1D2113420014A991 /* STTabBarController.m in Sources */,
 				015E3D501D2115610014A991 /* STTabBar.m in Sources */,
 				015E3D471D2113930014A991 /* STHoneyViewController.m in Sources */,
 				DBAF32171D23C2CB00D3CADC /* UIButton+Utility.m in Sources */,
+				0037672E1D29FF6A0064A5EB /* STChatViewController.m in Sources */,
 				015E3D391D2113420014A991 /* STGuideCell.m in Sources */,
-				015E3D411D21137D0014A991 /* STChatViewController.m in Sources */,
 				015E3D381D2113420014A991 /* STGuideController.m in Sources */,
 				015E3D561D211EAD0014A991 /* UIBarButtonItem+STExtension.m in Sources */,
 				DBE3DF8C1D2616670001FEE5 /* STHongBaoAnnotation.m in Sources */,
 				DBAF32181D23C2CB00D3CADC /* UILabel+Utility.m in Sources */,
 				DBA5A8801D1FAA9C00FCF0B1 /* main.m in Sources */,
 				DB06DC6A1D2528C30042B9F9 /* UIView+Extend.m in Sources */,
+				0037672D1D29FF6A0064A5EB /* STchatCell.m in Sources */,
 				015E3D3A1D2113420014A991 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
