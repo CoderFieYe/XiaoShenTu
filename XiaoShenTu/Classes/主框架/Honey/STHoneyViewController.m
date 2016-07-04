@@ -49,10 +49,10 @@
 
 @implementation STHoneyViewController
 
-static CGFloat  KHeadH76  = 76;
-static CGFloat  KHeadW76  = 76;
-static CGFloat  kInterval20  = 20;
-static CGFloat  KHeight136  = 136;
+static const CGFloat  KHeadH76  = 76;
+static const CGFloat  KHeadW76  = 76;
+static const CGFloat  kInterval20  = 20;
+static const CGFloat  KHeight136  = 136;
 
 
 //#define KScaleHeight(KHeadH76)   KScaleHeight(KHeadH76)
