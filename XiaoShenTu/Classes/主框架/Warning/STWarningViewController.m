@@ -23,19 +23,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-        self.view.backgroundColor = [UIColor whiteColor];
-    self.view.backgroundColor = [UIColor redColor];
+//    // Do any additional setup after loading the view.
+//        self.view.backgroundColor = [UIColor whiteColor];
+//    self.view.backgroundColor = [UIColor redColor];
    
     
 #pragma 地图展示
-//    //配置用户Key
-//    [MAMapServices sharedServices].apiKey = KGaoDeKey;
-//    
-//    _mapView = [[MAMapView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds))];
-//    _mapView.delegate = self;
-//    
-//    [self.view addSubview:_mapView];
+    //配置用户Key
+    [MAMapServices sharedServices].apiKey = KGaoDeKey;
+    
+    _mapView = [[MAMapView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds))];
+    _mapView.delegate = self;
+    
+    [self.view addSubview:_mapView];
     
     
 }
