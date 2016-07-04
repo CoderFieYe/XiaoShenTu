@@ -13,7 +13,7 @@
 
 @interface STGuideController ()<UICollectionViewDataSource,UICollectionViewDelegate>
 
-// 数组 用来存放所有的背景图片
+// 数组 用来存放所有的背景图片 123
 @property (nonatomic, strong) NSArray *bgImgsArr;
 
 //篮球足球
