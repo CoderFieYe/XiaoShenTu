@@ -35,7 +35,7 @@
     
     self = [super initWithFrame:frame collectionViewLayout:layout];
     
-//    self.frame = CGRectMake(0, 440, XScreenW, 68);
+
     self.backgroundColor = [UIColor orangeColor];
     
     self.dataSource = self;
@@ -96,16 +96,4 @@
 }
 
 
-
-
-#pragma mark - 懒加载
-//- (NSArray *)ImgsArr{
-//
-//    if (!_ImgsArrs) {
-//        _ImgsArrs = [NSMutableArray arrayWithObjects:@"1",@"2",@"3",nil];
-//
-//    }
-//    
-//    return _ImgsArrs;
-//}
 @end

@@ -401,12 +401,12 @@
 		DB4E71601D2A12B800B5938B /* 滚动头像 */ = {
 			isa = PBXGroup;
 			children = (
-				DB4E71611D2A12B800B5938B /* STHCollection.h */,
-				DB4E71621D2A12B800B5938B /* STHCollection.m */,
 				DB4E71631D2A12B800B5938B /* STHCollectionView.h */,
 				DB4E71641D2A12B800B5938B /* STHCollectionView.m */,
 				DB4E71651D2A12B800B5938B /* STHCollectionViewCell.h */,
 				DB4E71661D2A12B800B5938B /* STHCollectionViewCell.m */,
+				DB4E71611D2A12B800B5938B /* STHCollection.h */,
+				DB4E71621D2A12B800B5938B /* STHCollection.m */,
 			);
 			path = "滚动头像";
 			sourceTree = "<group>";
@@ -611,10 +611,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB11048F1D22771400851EE6 /* STHPersonMessage.m in Sources */,
-				DB4AD5B91D23EB0F004BB8CD /* STHClearView.m in Sources */,
-				DB06DC131D24C71F0042B9F9 /* STHCollection.m in Sources */,
-				DBA924941D2219EF00667239 /* STHInfomationView.m in Sources */,
 				015E3D5B1D211ED20014A991 /* UIView+STExtension.m in Sources */,
 				015E3D4D1D2113B70014A991 /* STWarningViewController.m in Sources */,
 				015E3D4A1D21139F0014A991 /* STPhotoViewController.m in Sources */,

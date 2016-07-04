@@ -52,7 +52,8 @@
 
 static CGFloat  KHeight136  = 136;
 
-#define kCollectionViewH  self.mapView.height - 49 - 38 - 40
+static  CGFloat  KInterval62 = 62;
+#define kCollectionViewH  self.mapView.height - 49  - KInterval62;
 
 -(STHInfomation *)InfomationArrs{
 
@@ -190,6 +191,7 @@ static CGFloat  KHeight136  = 136;
     [_mapView addAnnotation:pointAnnotationB];
     
     
+    
 //     地理围栏
     [self getCurrentLocation];
 
@@ -211,7 +213,7 @@ static CGFloat  KHeight136  = 136;
 
 
     UIButton *leftButton = [[UIButton alloc]initWithFrame:CGRectMake(0,0,30,30)];
-    [leftButton setImage:[UIImage imageNamed:@"个人中心.png"]forState:UIControlStateNormal];
+    [leftButton setImage:[UIImage imageNamed:@"个人中心"]forState:UIControlStateNormal];
     [leftButton addTarget:self action:@selector(leftButtonClick) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *leftItem = [[UIBarButtonItem alloc]initWithCustomView:leftButton];
     leftButton.adjustsImageWhenHighlighted = NO;
@@ -296,7 +298,8 @@ static CGFloat  KHeight136  = 136;
                                                           reuseIdentifier:hongbaoReuseID];
         }
         hongBaoView.image = [UIImage imageNamed:@"冒红包"];
-        hongBaoView.centerOffset = CGPointMake(0 , -18);
+        int a = KScaleHeight(18);
+        hongBaoView.centerOffset = CGPointMake(0 , -a);
         hongBaoView.canShowCallout = YES;
 
         return hongBaoView;
@@ -417,7 +420,9 @@ updatingLocation:(BOOL)updatingLocation
     
     flowLayouts.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     
-    STHCollectionView *collectionView = [[STHCollectionView alloc] initWithFrame:CGRectMake(50 ,kCollectionViewH , XScreenW, 80) collectionViewLayout:flowLayouts];
+//    CGFloat CollectionViewH =  self.mapView.height - 49  - KInterval62;
+    
+    STHCollectionView *collectionView = [[STHCollectionView alloc] initWithFrame:CGRectMake(KScaleWidth(100), self.mapView.height - 49  - KScaleHeight(82 * 2), XScreenW, KScaleHeight(86 * 2)) collectionViewLayout:flowLayouts];
     
     self.collectionView = collectionView;
     collectionView.backgroundColor = [UIColor clearColor];
@@ -426,7 +431,7 @@ updatingLocation:(BOOL)updatingLocation
     
     //    6.设置组的内间距
     //    (CGFloat top, CGFloat left, CGFloat bottom, CGFloat right)
-    flowLayouts.sectionInset = UIEdgeInsetsMake(10, 8, 0, 10);
+    flowLayouts.sectionInset = UIEdgeInsetsMake(10, 8, 8, 70);
     
     //    collectionView.frame = CGRectMake(0, 400, 200, KScaleHeight(KHeight136));
     
@@ -454,7 +459,7 @@ updatingLocation:(BOOL)updatingLocation
         [UIView animateWithDuration:0.5 animations:^{
             self.detailView.hidden = NO;
             self.redAndHomeView.y = self.mapView.height -  49 - KScaleHeight(235) -KScaleHeight(KHeight136);
-            self.collectionView.y =  kCollectionViewH  - KScaleHeight(KHeight136);
+            self.collectionView.y =  self.mapView.height - 49  - KScaleHeight(82 * 2) - KScaleHeight(KHeight136);
             
             self.detailView.y = self.mapView.height - 49 - KScaleHeight(KHeight136);
         }];
