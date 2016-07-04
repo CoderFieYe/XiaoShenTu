@@ -43,9 +43,6 @@
 @property (nonatomic, strong) STRedAndHomeView *redAndHomeView;
 
 @property (nonatomic, weak) UIButton *cellBtn;
-//@property (nonatomic, weak) UILabel *hongBaoLab;
-//@property (nonatomic, weak) UIButton *btn;
-//@property (nonatomic, weak) UILabel *homeLab;
 
 
 
@@ -53,24 +50,12 @@
 
 @implementation STHoneyViewController
 
-static CGFloat  KHeadH76  = 76;
-static CGFloat  KHeadW76  = 76;
-static CGFloat  kInterval20  = 20;
 static CGFloat  KHeight136  = 136;
-
-
-//#define KScaleHeight(KHeadH76)   KScaleHeight(KHeadH76)
-//#define KScaleHeight(KHeadW76)   KScaleHeight(KHeadW76)
-//#define  KScaleHeight(kInterval20)     KScaleHeight(kInterval20)
-//#define KScaleHeight(KHeight136)   KScaleHeight(KHeight136)
 
 #define kCollectionViewH  self.mapView.height - 49 - 38 - 40
 
 -(STHInfomation *)InfomationArrs{
 
-//     KScaleHeight(68 * 2)
-//   KScaleHeight(76 + 60)   KScaleHeight(76 + 60)
-   
     
     if (!_InfomationArrs) {
 
@@ -80,13 +65,7 @@ static CGFloat  KHeight136  = 136;
 
 }
 
-//#pragma mark - 懒加载
-//- (CLLocationManager *)manager {
-//    if (!_manager) {
-//        _manager = [[AMapLocationManager alloc]init];
-//    }
-//    return _manager;
-//}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -115,7 +94,7 @@ static CGFloat  KHeight136  = 136;
 //   单次定位
     
     // 带逆地理信息的一次定位（返回坐标和地址信息）
-    [self.locationManager setDesiredAccuracy:kCLLocationAccuracyHundredMeters];
+    [self.locationManager setDesiredAccuracy:kCLLocationAccuracyKilometer];
     //   定位超时时间，最低2s，此处设置为3s
     self.locationManager.locationTimeout =3;
     //   逆地理请求超时时间，最低2s，此处设置为3s
@@ -150,16 +129,7 @@ static CGFloat  KHeight136  = 136;
     
     self.mapView.showsUserLocation = YES;
 
-    
-    UIButton *leftButton = [[UIButton alloc]initWithFrame:CGRectMake(0,0,30,30)];
-    [leftButton setImage:[UIImage imageNamed:@"个人中心.png"]forState:UIControlStateNormal];
-    [leftButton addTarget:self action:@selector(leftButtonClick) forControlEvents:UIControlEventTouchUpInside];
-    UIBarButtonItem *leftItem = [[UIBarButtonItem alloc]initWithCustomView:leftButton];
-    leftButton.adjustsImageWhenHighlighted = NO;
-    self.navigationItem.leftBarButtonItem= leftItem;
-    
-    self.view.backgroundColor = [UIColor whiteColor];
-    
+    [self setLeftNavgationBar];
     
 }
 
@@ -167,12 +137,11 @@ static CGFloat  KHeight136  = 136;
     
   self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
     
-//    [AMapServices sharedServices].apiKey = @"38059dad5bc19bddfa2c6c82c777c1cd";
 //    大头针标注
     
     MAPointAnnotation *pointAnnotation = [[MAPointAnnotation alloc] init];
     pointAnnotation.coordinate = CLLocationCoordinate2DMake(39.989631, 116.481018);
-    pointAnnotation.title = @"方恒国际1";
+    pointAnnotation.title = @"方恒国际111";
     pointAnnotation.subtitle = @"阜通东大街6号";
     
     [_mapView addAnnotation:pointAnnotation];
@@ -197,20 +166,15 @@ static CGFloat  KHeight136  = 136;
     _mapView.showsUserLocation = YES;
     [_mapView setUserTrackingMode: MAUserTrackingModeFollowWithHeading animated:YES];
     
-    //地图跟着位置移动   实现缩放的方法
-//    [_mapView setZoomLevel:16.1 animated:YES];
-    [_mapView setZoomLevel:13.6 animated:YES];
+    //地图跟着位置移动   实现缩放的方法  定位无法实现缩放
+    [_mapView setZoomLevel:16.1 animated:YES];
+//    [_mapView setZoomLevel:33.6 animated:YES];
 
     
     
 //    添加大头针  利用 for 循环
 #pragma mark  -- 红包上的标注
-//    MAPointAnnotation *pointAnnotation = [[MAPointAnnotation alloc] init];
-//    pointAnnotation.coordinate = CLLocationCoordinate2DMake(39.989631, 116.481018);
-//    pointAnnotation.title = @"方恒国际2";
-//    pointAnnotation.subtitle = @"阜通东大街6号";
-//    [_mapView addAnnotation:pointAnnotation];
-//    
+    
     CLLocationCoordinate2D pointA =CLLocationCoordinate2DMake(39.992416, 116.43130);
     STHongBaoAnnotation *hongBaoAnnotation = [[STHongBaoAnnotation alloc] init];
     hongBaoAnnotation.coordinate = pointA;
@@ -225,23 +189,13 @@ static CGFloat  KHeight136  = 136;
     pointAnnotationB.subtitle = @"阜通东大街6号";
     [_mapView addAnnotation:pointAnnotationB];
     
-//    CLLocationCoordinate2D pointC =CLLocationCoordinate2DMake(39.881436, 116.43330);
-//    MAPointAnnotation *pointAnnotationC = [[MAPointAnnotation alloc] init];
-//    pointAnnotation.coordinate = pointC;
-//    pointAnnotationC.title = @"方恒国际3";
-//    pointAnnotationC.subtitle = @"阜通东大街6号";
-//    
-//    [_mapView addAnnotation:pointAnnotationC];
     
 //     地理围栏
-//        [self getCurrentLocation];
+    [self getCurrentLocation];
 
-    
-//    [self setFalseBtn];
     [self setHeadCollectionView];
     
-    UIButton *btn = [[UIButton alloc]init];
-    self.cellBtn = btn;
+
     
 //  红包和家庭  👪  按钮
     
@@ -250,6 +204,21 @@ static CGFloat  KHeight136  = 136;
     self.redAndHomeView = redAndHomeView;
     [self.mapView addSubview:redAndHomeView];
     
+}
+
+// 个人中心
+-(void)setLeftNavgationBar{
+
+
+    UIButton *leftButton = [[UIButton alloc]initWithFrame:CGRectMake(0,0,30,30)];
+    [leftButton setImage:[UIImage imageNamed:@"个人中心.png"]forState:UIControlStateNormal];
+    [leftButton addTarget:self action:@selector(leftButtonClick) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *leftItem = [[UIBarButtonItem alloc]initWithCustomView:leftButton];
+    leftButton.adjustsImageWhenHighlighted = NO;
+    self.navigationItem.leftBarButtonItem= leftItem;
+    
+    self.view.backgroundColor = [UIColor whiteColor];
+
 }
 
 #pragma mark - Add Regions
@@ -263,26 +232,26 @@ static CGFloat  KHeight136  = 136;
 
 - (void)addCircleReionForCoordinate:(CLLocationCoordinate2D)coordinate
 {
-    AMapLocationCircleRegion *cirRegion200 = [[AMapLocationCircleRegion alloc] initWithCenter:coordinate
-                                                                                       radius:200.0
-                                                                                   identifier:@"circleRegion200"];
+//    AMapLocationCircleRegion *cirRegion200 = [[AMapLocationCircleRegion alloc] initWithCenter:coordinate
+//                                                                                       radius:200.0
+//                                                                                   identifier:@"circleRegion200"];
     
     AMapLocationCircleRegion *cirRegion300 = [[AMapLocationCircleRegion alloc] initWithCenter:coordinate
-                                                                                       radius:300.0
+                                                                                       radius:500000.0
                                                                                    identifier:@"circleRegion300"];
     
     //添加地理围栏
-    [self.locationManager startMonitoringForRegion:cirRegion200];
+//    [self.locationManager startMonitoringForRegion:cirRegion200];
     [self.locationManager startMonitoringForRegion:cirRegion300];
     
     //保存地理围栏
-    [self.regions addObject:cirRegion200];
+//    [self.regions addObject:cirRegion200];
     [self.regions addObject:cirRegion300];
     
     //添加Overlay
-    MACircle *circle200 = [MACircle circleWithCenterCoordinate:coordinate radius:200.0];
+//    MACircle *circle200 = [MACircle circleWithCenterCoordinate:coordinate radius:200.0];
     MACircle *circle300 = [MACircle circleWithCenterCoordinate:coordinate radius:300.0];
-    [self.mapView addOverlay:circle200];
+//    [self.mapView addOverlay:circle200];
     [self.mapView addOverlay:circle300];
     
     [self.mapView setVisibleMapRect:circle300.boundingMapRect];
@@ -416,7 +385,7 @@ updatingLocation:(BOOL)updatingLocation
     if(updatingLocation)
     {
         //取出当前位置的坐标
-//        NSLog(@"取出当前位置的坐标 latitude : %f,longitude: %f",userLocation.coordinate.latitude,userLocation.coordinate.longitude);
+        NSLog(@"取出当前位置的坐标 latitude : %f,longitude: %f",userLocation.coordinate.latitude,userLocation.coordinate.longitude);
     }
 }
 
@@ -519,7 +488,7 @@ updatingLocation:(BOOL)updatingLocation
     
     [self.locationManager setDelegate:self];
     
-    [self.locationManager setDesiredAccuracy:kCLLocationAccuracyHundredMeters];
+    [self.locationManager setDesiredAccuracy:kCLLocationAccuracyKilometer];
     
     [self.locationManager setPausesLocationUpdatesAutomatically:NO];
     

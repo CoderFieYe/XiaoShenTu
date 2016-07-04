@@ -26,14 +26,11 @@
 #define KScaleWidth(width)   XScreenW /(375 * 2) * width
 
 
-//     fitScreenHeight= height*(SCREEN_HEIGHT/568)
-
 #define XScreenW [UIScreen mainScreen].bounds.size.width
 #define XScreenH [UIScreen mainScreen].bounds.size.height
 
 
 #define XRandomColor [UIColor colorWithRed:arc4random_uniform(256)/255.0 green:arc4random_uniform(256)/255.0  blue:arc4random_uniform(256)/255.0  alpha:1.0]
-
 
 
 #pragma mark - 打印宏
