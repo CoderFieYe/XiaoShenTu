@@ -78,8 +78,6 @@
 		DBA9248B1D22187500667239 /* STHCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = DBA9248A1D22187500667239 /* STHCollectionView.m */; };
 		DBA9248E1D22188700667239 /* STHCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DBA9248D1D22188700667239 /* STHCollectionViewCell.m */; };
 		DBA924941D2219EF00667239 /* STHInfomationView.m in Sources */ = {isa = PBXBuildFile; fileRef = DBA924931D2219EF00667239 /* STHInfomationView.m */; };
-		DBA924991D221A3300667239 /* UIButton+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = DBA924961D221A3300667239 /* UIButton+Utility.m */; };
-		DBA9249A1D221A3300667239 /* UILabel+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = DBA924981D221A3300667239 /* UILabel+Utility.m */; };
 		DBAB24861D22BC3C00325BA4 /* libPods-XiaoShenTu.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DBAB24851D22BC3C00325BA4 /* libPods-XiaoShenTu.a */; };
 		DBAF32111D237BDD00D3CADC /* AMapLocationKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBAF32101D237BDD00D3CADC /* AMapLocationKit.framework */; };
 		DBAF32171D23C2CB00D3CADC /* UIButton+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = DBAF32141D23C2CB00D3CADC /* UIButton+Utility.m */; };
@@ -91,6 +89,7 @@
 		DBE3DF901D2659340001FEE5 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBE3DF8F1D2659340001FEE5 /* Security.framework */; };
 		DBE3DF941D26596A0001FEE5 /* SFHFKeychainUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = DBE3DF931D26596A0001FEE5 /* SFHFKeychainUtils.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		DBEA53131D277C5C008BB097 /* STRedAndHomeView.m in Sources */ = {isa = PBXBuildFile; fileRef = DBEA53121D277C5C008BB097 /* STRedAndHomeView.m */; };
+		E778DF131D2A002A00FA5B7A /* HP_NString.m in Sources */ = {isa = PBXBuildFile; fileRef = E778DF111D2A002A00FA5B7A /* HP_NString.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -98,8 +97,8 @@
 		015E3D121D2113420014A991 /* STGuideController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STGuideController.m; sourceTree = "<group>"; };
 		015E3D161D2113420014A991 /* STGuideCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STGuideCell.h; sourceTree = "<group>"; };
 		015E3D171D2113420014A991 /* STGuideCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STGuideCell.m; sourceTree = "<group>"; };
-		015E3D191D2113420014A991 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		015E3D1A1D2113420014A991 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		015E3D191D2113420014A991 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Classes/Main/AppDelegate.h; sourceTree = "<group>"; };
+		015E3D1A1D2113420014A991 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Classes/Main/AppDelegate.m; sourceTree = "<group>"; };
 		015E3D1C1D2113420014A991 /* STNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STNavigationController.h; sourceTree = "<group>"; };
 		015E3D1D1D2113420014A991 /* STNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STNavigationController.m; sourceTree = "<group>"; };
 		015E3D1E1D2113420014A991 /* STTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STTabBarController.h; sourceTree = "<group>"; };
@@ -193,21 +192,17 @@
 		DBA9248D1D22188700667239 /* STHCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = STHCollectionViewCell.m; path = ../../STHCollectionViewCell.m; sourceTree = "<group>"; };
 		DBA924921D2219EF00667239 /* STHInfomationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STHInfomationView.h; sourceTree = "<group>"; };
 		DBA924931D2219EF00667239 /* STHInfomationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STHInfomationView.m; sourceTree = "<group>"; };
-		DBA924951D221A3300667239 /* UIButton+Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Utility.h"; sourceTree = "<group>"; };
-		DBA924961D221A3300667239 /* UIButton+Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Utility.m"; sourceTree = "<group>"; };
-		DBA924971D221A3300667239 /* UILabel+Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Utility.h"; sourceTree = "<group>"; };
-		DBA924981D221A3300667239 /* UILabel+Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Utility.m"; sourceTree = "<group>"; };
-		DBAB247D1D22BA9600325BA4 /* AMapFoundationKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AMapFoundationKit.framework; sourceTree = "<group>"; };
-		DBAB247E1D22BA9600325BA4 /* MAMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MAMapKit.framework; sourceTree = "<group>"; };
+		DBAB247D1D22BA9600325BA4 /* AMapFoundationKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AMapFoundationKit.framework; path = XiaoShenTu/AMapFoundationKit.framework; sourceTree = "<group>"; };
+		DBAB247E1D22BA9600325BA4 /* MAMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MAMapKit.framework; path = XiaoShenTu/MAMapKit.framework; sourceTree = "<group>"; };
 		DBAB24851D22BC3C00325BA4 /* libPods-XiaoShenTu.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-XiaoShenTu.a"; path = "Pods/../build/Debug-iphoneos/libPods-XiaoShenTu.a"; sourceTree = "<group>"; };
-		DBAF32101D237BDD00D3CADC /* AMapLocationKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AMapLocationKit.framework; sourceTree = "<group>"; };
-		DBAF32131D23C2CB00D3CADC /* UIButton+Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Utility.h"; sourceTree = "<group>"; };
-		DBAF32141D23C2CB00D3CADC /* UIButton+Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Utility.m"; sourceTree = "<group>"; };
-		DBAF32151D23C2CB00D3CADC /* UILabel+Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Utility.h"; sourceTree = "<group>"; };
-		DBAF32161D23C2CB00D3CADC /* UILabel+Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Utility.m"; sourceTree = "<group>"; };
-		DBAF32191D23C35E00D3CADC /* AppMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppMacro.h; sourceTree = "<group>"; };
-		DBAF321F1D23C73400D3CADC /* NSObject+STBasicColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+STBasicColor.h"; sourceTree = "<group>"; };
-		DBAF32201D23C73400D3CADC /* NSObject+STBasicColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+STBasicColor.m"; sourceTree = "<group>"; };
+		DBAF32101D237BDD00D3CADC /* AMapLocationKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AMapLocationKit.framework; path = XiaoShenTu/AMapLocationKit.framework; sourceTree = "<group>"; };
+		DBAF32131D23C2CB00D3CADC /* UIButton+Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIButton+Utility.h"; path = "../Utility/UIButton+Utility.h"; sourceTree = "<group>"; };
+		DBAF32141D23C2CB00D3CADC /* UIButton+Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIButton+Utility.m"; path = "../Utility/UIButton+Utility.m"; sourceTree = "<group>"; };
+		DBAF32151D23C2CB00D3CADC /* UILabel+Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UILabel+Utility.h"; path = "../Utility/UILabel+Utility.h"; sourceTree = "<group>"; };
+		DBAF32161D23C2CB00D3CADC /* UILabel+Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UILabel+Utility.m"; path = "../Utility/UILabel+Utility.m"; sourceTree = "<group>"; };
+		DBAF32191D23C35E00D3CADC /* AppMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppMacro.h; path = Classes/Utility/AppMacro.h; sourceTree = "<group>"; };
+		DBAF321F1D23C73400D3CADC /* NSObject+STBasicColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+STBasicColor.h"; path = "../Utility/NSObject+STBasicColor.h"; sourceTree = "<group>"; };
+		DBAF32201D23C73400D3CADC /* NSObject+STBasicColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+STBasicColor.m"; path = "../Utility/NSObject+STBasicColor.m"; sourceTree = "<group>"; };
 		DBCB254A1D224696000A85B3 /* STHInfomationXView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = STHInfomationXView.h; path = ../STHInfomationXView.h; sourceTree = "<group>"; };
 		DBCB254B1D224696000A85B3 /* STHInfomationXView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = STHInfomationXView.m; path = ../STHInfomationXView.m; sourceTree = "<group>"; };
 		DBE3DF8A1D2616670001FEE5 /* STHongBaoAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STHongBaoAnnotation.h; sourceTree = "<group>"; };
@@ -218,6 +213,10 @@
 		DBE3DF931D26596A0001FEE5 /* SFHFKeychainUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFHFKeychainUtils.m; sourceTree = "<group>"; };
 		DBEA53111D277C5C008BB097 /* STRedAndHomeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = STRedAndHomeView.h; path = ../STRedAndHomeView.h; sourceTree = "<group>"; };
 		DBEA53121D277C5C008BB097 /* STRedAndHomeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = STRedAndHomeView.m; path = ../STRedAndHomeView.m; sourceTree = "<group>"; };
+		E778DF0D1D29FD9F00FA5B7A /* CommonFiles.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonFiles.h; sourceTree = "<group>"; };
+		E778DF101D2A002A00FA5B7A /* HP_NString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HP_NString.h; sourceTree = "<group>"; };
+		E778DF111D2A002A00FA5B7A /* HP_NString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HP_NString.m; sourceTree = "<group>"; };
+		E778DF141D2A017300FA5B7A /* Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -238,9 +237,6 @@
 		015E3D0B1D2113420014A991 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				DBE3DF911D26596A0001FEE5 /* security */,
-				DBAF32121D23C2A200D3CADC /* Utility */,
-				015E3D0C1D2113420014A991 /* Category */,
 				015E3D0F1D2113420014A991 /* Guide(引导界面) */,
 				015E3D181D2113420014A991 /* Main */,
 				015E3D311D2113420014A991 /* 主框架 */,
@@ -251,12 +247,16 @@
 		015E3D0C1D2113420014A991 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				E778DF101D2A002A00FA5B7A /* HP_NString.h */,
+				E778DF111D2A002A00FA5B7A /* HP_NString.m */,
+				DBAF32131D23C2CB00D3CADC /* UIButton+Utility.h */,
+				DBAF32141D23C2CB00D3CADC /* UIButton+Utility.m */,
+				DBAF32151D23C2CB00D3CADC /* UILabel+Utility.h */,
+				DBAF32161D23C2CB00D3CADC /* UILabel+Utility.m */,
+				DBAF321F1D23C73400D3CADC /* NSObject+STBasicColor.h */,
+				DBAF32201D23C73400D3CADC /* NSObject+STBasicColor.m */,
 				DB06DC681D2528C30042B9F9 /* UIView+Extend.h */,
 				DB06DC691D2528C30042B9F9 /* UIView+Extend.m */,
-				DBA924951D221A3300667239 /* UIButton+Utility.h */,
-				DBA924961D221A3300667239 /* UIButton+Utility.m */,
-				DBA924971D221A3300667239 /* UILabel+Utility.h */,
-				DBA924981D221A3300667239 /* UILabel+Utility.m */,
 				015E3D571D211ED20014A991 /* UIView+STExtension.h */,
 				015E3D581D211ED20014A991 /* UIView+STExtension.m */,
 				015E3D591D211ED20014A991 /* NSDate+STExtension.h */,
@@ -264,7 +264,8 @@
 				015E3D541D211EAD0014A991 /* UIBarButtonItem+STExtension.h */,
 				015E3D551D211EAD0014A991 /* UIBarButtonItem+STExtension.m */,
 			);
-			path = Category;
+			name = Category;
+			path = ../Category;
 			sourceTree = "<group>";
 		};
 		015E3D0F1D2113420014A991 /* Guide(引导界面) */ = {
@@ -313,8 +314,9 @@
 		015E3D181D2113420014A991 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				015E3D191D2113420014A991 /* AppDelegate.h */,
-				015E3D1A1D2113420014A991 /* AppDelegate.m */,
+				DBE3DF911D26596A0001FEE5 /* security */,
+				DBAF32121D23C2A200D3CADC /* Utility */,
+				015E3D0C1D2113420014A991 /* Category */,
 				015E3D1B1D2113420014A991 /* Controllers */,
 				015E3D201D2113420014A991 /* Models */,
 				015E3D211D2113420014A991 /* Others */,
@@ -437,6 +439,9 @@
 		4EB8422A964EA515BE9ED21D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DBAF32101D237BDD00D3CADC /* AMapLocationKit.framework */,
+				DBAB247D1D22BA9600325BA4 /* AMapFoundationKit.framework */,
+				DBAB247E1D22BA9600325BA4 /* MAMapKit.framework */,
 				DBE3DF8F1D2659340001FEE5 /* Security.framework */,
 				DBAB24851D22BC3C00325BA4 /* libPods-XiaoShenTu.a */,
 				2A5A334EB665E4F83E579D62 /* libPods-XiaoShenTu.a */,
@@ -559,8 +564,10 @@
 		DBA5A87D1D1FAA9C00FCF0B1 /* XiaoShenTu */ = {
 			isa = PBXGroup;
 			children = (
-				015E3D0B1D2113420014A991 /* Classes */,
+				015E3D191D2113420014A991 /* AppDelegate.h */,
+				015E3D1A1D2113420014A991 /* AppDelegate.m */,
 				DBA5A87E1D1FAA9C00FCF0B1 /* Supporting Files */,
+				015E3D0B1D2113420014A991 /* Classes */,
 			);
 			path = XiaoShenTu;
 			sourceTree = "<group>";
@@ -568,16 +575,15 @@
 		DBA5A87E1D1FAA9C00FCF0B1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				DBAF32101D237BDD00D3CADC /* AMapLocationKit.framework */,
-				DBAB247D1D22BA9600325BA4 /* AMapFoundationKit.framework */,
-				DBAB247E1D22BA9600325BA4 /* MAMapKit.framework */,
-				DB1104581D2258D800851EE6 /* Images */,
+				E778DF0A1D29FC5A00FA5B7A /* ImageResource */,
 				DBA5A8871D1FAA9C00FCF0B1 /* Main.storyboard */,
-				DBA5A88A1D1FAA9C00FCF0B1 /* Assets.xcassets */,
 				DBA5A88C1D1FAA9C00FCF0B1 /* LaunchScreen.storyboard */,
 				DBA5A88F1D1FAA9C00FCF0B1 /* Info.plist */,
 				DBA5A87F1D1FAA9C00FCF0B1 /* main.m */,
 				DBA5A8B21D1FB98B00FCF0B1 /* PrefixHeader.pch */,
+				DBAF32191D23C35E00D3CADC /* AppMacro.h */,
+				E778DF0D1D29FD9F00FA5B7A /* CommonFiles.h */,
+				E778DF141D2A017300FA5B7A /* Header.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -593,15 +599,9 @@
 		DBAF32121D23C2A200D3CADC /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				DBAF32191D23C35E00D3CADC /* AppMacro.h */,
-				DBAF32131D23C2CB00D3CADC /* UIButton+Utility.h */,
-				DBAF32141D23C2CB00D3CADC /* UIButton+Utility.m */,
-				DBAF32151D23C2CB00D3CADC /* UILabel+Utility.h */,
-				DBAF32161D23C2CB00D3CADC /* UILabel+Utility.m */,
-				DBAF321F1D23C73400D3CADC /* NSObject+STBasicColor.h */,
-				DBAF32201D23C73400D3CADC /* NSObject+STBasicColor.m */,
 			);
-			path = Utility;
+			name = Utility;
+			path = ../Utility;
 			sourceTree = "<group>";
 		};
 		DBE3DF911D26596A0001FEE5 /* security */ = {
@@ -610,7 +610,8 @@
 				DBE3DF921D26596A0001FEE5 /* SFHFKeychainUtils.h */,
 				DBE3DF931D26596A0001FEE5 /* SFHFKeychainUtils.m */,
 			);
-			path = security;
+			name = security;
+			path = ../security;
 			sourceTree = "<group>";
 		};
 		DBEA53141D277C89008BB097 /* 红包和家庭 */ = {
@@ -620,6 +621,15 @@
 				DBEA53121D277C5C008BB097 /* STRedAndHomeView.m */,
 			);
 			path = "红包和家庭";
+			sourceTree = "<group>";
+		};
+		E778DF0A1D29FC5A00FA5B7A /* ImageResource */ = {
+			isa = PBXGroup;
+			children = (
+				DBA5A88A1D1FAA9C00FCF0B1 /* Assets.xcassets */,
+				DB1104581D2258D800851EE6 /* Images */,
+			);
+			name = ImageResource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -795,11 +805,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB11048F1D22771400851EE6 /* STHPersonMessage.m in Sources */,
-				DBA924991D221A3300667239 /* UIButton+Utility.m in Sources */,
 				DB06DC671D2528640042B9F9 /* STFocusViewController.m in Sources */,
 				DB4AD5B91D23EB0F004BB8CD /* STHClearView.m in Sources */,
 				DB06DC131D24C71F0042B9F9 /* STHCollection.m in Sources */,
-				DBA9249A1D221A3300667239 /* UILabel+Utility.m in Sources */,
 				DBA924941D2219EF00667239 /* STHInfomationView.m in Sources */,
 				015E3D5B1D211ED20014A991 /* UIView+STExtension.m in Sources */,
 				DB11048C1D2268D400851EE6 /* STBaseViewController.m in Sources */,
@@ -813,6 +821,7 @@
 				DBCB254C1D224696000A85B3 /* STHInfomationXView.m in Sources */,
 				DBAF32211D23C73400D3CADC /* NSObject+STBasicColor.m in Sources */,
 				015E3D5C1D211ED20014A991 /* NSDate+STExtension.m in Sources */,
+				E778DF131D2A002A00FA5B7A /* HP_NString.m in Sources */,
 				DBE3DF941D26596A0001FEE5 /* SFHFKeychainUtils.m in Sources */,
 				015E3D3C1D2113420014A991 /* STTabBarController.m in Sources */,
 				015E3D501D2115610014A991 /* STTabBar.m in Sources */,
