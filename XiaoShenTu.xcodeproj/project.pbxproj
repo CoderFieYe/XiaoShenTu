@@ -43,6 +43,7 @@
 		DBAF32171D23C2CB00D3CADC /* UIButton+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = DBAF32141D23C2CB00D3CADC /* UIButton+Utility.m */; };
 		DBAF32181D23C2CB00D3CADC /* UILabel+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = DBAF32161D23C2CB00D3CADC /* UILabel+Utility.m */; };
 		DBAF32211D23C73400D3CADC /* NSObject+STBasicColor.m in Sources */ = {isa = PBXBuildFile; fileRef = DBAF32201D23C73400D3CADC /* NSObject+STBasicColor.m */; };
+		DBDB52F91D2A6C3600B6EAB8 /* STWarningView.m in Sources */ = {isa = PBXBuildFile; fileRef = DBDB52F81D2A6C3600B6EAB8 /* STWarningView.m */; };
 		DBE3DF901D2659340001FEE5 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBE3DF8F1D2659340001FEE5 /* Security.framework */; };
 		DBE3DF941D26596A0001FEE5 /* SFHFKeychainUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = DBE3DF931D26596A0001FEE5 /* SFHFKeychainUtils.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E778DF131D2A002A00FA5B7A /* HP_NString.m in Sources */ = {isa = PBXBuildFile; fileRef = E778DF111D2A002A00FA5B7A /* HP_NString.m */; };
@@ -121,6 +122,8 @@
 		DBAF32191D23C35E00D3CADC /* AppMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppMacro.h; path = Classes/Utility/AppMacro.h; sourceTree = "<group>"; };
 		DBAF321F1D23C73400D3CADC /* NSObject+STBasicColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+STBasicColor.h"; path = "../Utility/NSObject+STBasicColor.h"; sourceTree = "<group>"; };
 		DBAF32201D23C73400D3CADC /* NSObject+STBasicColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+STBasicColor.m"; path = "../Utility/NSObject+STBasicColor.m"; sourceTree = "<group>"; };
+		DBDB52F71D2A6C3600B6EAB8 /* STWarningView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STWarningView.h; sourceTree = "<group>"; };
+		DBDB52F81D2A6C3600B6EAB8 /* STWarningView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STWarningView.m; sourceTree = "<group>"; };
 		DBE3DF8F1D2659340001FEE5 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		DBE3DF921D26596A0001FEE5 /* SFHFKeychainUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFHFKeychainUtils.h; sourceTree = "<group>"; };
 		DBE3DF931D26596A0001FEE5 /* SFHFKeychainUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFHFKeychainUtils.m; sourceTree = "<group>"; };
@@ -320,6 +323,8 @@
 			children = (
 				015E3D4B1D2113B70014A991 /* STWarningViewController.h */,
 				015E3D4C1D2113B70014A991 /* STWarningViewController.m */,
+				DBDB52F71D2A6C3600B6EAB8 /* STWarningView.h */,
+				DBDB52F81D2A6C3600B6EAB8 /* STWarningView.m */,
 			);
 			path = Warning;
 			sourceTree = "<group>";
@@ -401,12 +406,12 @@
 		DB4E71601D2A12B800B5938B /* 滚动头像 */ = {
 			isa = PBXGroup;
 			children = (
-				DB4E71611D2A12B800B5938B /* STHCollection.h */,
-				DB4E71621D2A12B800B5938B /* STHCollection.m */,
 				DB4E71631D2A12B800B5938B /* STHCollectionView.h */,
 				DB4E71641D2A12B800B5938B /* STHCollectionView.m */,
 				DB4E71651D2A12B800B5938B /* STHCollectionViewCell.h */,
 				DB4E71661D2A12B800B5938B /* STHCollectionViewCell.m */,
+				DB4E71611D2A12B800B5938B /* STHCollection.h */,
+				DB4E71621D2A12B800B5938B /* STHCollection.m */,
 			);
 			path = "滚动头像";
 			sourceTree = "<group>";
@@ -613,6 +618,7 @@
 			files = (
 				015E3D5B1D211ED20014A991 /* UIView+STExtension.m in Sources */,
 				015E3D4D1D2113B70014A991 /* STWarningViewController.m in Sources */,
+				DBDB52F91D2A6C3600B6EAB8 /* STWarningView.m in Sources */,
 				015E3D4A1D21139F0014A991 /* STPhotoViewController.m in Sources */,
 				0037672C1D29FF6A0064A5EB /* STchat.m in Sources */,
 				DB4E716A1D2A12B800B5938B /* STHInfomationView.m in Sources */,
