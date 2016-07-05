@@ -23,7 +23,10 @@
 #define XScaleWidth(width) XScreenW/750*width
 
 
+
 //     fitScreenHeight= height*(SCREEN_HEIGHT/568)
+
+
 
 #define XScreenW [UIScreen mainScreen].bounds.size.width
 #define XScreenH [UIScreen mainScreen].bounds.size.height
@@ -32,12 +35,11 @@
 #define XRandomColor [UIColor colorWithRed:arc4random_uniform(256)/255.0 green:arc4random_uniform(256)/255.0  blue:arc4random_uniform(256)/255.0  alpha:1.0]
 
 
-
 #pragma mark - 打印宏
 #ifdef __OBJC__
 
 #ifdef DEBUG
-#define XLog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
+#define NSLog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
 #else
 #define NSLog(...)
 #endif

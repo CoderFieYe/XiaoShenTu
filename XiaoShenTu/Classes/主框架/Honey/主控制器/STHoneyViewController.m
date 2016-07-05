@@ -8,6 +8,10 @@
 
 #import "Masonry.h"
 
+#import "STLoginViewController.h"
+
+
+
 #import "STHoneyViewController.h"
 
 #import "STHInfomation.h"
@@ -43,9 +47,6 @@
 @property (nonatomic, strong) STRedAndHomeView *redAndHomeView;
 
 @property (nonatomic, weak) UIButton *cellBtn;
-//@property (nonatomic, weak) UILabel *hongBaoLab;
-//@property (nonatomic, weak) UIButton *btn;
-//@property (nonatomic, weak) UILabel *homeLab;
 
 
 
@@ -53,10 +54,8 @@
 
 @implementation STHoneyViewController
 
-static CGFloat  KHeadH76  = 76;
-static CGFloat  KHeadW76  = 76;
-static CGFloat  kInterval20  = 20;
 static CGFloat  KHeight136  = 136;
+
 
 
 //#define XScaleHeight(KHeadH76)   XScaleHeight(KHeadH76)
@@ -66,11 +65,11 @@ static CGFloat  KHeight136  = 136;
 
 #define kCollectionViewH  self.mapView.height - 49 - 38 - 40
 
+
+
 -(STHInfomation *)InfomationArrs{
 
-//     XScaleHeight(68 * 2)
-//   XScaleHeight(76 + 60)   XScaleHeight(76 + 60)
-   
+
     
     if (!_InfomationArrs) {
 
@@ -80,13 +79,7 @@ static CGFloat  KHeight136  = 136;
 
 }
 
-//#pragma mark - 懒加载
-//- (CLLocationManager *)manager {
-//    if (!_manager) {
-//        _manager = [[AMapLocationManager alloc]init];
-//    }
-//    return _manager;
-//}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -101,7 +94,7 @@ static CGFloat  KHeight136  = 136;
     self.locationManager = [[AMapLocationManager alloc] init];
     self.locationManager.delegate = self;
 //    开启持续定位
-    [self.locationManager startUpdatingLocation];
+//    [self.locationManager startUpdatingLocation];
     
 //   停止持续定位
 //    [self.locationManager stopUpdatingLocation];
@@ -115,13 +108,13 @@ static CGFloat  KHeight136  = 136;
 //   单次定位
     
     // 带逆地理信息的一次定位（返回坐标和地址信息）
-    [self.locationManager setDesiredAccuracy:kCLLocationAccuracyHundredMeters];
+    [self.locationManager setDesiredAccuracy:kCLLocationAccuracyThreeKilometers];
     //   定位超时时间，最低2s，此处设置为3s
     self.locationManager.locationTimeout =3;
     //   逆地理请求超时时间，最低2s，此处设置为3s
     self.locationManager.reGeocodeTimeout = 3;
     
-    // 带逆地理（返回坐标和地址信息）。将下面代码中的YES改成NO，则不会返回地址信息。
+    // 带逆地理（返回坐标和地址信息。将下面代码中的YES改成NO，则不会返回地址信息。
     [self.locationManager requestLocationWithReGeocode:YES completionBlock:^(CLLocation *location, AMapLocationReGeocode *regeocode, NSError *error) {
         
         if (error)
@@ -144,22 +137,13 @@ static CGFloat  KHeight136  = 136;
     }];
     
 //    围栏
-    [self configLocationManager];
+//    [self configLocationManager];
     
     self.regions = [[NSMutableArray alloc] init];
     
     self.mapView.showsUserLocation = YES;
 
-    
-    UIButton *leftButton = [[UIButton alloc]initWithFrame:CGRectMake(0,0,30,30)];
-    [leftButton setImage:[UIImage imageNamed:@"个人中心.png"]forState:UIControlStateNormal];
-    [leftButton addTarget:self action:@selector(leftButtonClick) forControlEvents:UIControlEventTouchUpInside];
-    UIBarButtonItem *leftItem = [[UIBarButtonItem alloc]initWithCustomView:leftButton];
-    leftButton.adjustsImageWhenHighlighted = NO;
-    self.navigationItem.leftBarButtonItem= leftItem;
-    
-    self.view.backgroundColor = [UIColor whiteColor];
-    
+    [self setLeftNavgationBar];
     
 }
 
@@ -167,12 +151,11 @@ static CGFloat  KHeight136  = 136;
     
   self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
     
-//    [AMapServices sharedServices].apiKey = @"38059dad5bc19bddfa2c6c82c777c1cd";
 //    大头针标注
     
     MAPointAnnotation *pointAnnotation = [[MAPointAnnotation alloc] init];
     pointAnnotation.coordinate = CLLocationCoordinate2DMake(39.989631, 116.481018);
-    pointAnnotation.title = @"方恒国际1";
+    pointAnnotation.title = @"方恒国际111";
     pointAnnotation.subtitle = @"阜通东大街6号";
     
     [_mapView addAnnotation:pointAnnotation];
@@ -197,20 +180,15 @@ static CGFloat  KHeight136  = 136;
     _mapView.showsUserLocation = YES;
     [_mapView setUserTrackingMode: MAUserTrackingModeFollowWithHeading animated:YES];
     
-    //地图跟着位置移动   实现缩放的方法
-//    [_mapView setZoomLevel:16.1 animated:YES];
-    [_mapView setZoomLevel:13.6 animated:YES];
+    //地图跟着位置移动   实现缩放的方法  定位无法实现缩放
+    [_mapView setZoomLevel:14.1 animated:YES];
+
 
     
     
 //    添加大头针  利用 for 循环
 #pragma mark  -- 红包上的标注
-//    MAPointAnnotation *pointAnnotation = [[MAPointAnnotation alloc] init];
-//    pointAnnotation.coordinate = CLLocationCoordinate2DMake(39.989631, 116.481018);
-//    pointAnnotation.title = @"方恒国际2";
-//    pointAnnotation.subtitle = @"阜通东大街6号";
-//    [_mapView addAnnotation:pointAnnotation];
-//    
+    
     CLLocationCoordinate2D pointA =CLLocationCoordinate2DMake(39.992416, 116.43130);
     STHongBaoAnnotation *hongBaoAnnotation = [[STHongBaoAnnotation alloc] init];
     hongBaoAnnotation.coordinate = pointA;
@@ -225,31 +203,39 @@ static CGFloat  KHeight136  = 136;
     pointAnnotationB.subtitle = @"阜通东大街6号";
     [_mapView addAnnotation:pointAnnotationB];
     
-//    CLLocationCoordinate2D pointC =CLLocationCoordinate2DMake(39.881436, 116.43330);
-//    MAPointAnnotation *pointAnnotationC = [[MAPointAnnotation alloc] init];
-//    pointAnnotation.coordinate = pointC;
-//    pointAnnotationC.title = @"方恒国际3";
-//    pointAnnotationC.subtitle = @"阜通东大街6号";
-//    
-//    [_mapView addAnnotation:pointAnnotationC];
+    
     
 //     地理围栏
-//        [self getCurrentLocation];
+    [self getCurrentLocation];
 
-    
-//    [self setFalseBtn];
     [self setHeadCollectionView];
     
-    UIButton *btn = [[UIButton alloc]init];
-    self.cellBtn = btn;
+
     
 //  红包和家庭  👪  按钮
-    
+
+  
+
     STRedAndHomeView *redAndHomeView = [[STRedAndHomeView alloc]initWithFrame:CGRectMake(0, self.mapView.height -  49 - XScaleHeight(235) , XScaleWidth(100), XScaleHeight(235))];
     
     self.redAndHomeView = redAndHomeView;
     [self.mapView addSubview:redAndHomeView];
     
+}
+
+// 个人中心
+-(void)setLeftNavgationBar{
+
+
+    UIButton *leftButton = [[UIButton alloc]initWithFrame:CGRectMake(0,0,30,30)];
+    [leftButton setImage:[UIImage imageNamed:@"个人中心"]forState:UIControlStateNormal];
+    [leftButton addTarget:self action:@selector(leftButtonClick) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *leftItem = [[UIBarButtonItem alloc]initWithCustomView:leftButton];
+    leftButton.adjustsImageWhenHighlighted = NO;
+    self.navigationItem.leftBarButtonItem= leftItem;
+    
+    self.view.backgroundColor = [UIColor whiteColor];
+
 }
 
 #pragma mark - Add Regions
@@ -263,26 +249,27 @@ static CGFloat  KHeight136  = 136;
 
 - (void)addCircleReionForCoordinate:(CLLocationCoordinate2D)coordinate
 {
-    AMapLocationCircleRegion *cirRegion200 = [[AMapLocationCircleRegion alloc] initWithCenter:coordinate
-                                                                                       radius:200.0
-                                                                                   identifier:@"circleRegion200"];
-    
+//    AMapLocationCircleRegion *cirRegion200 = [[AMapLocationCircleRegion alloc] initWithCenter:coordinate
+//                                                                                       radius:200.0
+//                                                                                   identifier:@"circleRegion200"];
+   
+//    可以设置围栏圈的大小  圆圈半径3km
     AMapLocationCircleRegion *cirRegion300 = [[AMapLocationCircleRegion alloc] initWithCenter:coordinate
-                                                                                       radius:300.0
+                                                                                       radius:3000.0
                                                                                    identifier:@"circleRegion300"];
     
     //添加地理围栏
-    [self.locationManager startMonitoringForRegion:cirRegion200];
+//    [self.locationManager startMonitoringForRegion:cirRegion200];
     [self.locationManager startMonitoringForRegion:cirRegion300];
     
     //保存地理围栏
-    [self.regions addObject:cirRegion200];
+//    [self.regions addObject:cirRegion200];
     [self.regions addObject:cirRegion300];
     
     //添加Overlay
-    MACircle *circle200 = [MACircle circleWithCenterCoordinate:coordinate radius:200.0];
-    MACircle *circle300 = [MACircle circleWithCenterCoordinate:coordinate radius:300.0];
-    [self.mapView addOverlay:circle200];
+//    MACircle *circle200 = [MACircle circleWithCenterCoordinate:coordinate radius:200.0];
+    MACircle *circle300 = [MACircle circleWithCenterCoordinate:coordinate radius:3000.0];
+//    [self.mapView addOverlay:circle200];
     [self.mapView addOverlay:circle300];
     
     [self.mapView setVisibleMapRect:circle300.boundingMapRect];
@@ -327,7 +314,8 @@ static CGFloat  KHeight136  = 136;
                                                           reuseIdentifier:hongbaoReuseID];
         }
         hongBaoView.image = [UIImage imageNamed:@"冒红包"];
-        hongBaoView.centerOffset = CGPointMake(0 , -18);
+        int a = XScaleHeight(18);
+        hongBaoView.centerOffset = CGPointMake(0 , -a);
         hongBaoView.canShowCallout = YES;
 
         return hongBaoView;
@@ -399,7 +387,7 @@ static CGFloat  KHeight136  = 136;
         pre.fillColor = [UIColor colorWithRed:0.9 green:0.1 blue:0.1 alpha:0.3];
         pre.strokeColor = [UIColor colorWithRed:0.1 green:0.1 blue:0.9 alpha:1.0];
         pre.image = [UIImage imageNamed:@"dingwei"];
-        pre.lineWidth = 3;
+        pre.lineWidth = 2;
         pre.lineDashPattern = @[@6, @3];
         
         [self.mapView updateUserLocationRepresentation:pre];
@@ -432,6 +420,11 @@ updatingLocation:(BOOL)updatingLocation
 -(void)leftButtonClick{
     NSLog(@"个人中心按钮被点击");
     
+    STLoginViewController *LoginVc = [[STLoginViewController alloc] init];
+
+    
+    [self.navigationController pushViewController:LoginVc animated:YES];
+    
     
 }
 
@@ -441,14 +434,16 @@ updatingLocation:(BOOL)updatingLocation
 
     UICollectionViewFlowLayout *flowLayouts = [[UICollectionViewFlowLayout alloc]init];
     
-    flowLayouts.itemSize = CGSizeMake(38,38);
+    flowLayouts.itemSize = CGSizeMake(XScaleWidth(76),XScaleWidth(76));
     
     flowLayouts.minimumLineSpacing = 10;
-    //    flowLayouts.minimumInteritemSpacing = 15;
+//    flowLayouts.minimumInteritemSpacing = 15;
     
     flowLayouts.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     
-    STHCollectionView *collectionView = [[STHCollectionView alloc] initWithFrame:CGRectMake(50 ,kCollectionViewH , XScreenW, 80) collectionViewLayout:flowLayouts];
+//    CGFloat CollectionViewH =  self.mapView.height - 49  - KInterval62;
+    
+    STHCollectionView *collectionView = [[STHCollectionView alloc] initWithFrame:CGRectMake(XScaleWidth(100), self.mapView.height - 49  - XScaleHeight(82 * 2), XScreenW, XScaleHeight(86 * 2)) collectionViewLayout:flowLayouts];
     
     self.collectionView = collectionView;
     collectionView.backgroundColor = [UIColor clearColor];
@@ -457,7 +452,7 @@ updatingLocation:(BOOL)updatingLocation
     
     //    6.设置组的内间距
     //    (CGFloat top, CGFloat left, CGFloat bottom, CGFloat right)
-    flowLayouts.sectionInset = UIEdgeInsetsMake(10, 8, 0, 10);
+    flowLayouts.sectionInset = UIEdgeInsetsMake(10, 8, 8, 60);
     
     //    collectionView.frame = CGRectMake(0, 400, 200, XScaleHeight(KHeight136));
     
@@ -475,13 +470,19 @@ updatingLocation:(BOOL)updatingLocation
 // cell 的点击方法
 - (void)CellClick {
 
+
     if (self.detailView == nil) {
         self.detailView = [[STHInfomationView alloc]initWithFrame: CGRectMake(0,self.mapView.height - 49, XScreenW, XScaleHeight(KHeight136))];
+
+    
+    
+    if (   self.collectionView.y >  self.mapView.height - 49  - XScaleHeight(82 * 2) - XScaleHeight(KHeight136)) {
+
         
-        self.detailView.hidden = YES;
         
-        [self.mapView addSubview: self.detailView];
+//        if (self.detailView == nil) {
         
+
         [UIView animateWithDuration:0.5 animations:^{
             self.detailView.hidden = NO;
             self.redAndHomeView.y = self.mapView.height -  49 - XScaleHeight(235) -XScaleHeight(KHeight136);
@@ -489,18 +490,33 @@ updatingLocation:(BOOL)updatingLocation
             
             self.detailView.y = self.mapView.height - 49 - XScaleHeight(KHeight136);
         }];
- 
+
+            self.detailView = [[STHInfomationView alloc]initWithFrame: CGRectMake(0,self.mapView.height - 49, XScreenW, XScaleHeight(KHeight136))];
+            
+            self.detailView.hidden = YES;
+            
+            [self.mapView addSubview: self.detailView];
+            
+            [UIView animateWithDuration:0.5 animations:^{
+                self.detailView.hidden = NO;
+                self.redAndHomeView.y = self.mapView.height -  49 - XScaleHeight(235) - XScaleHeight(KHeight136);
+                self.collectionView.y =  self.mapView.height - 49  - XScaleHeight(82 * 2) - XScaleHeight(KHeight136);
+                
+                self.detailView.y = self.mapView.height - 49 - XScaleHeight(KHeight136);
+            }];
+
+            
+        
+//    }
+
+
         
     }
     
 }
 
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
-
 
 #pragma mark -- 通知方法
 -(void)OpenPersonDetailNoti{
@@ -519,7 +535,7 @@ updatingLocation:(BOOL)updatingLocation
     
     [self.locationManager setDelegate:self];
     
-    [self.locationManager setDesiredAccuracy:kCLLocationAccuracyHundredMeters];
+    [self.locationManager setDesiredAccuracy:kCLLocationAccuracyThreeKilometers];
     
     [self.locationManager setPausesLocationUpdatesAutomatically:NO];
     

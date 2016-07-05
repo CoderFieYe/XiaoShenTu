@@ -25,7 +25,7 @@
     if (!_ImgNameArrs) {
 //        _ImgNameArrs = [NSMutableArray array];
     
-        _ImgNameArrs = [NSMutableArray arrayWithObjects:@"touxiang",@"touxiang",@"touxiang",@"touxiang",@"touxiang",@"touxiang",@"touxiang",@"touxiang",@"touxiang",@"jiaren",@"jiaren", nil];
+        _ImgNameArrs = [NSMutableArray arrayWithObjects:@"touxiang",@"touxiang",@"touxiang",@"touxiang",@"touxiang",@"touxiang",@"touxiang",@"touxiang",@"touxiang",@"touxiang",@"jiaren", nil];
     }
     
     return _ImgNameArrs;
@@ -35,7 +35,7 @@
     
     self = [super initWithFrame:frame collectionViewLayout:layout];
     
-//    self.frame = CGRectMake(0, 440, XScreenW, 68);
+
     self.backgroundColor = [UIColor orangeColor];
     
     self.dataSource = self;
@@ -84,7 +84,7 @@
     
     NSLog(@"👤cell被点击");
     
-    if (indexPath.item == self.ImgNameArrs.count - 2) {
+    if (indexPath.item == self.ImgNameArrs.count - 1) {
         
         NSLog(@"点击了 添加亲人 cell");
     }else{
@@ -96,16 +96,4 @@
 }
 
 
-
-
-#pragma mark - 懒加载
-//- (NSArray *)ImgsArr{
-//
-//    if (!_ImgsArrs) {
-//        _ImgsArrs = [NSMutableArray arrayWithObjects:@"1",@"2",@"3",nil];
-//
-//    }
-//    
-//    return _ImgsArrs;
-//}
 @end

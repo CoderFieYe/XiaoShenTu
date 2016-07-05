@@ -23,6 +23,7 @@ PODS:
   - Masonry (1.0.0)
   - MBProgressHUD (0.9.2)
   - MJRefresh (3.1.0)
+  - RongCloudIMKit (2.6.4)
   - SDWebImage (3.7.5):
     - SDWebImage/Core (= 3.7.5)
   - SDWebImage/Core (3.7.5)
@@ -36,6 +37,7 @@ DEPENDENCIES:
   - Masonry
   - MBProgressHUD
   - MJRefresh
+  - RongCloudIMKit (= 2.6.4)
   - SDWebImage
 
 SPEC CHECKSUMS:
@@ -47,8 +49,9 @@ SPEC CHECKSUMS:
   Masonry: b529bb169217897b6354d4b56b1fada6d475b13d
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
   MJRefresh: 743e6404967d1c2c688472ea3ecfde247d872db4
+  RongCloudIMKit: e8effbf2b4e634643bb5c420e5d23a4c1f34d2db
   SDWebImage: 69c6303e3348fba97e03f65d65d4fbc26740f461
 
-PODFILE CHECKSUM: 56cc82048001a83e7a4211f67a6c2346a1a4044a
+PODFILE CHECKSUM: 8839d98fec5a90b25b1e79500904ee80160640f6
 
-COCOAPODS: 1.0.0
+COCOAPODS: 1.0.1
