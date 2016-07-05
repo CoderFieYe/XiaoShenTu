@@ -57,7 +57,18 @@
 static CGFloat  KHeight136  = 136;
 
 
+
+//#define XScaleHeight(KHeadH76)   XScaleHeight(KHeadH76)
+//#define XScaleHeight(KHeadW76)   XScaleHeight(KHeadW76)
+//#define  XScaleHeight(kInterval20)     XScaleHeight(kInterval20)
+//#define XScaleHeight(KHeight136)   XScaleHeight(KHeight136)
+
+#define kCollectionViewH  self.mapView.height - 49 - 38 - 40
+
+
+
 -(STHInfomation *)InfomationArrs{
+
 
     
     if (!_InfomationArrs) {
@@ -126,7 +137,7 @@ static CGFloat  KHeight136  = 136;
     }];
     
 //    围栏
-    [self configLocationManager];
+//    [self configLocationManager];
     
     self.regions = [[NSMutableArray alloc] init];
     
@@ -202,7 +213,9 @@ static CGFloat  KHeight136  = 136;
 
     
 //  红包和家庭  👪  按钮
+
   
+
     STRedAndHomeView *redAndHomeView = [[STRedAndHomeView alloc]initWithFrame:CGRectMake(0, self.mapView.height -  49 - XScaleHeight(235) , XScaleWidth(100), XScaleHeight(235))];
     
     self.redAndHomeView = redAndHomeView;
@@ -456,13 +469,28 @@ updatingLocation:(BOOL)updatingLocation
 
 // cell 的点击方法
 - (void)CellClick {
+
+
+    if (self.detailView == nil) {
+        self.detailView = [[STHInfomationView alloc]initWithFrame: CGRectMake(0,self.mapView.height - 49, XScreenW, XScaleHeight(KHeight136))];
+
     
     
     if (   self.collectionView.y >  self.mapView.height - 49  - XScaleHeight(82 * 2) - XScaleHeight(KHeight136)) {
+
         
         
 //        if (self.detailView == nil) {
         
+
+        [UIView animateWithDuration:0.5 animations:^{
+            self.detailView.hidden = NO;
+            self.redAndHomeView.y = self.mapView.height -  49 - XScaleHeight(235) -XScaleHeight(KHeight136);
+            self.collectionView.y =  kCollectionViewH  - XScaleHeight(KHeight136);
+            
+            self.detailView.y = self.mapView.height - 49 - XScaleHeight(KHeight136);
+        }];
+
             self.detailView = [[STHInfomationView alloc]initWithFrame: CGRectMake(0,self.mapView.height - 49, XScreenW, XScaleHeight(KHeight136))];
             
             self.detailView.hidden = YES;
@@ -481,17 +509,14 @@ updatingLocation:(BOOL)updatingLocation
         
 //    }
 
+
         
     }
     
 }
 
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    
 }
-
 
 #pragma mark -- 通知方法
 -(void)OpenPersonDetailNoti{

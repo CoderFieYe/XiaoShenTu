@@ -42,7 +42,11 @@
 {
     
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithImage:@"Personal" highImage:@"Personal" target:self action:@selector(friendsearch)];
+
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithImage:@"tabBar_essence_icon" highImage:@"tabBar_essence_icon" target:self action:@selector(pop)];
+
+//        self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithImage:@"tongxun" highImage:@"tongxun" target:self action:@selector(pop)];
+
 }
 
 
@@ -54,7 +58,7 @@
     [_topView addSubview:lab];
     
     UIImageView *nearby = [[UIImageView alloc] initWithFrame:CGRectMake(9, lab.bottom+14, SCREEN_WIDTH-18, 100)];
-    [nearby setImage:[UIImage imageNamed:@"pic"]];
+    [nearby setImage:[UIImage imageNamed:@"bg"]];
     [_topView addSubview:nearby];
     
     UILabel *chatLab = [[UILabel alloc] initWithFrame:CGRectMake(14, nearby.bottom+23, 34, 16)];
@@ -89,8 +93,8 @@
                 STchat *chatModel = [[STchat alloc] init];
                 chatModel.icon = @"dsadas";
                 chatModel.name = @"董强";
-                chatModel.content = @"恢复和收费空间换地方666";
-                chatModel.time = @"12:00";
+                chatModel.content = @"6666666";
+                chatModel.time = @"1分钟前";
                 
                 [arrayM addObject:chatModel];
                 
@@ -108,7 +112,7 @@
 }
  #pragma mark设置每组每行
  -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
- {
+{
         //1.创建cell
        STchatCell *cell=[STchatCell stcellWithTableView:tableView];
     
@@ -118,6 +122,7 @@
     
         //3.返回cell
         return cell;
+
  }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -127,6 +132,8 @@
     RCConversationVC.title = @"在和2301聊天中";
     [self.navigationController pushViewController:RCConversationVC animated:YES];
     
+
+
 }
 
 - (void)friendsearch{

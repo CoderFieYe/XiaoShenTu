@@ -12,6 +12,9 @@
 		0037672C1D29FF6A0064A5EB /* STchat.m in Sources */ = {isa = PBXBuildFile; fileRef = 003767271D29FF6A0064A5EB /* STchat.m */; };
 		0037672D1D29FF6A0064A5EB /* STchatCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 003767291D29FF6A0064A5EB /* STchatCell.m */; };
 		0037672E1D29FF6A0064A5EB /* STChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0037672B1D29FF6A0064A5EB /* STChatViewController.m */; };
+		003767311D2A3E680064A5EB /* STPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 003767301D2A3E680064A5EB /* STPhoto.m */; };
+		003767341D2A3FAC0064A5EB /* STphotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 003767331D2A3FAC0064A5EB /* STphotoCell.m */; };
+		005818891D2B8C4E00EE4421 /* NSString+STExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 005818881D2B8C4E00EE4421 /* NSString+STExtension.m */; };
 		015E3D381D2113420014A991 /* STGuideController.m in Sources */ = {isa = PBXBuildFile; fileRef = 015E3D121D2113420014A991 /* STGuideController.m */; };
 		015E3D391D2113420014A991 /* STGuideCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 015E3D171D2113420014A991 /* STGuideCell.m */; };
 		015E3D3A1D2113420014A991 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 015E3D1A1D2113420014A991 /* AppDelegate.m */; };
@@ -65,6 +68,12 @@
 		003767291D29FF6A0064A5EB /* STchatCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STchatCell.m; sourceTree = "<group>"; };
 		0037672A1D29FF6A0064A5EB /* STChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STChatViewController.h; sourceTree = "<group>"; };
 		0037672B1D29FF6A0064A5EB /* STChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STChatViewController.m; sourceTree = "<group>"; };
+		0037672F1D2A3E680064A5EB /* STPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPhoto.h; sourceTree = "<group>"; };
+		003767301D2A3E680064A5EB /* STPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STPhoto.m; sourceTree = "<group>"; };
+		003767321D2A3FAC0064A5EB /* STphotoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STphotoCell.h; sourceTree = "<group>"; };
+		003767331D2A3FAC0064A5EB /* STphotoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STphotoCell.m; sourceTree = "<group>"; };
+		005818871D2B8C4E00EE4421 /* NSString+STExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+STExtension.h"; sourceTree = "<group>"; };
+		005818881D2B8C4E00EE4421 /* NSString+STExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+STExtension.m"; sourceTree = "<group>"; };
 		015E3D111D2113420014A991 /* STGuideController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STGuideController.h; sourceTree = "<group>"; };
 		015E3D121D2113420014A991 /* STGuideController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STGuideController.m; sourceTree = "<group>"; };
 		015E3D161D2113420014A991 /* STGuideCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STGuideCell.h; sourceTree = "<group>"; };
@@ -194,6 +203,8 @@
 				015E3D5A1D211ED20014A991 /* NSDate+STExtension.m */,
 				015E3D541D211EAD0014A991 /* UIBarButtonItem+STExtension.h */,
 				015E3D551D211EAD0014A991 /* UIBarButtonItem+STExtension.m */,
+				005818871D2B8C4E00EE4421 /* NSString+STExtension.h */,
+				005818881D2B8C4E00EE4421 /* NSString+STExtension.m */,
 			);
 			name = Category;
 			path = ../Category;
@@ -337,6 +348,10 @@
 			children = (
 				015E3D481D21139F0014A991 /* STPhotoViewController.h */,
 				015E3D491D21139F0014A991 /* STPhotoViewController.m */,
+				0037672F1D2A3E680064A5EB /* STPhoto.h */,
+				003767301D2A3E680064A5EB /* STPhoto.m */,
+				003767321D2A3FAC0064A5EB /* STphotoCell.h */,
+				003767331D2A3FAC0064A5EB /* STphotoCell.m */,
 			);
 			path = Photo;
 			sourceTree = "<group>";
@@ -669,6 +684,7 @@
 				DB4E716C1D2A12B800B5938B /* STHCollectionView.m in Sources */,
 				003767251D29F4A00064A5EB /* STFocusViewController.m in Sources */,
 				DB4E71691D2A12B800B5938B /* STHInfomation.m in Sources */,
+				003767341D2A3FAC0064A5EB /* STphotoCell.m in Sources */,
 				E778DF131D2A002A00FA5B7A /* HP_NString.m in Sources */,
 				DBE3DF941D26596A0001FEE5 /* SFHFKeychainUtils.m in Sources */,
 				DB4E716B1D2A12B800B5938B /* STHCollection.m in Sources */,
@@ -680,6 +696,7 @@
 				015E3D391D2113420014A991 /* STGuideCell.m in Sources */,
 				015E3D381D2113420014A991 /* STGuideController.m in Sources */,
 				015E3D561D211EAD0014A991 /* UIBarButtonItem+STExtension.m in Sources */,
+				003767311D2A3E680064A5EB /* STPhoto.m in Sources */,
 				DBAF32181D23C2CB00D3CADC /* UILabel+Utility.m in Sources */,
 				DB4E716D1D2A12B800B5938B /* STHCollectionViewCell.m in Sources */,
 				DBA5A8801D1FAA9C00FCF0B1 /* main.m in Sources */,
@@ -691,6 +708,7 @@
 				DB4E71681D2A12B800B5938B /* STRedAndHomeView.m in Sources */,
 				DBAD7DA21D2B5E000095A311 /* STLoginView.m in Sources */,
 				015E3D3A1D2113420014A991 /* AppDelegate.m in Sources */,
+				005818891D2B8C4E00EE4421 /* NSString+STExtension.m in Sources */,
 				DB4E71731D2A139900B5938B /* STHPersonMessage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

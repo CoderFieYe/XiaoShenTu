@@ -29,7 +29,7 @@
 
 //    1.统一设置导航栏的背景
     
-    [self.navigationBar setBackgroundImage:[UIImage imageNamed:@"navigationbarBackground"] forBarMetrics:UIBarMetricsDefault];
+    [self.navigationBar setBackgroundImage:[UIImage imageNamed:@"status"] forBarMetrics:UIBarMetricsDefault];
 }
 
 -(void)headBtnaaClicked{

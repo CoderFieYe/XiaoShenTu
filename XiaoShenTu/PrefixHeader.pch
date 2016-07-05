@@ -15,12 +15,18 @@
 #import "AppMacro.h"
 #import "CommonFiles.h"
 #import "Header.h"
-
+#import "HP_NString.h"
 #import "UIView+STExtension.h"
+#import "UIView+Extend.h"
 #import "UIBarButtonItem+STExtension.h"
 #import "NSDate+STExtension.h"
 #import "NSObject+STBasicColor.h"
+
 #import <RongIMKit/RongIMKit.h>
+
+#import "NSString+STExtension.h"
+
+
 
 #endif
 
