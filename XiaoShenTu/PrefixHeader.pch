@@ -20,8 +20,7 @@
 #import "UIBarButtonItem+STExtension.h"
 #import "NSDate+STExtension.h"
 #import "NSObject+STBasicColor.h"
-
-
+#import <RongIMKit/RongIMKit.h>
 
 #endif
 

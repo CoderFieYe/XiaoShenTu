@@ -10,6 +10,8 @@
 #import "STchat.h"
 #import "STchatCell.h"
 #import "UIView+Extend.h"
+#import "STConversationViewController.h"
+//#import "RCConversationViewController.h"
 @interface STChatViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic)UIView *topView;
 @property (nonatomic,strong)NSMutableArray *stArr;
@@ -20,6 +22,9 @@
 - (void)viewDidLoad {
 
     [super viewDidLoad];
+    
+    
+    
      _topView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 300)];
     
     self.tableView.tableHeaderView = _topView;
@@ -27,7 +32,7 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     
-    [self settingNavigationItem];
+//    [self settingNavigationItem];
     [self creatUI];
 
 }
@@ -37,7 +42,7 @@
 {
     
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithImage:@"Personal" highImage:@"Personal" target:self action:@selector(friendsearch)];
-        self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithImage:@"tabBar_essence_icon" highImage:@"tabBar_essence_icon" target:self action:@selector(pop)];
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithImage:@"tabBar_essence_icon" highImage:@"tabBar_essence_icon" target:self action:@selector(pop)];
 }
 
 
@@ -113,7 +118,16 @@
     
         //3.返回cell
         return cell;
-     }
+ }
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    STConversationViewController *RCConversationVC = [[STConversationViewController alloc]init];
+    RCConversationVC.conversationType = ConversationType_PRIVATE;
+    RCConversationVC.targetId = @"2301";
+    RCConversationVC.title = @"在和2301聊天中";
+    [self.navigationController pushViewController:RCConversationVC animated:YES];
+    
+}
 
 - (void)friendsearch{
 

@@ -18,8 +18,8 @@
     [super viewDidLoad];
 
 
-    UIBarButtonItem *barBtn2 = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"个人中心@2x"] style:UIBarButtonItemStylePlain target:self action:@selector(headBtnClicked)];
-    self.navigationItem.leftBarButtonItem=barBtn2;
+//    UIBarButtonItem *barBtn2 = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"个人中心@2x"] style:UIBarButtonItemStylePlain target:self action:@selector(headBtnClicked)];
+//    self.navigationItem.leftBarButtonItem=barBtn2;
 
 //    1.统一设置导航栏的背景
     
@@ -36,8 +36,8 @@
     NSLog(@"导航控制器类被加载");
 //    1.外观代理对象 决定了导航条的外观[显示效果]
 //    将来应用内的所有的导航条的外观都是一样的 其他的控件也是类似 [某些如果有系统的渲染效果的话可能不太好使]
-//    UINavigationBar *navgationBar = [UINavigationBar appearance];
-    UINavigationBar *navgationBar = [[UINavigationBar alloc]init];
+    UINavigationBar *navgationBar = [UINavigationBar appearance];
+//    UINavigationBar *navgationBar = [[UINavigationBar alloc]init];
     
     
 //    2.设置背景图片
@@ -75,7 +75,7 @@
 //        [button addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
         
         // 修改导航栏左边的item
-        viewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
+        viewController.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithImage:@"navigationButtonReturn" highImage:@"navigationButtonReturnClick" target:viewController action:@selector(back)];
         
         // 隐藏tabbar
         viewController.hidesBottomBarWhenPushed = YES;

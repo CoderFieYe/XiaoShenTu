@@ -46,6 +46,8 @@
 		DBDB52F91D2A6C3600B6EAB8 /* STWarningView.m in Sources */ = {isa = PBXBuildFile; fileRef = DBDB52F81D2A6C3600B6EAB8 /* STWarningView.m */; };
 		DBE3DF901D2659340001FEE5 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBE3DF8F1D2659340001FEE5 /* Security.framework */; };
 		DBE3DF941D26596A0001FEE5 /* SFHFKeychainUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = DBE3DF931D26596A0001FEE5 /* SFHFKeychainUtils.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		E7681E0E1D2B616400A3B94E /* STConversationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7681E0D1D2B616400A3B94E /* STConversationViewController.m */; };
+		E7681E111D2B651F00A3B94E /* STConversationListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7681E101D2B651F00A3B94E /* STConversationListViewController.m */; };
 		E778DF131D2A002A00FA5B7A /* HP_NString.m in Sources */ = {isa = PBXBuildFile; fileRef = E778DF111D2A002A00FA5B7A /* HP_NString.m */; };
 /* End PBXBuildFile section */
 
@@ -127,6 +129,10 @@
 		DBE3DF8F1D2659340001FEE5 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		DBE3DF921D26596A0001FEE5 /* SFHFKeychainUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFHFKeychainUtils.h; sourceTree = "<group>"; };
 		DBE3DF931D26596A0001FEE5 /* SFHFKeychainUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFHFKeychainUtils.m; sourceTree = "<group>"; };
+		E7681E0C1D2B616400A3B94E /* STConversationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STConversationViewController.h; sourceTree = "<group>"; };
+		E7681E0D1D2B616400A3B94E /* STConversationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STConversationViewController.m; sourceTree = "<group>"; };
+		E7681E0F1D2B651F00A3B94E /* STConversationListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STConversationListViewController.h; sourceTree = "<group>"; };
+		E7681E101D2B651F00A3B94E /* STConversationListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STConversationListViewController.m; sourceTree = "<group>"; };
 		E778DF0D1D29FD9F00FA5B7A /* CommonFiles.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonFiles.h; sourceTree = "<group>"; };
 		E778DF101D2A002A00FA5B7A /* HP_NString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HP_NString.h; sourceTree = "<group>"; };
 		E778DF111D2A002A00FA5B7A /* HP_NString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HP_NString.m; sourceTree = "<group>"; };
@@ -295,6 +301,10 @@
 				003767291D29FF6A0064A5EB /* STchatCell.m */,
 				0037672A1D29FF6A0064A5EB /* STChatViewController.h */,
 				0037672B1D29FF6A0064A5EB /* STChatViewController.m */,
+				E7681E0C1D2B616400A3B94E /* STConversationViewController.h */,
+				E7681E0D1D2B616400A3B94E /* STConversationViewController.m */,
+				E7681E0F1D2B651F00A3B94E /* STConversationListViewController.h */,
+				E7681E101D2B651F00A3B94E /* STConversationListViewController.m */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -634,6 +644,7 @@
 				015E3D3C1D2113420014A991 /* STTabBarController.m in Sources */,
 				015E3D501D2115610014A991 /* STTabBar.m in Sources */,
 				DBAF32171D23C2CB00D3CADC /* UIButton+Utility.m in Sources */,
+				E7681E111D2B651F00A3B94E /* STConversationListViewController.m in Sources */,
 				0037672E1D29FF6A0064A5EB /* STChatViewController.m in Sources */,
 				015E3D391D2113420014A991 /* STGuideCell.m in Sources */,
 				015E3D381D2113420014A991 /* STGuideController.m in Sources */,
@@ -644,6 +655,7 @@
 				DB4E71721D2A139900B5938B /* STHongBaoAnnotation.m in Sources */,
 				DB06DC6A1D2528C30042B9F9 /* UIView+Extend.m in Sources */,
 				0037672D1D29FF6A0064A5EB /* STchatCell.m in Sources */,
+				E7681E0E1D2B616400A3B94E /* STConversationViewController.m in Sources */,
 				DB4E71671D2A12B800B5938B /* STHoneyViewController.m in Sources */,
 				DB4E71681D2A12B800B5938B /* STRedAndHomeView.m in Sources */,
 				015E3D3A1D2113420014A991 /* AppDelegate.m in Sources */,

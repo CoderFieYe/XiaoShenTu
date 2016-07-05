@@ -15,6 +15,7 @@
 #import "STTabBarController.h"
 #import "STNavigationController.h"
 #import "STTabBar.h"
+#import "STConversationListViewController.h"
 @interface STTabBarController()
 @property (nonatomic, weak)  STTabBar *customTabbar ;
 @end
@@ -46,7 +47,7 @@
     // 添加子控制器
     [self setupChildVc:[[STHoneyViewController alloc] init] title:@"宝贝" image:@"tabBar_essence_icon" selectedImage:@"tabBar_essence_click_icon"];
     
-    [self setupChildVc:[[STChatViewController alloc] init] title:@"微聊" image:@"tabBar_new_icon" selectedImage:@"tabBar_new_click_icon"];
+    [self setupChildVc:[[STConversationListViewController alloc] init] title:@"微聊" image:@"tabBar_new_icon" selectedImage:@"tabBar_new_click_icon"];
     
     [self setupChildVc:[[STPhotoViewController alloc] init] title:@"生活圈" image:@"tabBar_new_icon" selectedImage:@"tabBar_publish_click_icon"];
     

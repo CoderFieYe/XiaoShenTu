@@ -13,7 +13,8 @@
 #import "SFHFKeychainUtils.h"
 #import <AdSupport/AdSupport.h>
 #import <RongIMKit/RongIMKit.h>
-@interface AppDelegate ()
+
+@interface AppDelegate ()<RCIMUserInfoDataSource>
 
 @end
 
@@ -56,7 +57,10 @@
     // 融云
     [[RCIM sharedRCIM]initWithAppKey:@"sfci50a7c7a8i"];
     
-    [[RCIM sharedRCIM] connectWithToken:@"bwHeZRMXXR12GGVFGhNHKln/J0XQHmIWbee4bzspyt5625hHU81nk08oqGA5Qege0TCSvziurfnYv0t367JH3A==" success:^(NSString *userId) {
+    [[RCIM sharedRCIM] connectWithToken:@"/nfxDWyiVyfOfH1mYuz+ZuiloZdM//845nNMEgWAaz0KIQcCG9NzQo1S1Zq5k4Qej1/m7bQecXCoR8XU73yKuQ==" success:^(NSString *userId) {
+        
+        //设置用户信息提供者,页面展现的用户头像及昵称都会从此代理取
+        [[RCIM sharedRCIM] setUserInfoDataSource:self];
         NSLog(@"登录成功，当前用户ID ＝ %@",userId);
     } error:^(RCConnectErrorCode status) {
         NSLog(@"登录失败，错误码 ＝ %ld",(long)status);
@@ -107,6 +111,28 @@
     
     return YES;
     
+}
+
+/**
+ *此方法中要提供给融云用户的信息，建议缓存到本地，然后改方法每次从您的缓存返回
+ */
+- (void)getUserInfoWithUserId:(NSString *)userId completion:(void(^)(RCUserInfo* userInfo))completion
+{
+    //此处为了演示写了一个用户信息
+    if ([@"001" isEqual:userId]) {
+        RCUserInfo *user = [[RCUserInfo alloc]init];
+        user.userId = @"001";
+        user.name = @"test1";
+        user.portraitUri = @"https://ss0.baidu.com/73t1bjeh1BF3odCf/it/u=1756054607,4047938258&fm=96&s=94D712D20AA1875519EB37BE0300C008";
+        
+        completion(user);
+    }else if([@"2301" isEqual:userId]) {
+        RCUserInfo *user = [[RCUserInfo alloc]init];
+        user.userId = @"2301";
+        user.name = @"小神兔1";
+        user.portraitUri = @"https://ss0.baidu.com/73t1bjeh1BF3odCf/it/u=1756054607,4047938258&fm=96&s=94D712D20AA1875519EB37BE0300C008";
+        return completion(user);
+    }
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
