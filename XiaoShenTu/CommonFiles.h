@@ -23,6 +23,11 @@
 #define XScaleWidth(width) XScreenW/750*width
 
 
+
+//     fitScreenHeight= height*(SCREEN_HEIGHT/568)
+
+
+
 #define XScreenW [UIScreen mainScreen].bounds.size.width
 #define XScreenH [UIScreen mainScreen].bounds.size.height
 

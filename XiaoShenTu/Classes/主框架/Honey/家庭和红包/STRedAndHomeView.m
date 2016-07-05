@@ -40,7 +40,11 @@ static CGFloat  KHeadH76  = 76;
     
     //    红包按钮
     UIButton *redbtn  = [[UIButton alloc]init];
+
+    redbtn.size = CGSizeMake(XScaleHeight(KHeadH76), XScaleHeight(KHeadH76));
+
 //    redbtn.size = CGSizeMake(XScaleWidth(KHeadH76), XScaleWidth(KHeadH76));
+
     self.hongbaoBtn = redbtn;
     [redbtn setBackgroundImage:[UIImage imageNamed:@"hongbao"] forState:UIControlStateNormal];
 
@@ -60,7 +64,11 @@ static CGFloat  KHeadH76  = 76;
     //    家庭按钮
     UIButton *homeBtn  = [[UIButton alloc]init];
 
+
+    homeBtn.size = CGSizeMake(XScaleHeight(KHeadH76), XScaleHeight(KHeadH76));
+
 //    homeBtn.size = CGSizeMake(XScaleWidth(KHeadH76), XScaleWidth(KHeadH76));
+
     self.homeBtn = homeBtn;
     [homeBtn setBackgroundImage:[UIImage imageNamed:@"家庭图标"] forState:UIControlStateNormal];
     [homeBtn addTarget:self action:@selector(HomeBtnClick) forControlEvents:UIControlEventTouchUpInside];
@@ -83,21 +91,31 @@ static CGFloat  KHeadH76  = 76;
     [self.hongbaoBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.mas_equalTo(self.mas_leading).offset(XScaleWidth(20));
         make.top.equalTo(self.mas_top).offset(XScaleWidth(10));
+
+
         make.height.mas_equalTo(XScaleWidth(KHeadH76));
         make.width.mas_equalTo(XScaleWidth(KHeadH76));
+
         
     }];
     [self.hongBaoLab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.hongbaoBtn.mas_centerX);
+
+        make.top.equalTo(self.hongbaoBtn.mas_bottom).offset(XScaleHeight(6));
+
         make.top.equalTo(self.hongbaoBtn.mas_bottom).offset(XScaleWidth(6));
+
         
     }];
 
     [self.homeBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.hongBaoLab.mas_bottom).offset(XScaleWidth(6));
         make.leading.mas_equalTo(self.mas_leading).offset(XScaleWidth(20));
+
+
         make.height.mas_equalTo(XScaleWidth(KHeadH76));
         make.width.mas_equalTo(XScaleWidth(KHeadH76));
+
         
     }];
     [self.homeLab mas_makeConstraints:^(MASConstraintMaker *make) {

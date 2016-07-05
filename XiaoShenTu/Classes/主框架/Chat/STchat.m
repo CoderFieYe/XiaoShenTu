@@ -16,7 +16,7 @@
         self.name =dict[@"name"];
         self.icon = dict[@"icon"];
         self.time = dict[@"time"];
-        self.content = dict[@"desc"];
+        self.content = dict[@"content"];
     }
     return self;
 }
