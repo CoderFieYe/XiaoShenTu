@@ -9,7 +9,10 @@
 #import "STRegisterViewController.h"
 #import "STRegister.h"
 
+#import "JKCountDownButton.h"
+
 @interface STRegisterViewController ()
+@property (nonatomic, weak) JKCountDownButton *yanzBtn;
 
 @end
 
@@ -24,9 +27,34 @@
     [self  setNavgationBar];
     
     STRegister *view = [[STRegister alloc]initWithFrame:CGRectMake(0, 0, XScreenW, self.view.height)];
+    self.yanzBtn = view.yanzBtn;
     
     [self.view addSubview:view];
     
+    [self buildCountDown];
+}
+
+//  60秒倒计时
+-(void)buildCountDown{
+
+    [_yanzBtn countDownButtonHandler:^(JKCountDownButton*sender, NSInteger tag) {
+        sender.enabled = NO;
+        
+        [sender startCountDownWithSecond:60];
+        
+        [sender countDownChanging:^NSString *(JKCountDownButton *countDownButton,NSUInteger second) {
+            NSString *title = [NSString stringWithFormat:@"剩余%zd秒",second];
+            return title;
+        }];
+        [sender countDownFinished:^NSString *(JKCountDownButton *countDownButton, NSUInteger second) {
+            countDownButton.enabled = YES;
+            return @"点击重新获取";
+            
+        }];
+        
+    }];
+
+
 }
 
 -(void)setNavgationBar{

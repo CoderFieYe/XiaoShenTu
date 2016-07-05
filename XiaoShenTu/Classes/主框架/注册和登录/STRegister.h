@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+@class JKCountDownButton;
 
 @interface STRegister : UIView
 
+
+@property (nonatomic, weak) JKCountDownButton *yanzBtn;
 @end
