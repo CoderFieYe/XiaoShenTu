@@ -58,9 +58,9 @@
 //    NSLog(@"XScaleWidth %f",XScaleWidth(100));
 //
     NSLog(@" Height  %f",  [UIScreen mainScreen].bounds.size.height);
-    NSLog(@" KScaleHeight  %f", KScaleHeight(68 * 2));
+    NSLog(@" XScaleHeight  %f", XScaleHeight(68 * 2));
 //
-//    NSLog(@"KScaleWidth %f",KScaleWidth(100));
+//    NSLog(@"XScaleWidth %f",XScaleWidth(100));
 //    
     
 //    1.创建窗口
