@@ -12,7 +12,7 @@
 
 #import "SFHFKeychainUtils.h"
 #import <AdSupport/AdSupport.h>
-
+#import <RongIMKit/RongIMKit.h>
 @interface AppDelegate ()
 
 @end
@@ -51,17 +51,21 @@
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+   
+
+    // 融云
+    [[RCIM sharedRCIM]initWithAppKey:@"sfci50a7c7a8i"];
     
-//    NSLog(@" XScaleHeight  %f", XScaleHeight(100));
-//    
-//    NSLog(@"XScaleWidth %f",XScaleWidth(100));
-//
-    NSLog(@" Height  %f",  [UIScreen mainScreen].bounds.size.height);
-    NSLog(@" KScaleHeight  %f", KScaleHeight(68 * 2));
-//
-//    NSLog(@"KScaleWidth %f",KScaleWidth(100));
-//    
+    [[RCIM sharedRCIM] connectWithToken:@"bwHeZRMXXR12GGVFGhNHKln/J0XQHmIWbee4bzspyt5625hHU81nk08oqGA5Qege0TCSvziurfnYv0t367JH3A==" success:^(NSString *userId) {
+        NSLog(@"登录成功，当前用户ID ＝ %@",userId);
+    } error:^(RCConnectErrorCode status) {
+        NSLog(@"登录失败，错误码 ＝ %ld",(long)status);
+
+    } tokenIncorrect:^{
+        NSLog(@"token 错误");
+    }];
+    
+    
     
 //    1.创建窗口
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
