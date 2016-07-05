@@ -39,6 +39,10 @@
 		DBA5A88B1D1FAA9C00FCF0B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBA5A88A1D1FAA9C00FCF0B1 /* Assets.xcassets */; };
 		DBA5A88E1D1FAA9C00FCF0B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBA5A88C1D1FAA9C00FCF0B1 /* LaunchScreen.storyboard */; };
 		DBAB24861D22BC3C00325BA4 /* libPods-XiaoShenTu.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DBAB24851D22BC3C00325BA4 /* libPods-XiaoShenTu.a */; };
+		DBAD7D9F1D2B4C210095A311 /* STLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBAD7D9E1D2B4C210095A311 /* STLoginViewController.m */; };
+		DBAD7DA21D2B5E000095A311 /* STLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = DBAD7DA11D2B5E000095A311 /* STLoginView.m */; };
+		DBAD7DA51D2B908C0095A311 /* STRegister.m in Sources */ = {isa = PBXBuildFile; fileRef = DBAD7DA41D2B908C0095A311 /* STRegister.m */; };
+		DBAD7DA81D2B90A90095A311 /* STRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBAD7DA71D2B90A90095A311 /* STRegisterViewController.m */; };
 		DBAF32111D237BDD00D3CADC /* AMapLocationKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBAF32101D237BDD00D3CADC /* AMapLocationKit.framework */; };
 		DBAF32171D23C2CB00D3CADC /* UIButton+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = DBAF32141D23C2CB00D3CADC /* UIButton+Utility.m */; };
 		DBAF32181D23C2CB00D3CADC /* UILabel+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = DBAF32161D23C2CB00D3CADC /* UILabel+Utility.m */; };
@@ -116,6 +120,14 @@
 		DBAB247D1D22BA9600325BA4 /* AMapFoundationKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AMapFoundationKit.framework; path = XiaoShenTu/AMapFoundationKit.framework; sourceTree = "<group>"; };
 		DBAB247E1D22BA9600325BA4 /* MAMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MAMapKit.framework; path = XiaoShenTu/MAMapKit.framework; sourceTree = "<group>"; };
 		DBAB24851D22BC3C00325BA4 /* libPods-XiaoShenTu.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-XiaoShenTu.a"; path = "Pods/../build/Debug-iphoneos/libPods-XiaoShenTu.a"; sourceTree = "<group>"; };
+		DBAD7D9D1D2B4C210095A311 /* STLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STLoginViewController.h; sourceTree = "<group>"; };
+		DBAD7D9E1D2B4C210095A311 /* STLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STLoginViewController.m; sourceTree = "<group>"; };
+		DBAD7DA01D2B5E000095A311 /* STLoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STLoginView.h; sourceTree = "<group>"; };
+		DBAD7DA11D2B5E000095A311 /* STLoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STLoginView.m; sourceTree = "<group>"; };
+		DBAD7DA31D2B908C0095A311 /* STRegister.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRegister.h; sourceTree = "<group>"; };
+		DBAD7DA41D2B908C0095A311 /* STRegister.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRegister.m; sourceTree = "<group>"; };
+		DBAD7DA61D2B90A90095A311 /* STRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRegisterViewController.h; sourceTree = "<group>"; };
+		DBAD7DA71D2B90A90095A311 /* STRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRegisterViewController.m; sourceTree = "<group>"; };
 		DBAF32101D237BDD00D3CADC /* AMapLocationKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AMapLocationKit.framework; path = XiaoShenTu/AMapLocationKit.framework; sourceTree = "<group>"; };
 		DBAF32131D23C2CB00D3CADC /* UIButton+Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIButton+Utility.h"; path = "../Utility/UIButton+Utility.h"; sourceTree = "<group>"; };
 		DBAF32141D23C2CB00D3CADC /* UIButton+Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIButton+Utility.m"; path = "../Utility/UIButton+Utility.m"; sourceTree = "<group>"; };
@@ -282,6 +294,7 @@
 		015E3D311D2113420014A991 /* 主框架 */ = {
 			isa = PBXGroup;
 			children = (
+				DBAD7D9C1D2B4BC00095A311 /* 注册和登录 */,
 				015E3D0F1D2113420014A991 /* Guide(引导界面) */,
 				DB4E71531D2A12B800B5938B /* Honey */,
 				015E3D321D2113420014A991 /* Chat */,
@@ -405,10 +418,10 @@
 		DB4E715B1D2A12B800B5938B /* 小个人详情 */ = {
 			isa = PBXGroup;
 			children = (
-				DB4E715C1D2A12B800B5938B /* STHInfomation.h */,
-				DB4E715D1D2A12B800B5938B /* STHInfomation.m */,
 				DB4E715E1D2A12B800B5938B /* STHInfomationView.h */,
 				DB4E715F1D2A12B800B5938B /* STHInfomationView.m */,
+				DB4E715C1D2A12B800B5938B /* STHInfomation.h */,
+				DB4E715D1D2A12B800B5938B /* STHInfomation.m */,
 			);
 			path = "小个人详情";
 			sourceTree = "<group>";
@@ -469,6 +482,21 @@
 				E778DF141D2A017300FA5B7A /* Header.h */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DBAD7D9C1D2B4BC00095A311 /* 注册和登录 */ = {
+			isa = PBXGroup;
+			children = (
+				DBAD7D9D1D2B4C210095A311 /* STLoginViewController.h */,
+				DBAD7D9E1D2B4C210095A311 /* STLoginViewController.m */,
+				DBAD7DA01D2B5E000095A311 /* STLoginView.h */,
+				DBAD7DA11D2B5E000095A311 /* STLoginView.m */,
+				DBAD7DA61D2B90A90095A311 /* STRegisterViewController.h */,
+				DBAD7DA71D2B90A90095A311 /* STRegisterViewController.m */,
+				DBAD7DA31D2B908C0095A311 /* STRegister.h */,
+				DBAD7DA41D2B908C0095A311 /* STRegister.m */,
+			);
+			path = "注册和登录";
 			sourceTree = "<group>";
 		};
 		DBAF32121D23C2A200D3CADC /* Utility */ = {
@@ -629,12 +657,15 @@
 				015E3D5B1D211ED20014A991 /* UIView+STExtension.m in Sources */,
 				015E3D4D1D2113B70014A991 /* STWarningViewController.m in Sources */,
 				DBDB52F91D2A6C3600B6EAB8 /* STWarningView.m in Sources */,
+				DBAD7DA51D2B908C0095A311 /* STRegister.m in Sources */,
+				DBAD7DA81D2B90A90095A311 /* STRegisterViewController.m in Sources */,
 				015E3D4A1D21139F0014A991 /* STPhotoViewController.m in Sources */,
 				0037672C1D29FF6A0064A5EB /* STchat.m in Sources */,
 				DB4E716A1D2A12B800B5938B /* STHInfomationView.m in Sources */,
 				015E3D3B1D2113420014A991 /* STNavigationController.m in Sources */,
 				DBAF32211D23C73400D3CADC /* NSObject+STBasicColor.m in Sources */,
 				015E3D5C1D211ED20014A991 /* NSDate+STExtension.m in Sources */,
+				DBAD7D9F1D2B4C210095A311 /* STLoginViewController.m in Sources */,
 				DB4E716C1D2A12B800B5938B /* STHCollectionView.m in Sources */,
 				003767251D29F4A00064A5EB /* STFocusViewController.m in Sources */,
 				DB4E71691D2A12B800B5938B /* STHInfomation.m in Sources */,
@@ -658,6 +689,7 @@
 				E7681E0E1D2B616400A3B94E /* STConversationViewController.m in Sources */,
 				DB4E71671D2A12B800B5938B /* STHoneyViewController.m in Sources */,
 				DB4E71681D2A12B800B5938B /* STRedAndHomeView.m in Sources */,
+				DBAD7DA21D2B5E000095A311 /* STLoginView.m in Sources */,
 				015E3D3A1D2113420014A991 /* AppDelegate.m in Sources */,
 				DB4E71731D2A139900B5938B /* STHPersonMessage.m in Sources */,
 			);

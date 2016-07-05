@@ -8,6 +8,8 @@
 
 #import "STNavigationController.h"
 
+
+
 @interface STNavigationController ()
 
 @end
@@ -18,7 +20,11 @@
     [super viewDidLoad];
 
 
+
 //    UIBarButtonItem *barBtn2 = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"个人中心@2x"] style:UIBarButtonItemStylePlain target:self action:@selector(headBtnClicked)];
+
+//    UIBarButtonItem *barBtn2 = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"个人中心@2x"] style:UIBarButtonItemStylePlain target:self action:@selector(headBtnaaClicked)];
+
 //    self.navigationItem.leftBarButtonItem=barBtn2;
 
 //    1.统一设置导航栏的背景
@@ -26,9 +32,11 @@
     [self.navigationBar setBackgroundImage:[UIImage imageNamed:@"navigationbarBackground"] forBarMetrics:UIBarMetricsDefault];
 }
 
--(void)headBtnClicked{
+-(void)headBtnaaClicked{
 
     NSLog(@"个人头像按钮被点击");
+
+  
 
 }
 //此方法 在当前的类第一次被加载到系统中的时候被调用一次  以后都不会被调用
@@ -41,14 +49,14 @@
     
     
 //    2.设置背景图片
-//    [navgationBar setBackgroundImage:[UIImage imageNamed:@"navigationbarBackground"] forBarMetrics:UIBarMetricsDefault];
+    [navgationBar setBackgroundImage:[UIImage imageNamed:@"navigationbarBackground"] forBarMetrics:UIBarMetricsDefault];
 //    3.设置标题颜色
     [navgationBar setTitleTextAttributes:@{
                                           NSForegroundColorAttributeName : [UIColor whiteColor]
                                            
                                            }];
 //    4.设置返回按钮的颜色 将来两侧的按钮的颜色也就是白色
-//    [navgationBar setTintColor:[UIColor whiteColor]];
+    [navgationBar setTintColor:[UIColor whiteColor]];
     
   
     
@@ -59,7 +67,8 @@
  */
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
-    if (self.childViewControllers.count > 0) { // 如果push进来的不是第一个控制器
+    if (self.childViewControllers.count > 0) {
+        // 如果push进来的不是第一个控制器
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         [button setTitle:@"返回" forState:UIControlStateNormal];
         [button setImage:[UIImage imageNamed:@"navigationButtonReturn"] forState:UIControlStateNormal];

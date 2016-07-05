@@ -19,11 +19,8 @@
 
 
 
-#define XScaleHeight(height) XScreenH/667*2*height
+#define XScaleHeight(height) XScreenH/1334*height
 #define XScaleWidth(width) XScreenW/750*width
-
-#define KScaleHeight(height)     XScreenH /(667.00 * 2) * height
-#define KScaleWidth(width)   XScreenW /(375 * 2) * width
 
 
 #define XScreenW [UIScreen mainScreen].bounds.size.width
@@ -37,7 +34,7 @@
 #ifdef __OBJC__
 
 #ifdef DEBUG
-#define XLog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
+#define NSLog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
 #else
 #define NSLog(...)
 #endif

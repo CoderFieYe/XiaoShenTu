@@ -26,12 +26,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "XiaoShenTu/Classes/Main/AppDelegate.m"
-            timestampString = "489397036.00561"
+            timestampString = "489411754.31582"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "123"
-            endingLineNumber = "123"
-            landmarkName = "-getUserInfoWithUserId:completion:"
+            startingLineNumber = "122"
+            endingLineNumber = "122"
+            landmarkName = "-application:didFinishLaunchingWithOptions:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -42,12 +42,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "XiaoShenTu/Classes/Main/AppDelegate.m"
-            timestampString = "489397037.079621"
+            timestampString = "489411754.31582"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "122"
-            endingLineNumber = "122"
-            landmarkName = "-getUserInfoWithUserId:completion:"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
+            landmarkName = "-application:didFinishLaunchingWithOptions:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

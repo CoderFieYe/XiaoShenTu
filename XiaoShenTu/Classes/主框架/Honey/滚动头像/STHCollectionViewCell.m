@@ -22,9 +22,9 @@
 
     self = [super initWithFrame:frame];
     
-    self.frame =CGRectMake(0, 0, KScaleWidth(76), KScaleWidth(76));
+    self.frame =CGRectMake(0, 0, XScaleWidth(76), XScaleWidth(76));
     
-    UIImageView *imgView = [[UIImageView alloc]initWithFrame: CGRectMake(0, 0, KScaleWidth(76), KScaleWidth(76))];
+    UIImageView *imgView = [[UIImageView alloc]initWithFrame: CGRectMake(0, 0, XScaleWidth(76), XScaleWidth(76))];
     
     self.imgView = imgView;
     
