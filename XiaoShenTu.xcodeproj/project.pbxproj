@@ -46,6 +46,7 @@
 		DBAD7DA21D2B5E000095A311 /* STLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = DBAD7DA11D2B5E000095A311 /* STLoginView.m */; };
 		DBAD7DA51D2B908C0095A311 /* STRegister.m in Sources */ = {isa = PBXBuildFile; fileRef = DBAD7DA41D2B908C0095A311 /* STRegister.m */; };
 		DBAD7DA81D2B90A90095A311 /* STRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBAD7DA71D2B90A90095A311 /* STRegisterViewController.m */; };
+		DBAD7DAC1D2BB9000095A311 /* JKCountDownButton.m in Sources */ = {isa = PBXBuildFile; fileRef = DBAD7DAB1D2BB9000095A311 /* JKCountDownButton.m */; };
 		DBAF32111D237BDD00D3CADC /* AMapLocationKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBAF32101D237BDD00D3CADC /* AMapLocationKit.framework */; };
 		DBAF32171D23C2CB00D3CADC /* UIButton+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = DBAF32141D23C2CB00D3CADC /* UIButton+Utility.m */; };
 		DBAF32181D23C2CB00D3CADC /* UILabel+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = DBAF32161D23C2CB00D3CADC /* UILabel+Utility.m */; };
@@ -137,6 +138,8 @@
 		DBAD7DA41D2B908C0095A311 /* STRegister.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRegister.m; sourceTree = "<group>"; };
 		DBAD7DA61D2B90A90095A311 /* STRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRegisterViewController.h; sourceTree = "<group>"; };
 		DBAD7DA71D2B90A90095A311 /* STRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRegisterViewController.m; sourceTree = "<group>"; };
+		DBAD7DAA1D2BB9000095A311 /* JKCountDownButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKCountDownButton.h; sourceTree = "<group>"; };
+		DBAD7DAB1D2BB9000095A311 /* JKCountDownButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKCountDownButton.m; sourceTree = "<group>"; };
 		DBAF32101D237BDD00D3CADC /* AMapLocationKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AMapLocationKit.framework; path = XiaoShenTu/AMapLocationKit.framework; sourceTree = "<group>"; };
 		DBAF32131D23C2CB00D3CADC /* UIButton+Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIButton+Utility.h"; path = "../Utility/UIButton+Utility.h"; sourceTree = "<group>"; };
 		DBAF32141D23C2CB00D3CADC /* UIButton+Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIButton+Utility.m"; path = "../Utility/UIButton+Utility.m"; sourceTree = "<group>"; };
@@ -257,6 +260,7 @@
 		015E3D181D2113420014A991 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				DBAD7DA91D2BB9000095A311 /* JKCountDownButton */,
 				DBE3DF911D26596A0001FEE5 /* security */,
 				DBAF32121D23C2A200D3CADC /* Utility */,
 				015E3D0C1D2113420014A991 /* Category */,
@@ -514,6 +518,15 @@
 			path = "注册和登录";
 			sourceTree = "<group>";
 		};
+		DBAD7DA91D2BB9000095A311 /* JKCountDownButton */ = {
+			isa = PBXGroup;
+			children = (
+				DBAD7DAA1D2BB9000095A311 /* JKCountDownButton.h */,
+				DBAD7DAB1D2BB9000095A311 /* JKCountDownButton.m */,
+			);
+			path = JKCountDownButton;
+			sourceTree = "<group>";
+		};
 		DBAF32121D23C2A200D3CADC /* Utility */ = {
 			isa = PBXGroup;
 			children = (
@@ -692,6 +705,7 @@
 				015E3D501D2115610014A991 /* STTabBar.m in Sources */,
 				DBAF32171D23C2CB00D3CADC /* UIButton+Utility.m in Sources */,
 				E7681E111D2B651F00A3B94E /* STConversationListViewController.m in Sources */,
+				DBAD7DAC1D2BB9000095A311 /* JKCountDownButton.m in Sources */,
 				0037672E1D29FF6A0064A5EB /* STChatViewController.m in Sources */,
 				015E3D391D2113420014A991 /* STGuideCell.m in Sources */,
 				015E3D381D2113420014A991 /* STGuideController.m in Sources */,

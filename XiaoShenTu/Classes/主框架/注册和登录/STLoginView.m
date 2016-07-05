@@ -78,13 +78,13 @@
     
     [self addSubview:passImg];
     
-    //    UITextView *phoneNub = [[UITextView alloc]init];
-
+#pragma mark -- 手机号输入
     UITextField *phoneNum  = [[UITextField alloc]init];
     phoneNum.placeholder = @"手机号";
-//    phoneNum.leftView = (UIView *)self.headImg;
-//    phoneNum.leftViewMode = UITextFieldViewModeAlways;
-    self .PhoenNum = phoneNum;
+    self.PhoenNum = phoneNum;
+    self.PhoenNum.delegate = self;
+    self.PhoenNum.keyboardType = UIKeyboardTypeDecimalPad;
+    
     [self addSubview:phoneNum];
     
 
@@ -92,10 +92,13 @@
     
     UITextField *mimaField  = [[UITextField alloc]init];
     mimaField.placeholder = @"密码";
-//    mimaField.leftView = (UIView *)self.passImg;
-//    mimaField.leftViewMode = UITextFieldViewModeAlways;
     self.mimaField = mimaField;
+    
+    self.mimaField.secureTextEntry = YES;
+    self.mimaField.delegate = self;
     [self addSubview:mimaField];
+    
+    
     
     UIButton *loginBtn = [[UIButton alloc]init];
     [loginBtn setImage:[UIImage imageNamed:@"denglu"] forState:UIControlStateNormal];
@@ -152,7 +155,8 @@
        
         make.top.mas_equalTo(self.mas_top).mas_equalTo(XScaleHeight(510));
         make.left.mas_equalTo(self.mas_left).mas_equalTo(XScaleWidth(40));
-        
+        make.width.mas_equalTo(XScaleWidth(670));
+        make.height.mas_equalTo(XScaleHeight(84));
     }];
     
     [self.messageBtn mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -173,10 +177,10 @@
     
     [self.view1 mas_makeConstraints:^(MASConstraintMaker *make) {
        
-        make.top.mas_equalTo(self.PhoenNum.mas_top);
+        make.top.mas_equalTo(self.PhoenNum.mas_top).mas_offset(XScaleHeight(2));
         make.centerX.equalTo(self.mas_centerX);
         make.width.mas_equalTo(XScreenW);
-        make.height.mas_equalTo(XScaleHeight(1));
+        make.height.mas_equalTo(XScaleHeight(2));
         
     }];
     
@@ -201,7 +205,7 @@
  
     [self.view2 mas_makeConstraints:^(MASConstraintMaker *make) {
         
-        make.top.mas_equalTo(self.PhoenNum.mas_bottom).mas_offset(1);
+        make.top.mas_equalTo(self.PhoenNum.mas_bottom).mas_offset(XScaleHeight(2));
         make.centerX.equalTo(self.mas_centerX);
         
         make.width.mas_equalTo(XScreenW);
@@ -210,12 +214,11 @@
     }];
     [self.view3 mas_makeConstraints:^(MASConstraintMaker *make) {
         
-        make.top.mas_equalTo(self.mimaField.mas_bottom);
+        make.top.mas_equalTo(self.mimaField.mas_bottom).mas_offset(XScaleHeight(2));
         make.centerX.equalTo(self.mas_centerX);
         make.width.mas_equalTo(XScreenW);
-        make.height.mas_equalTo(XScaleHeight(1));
+        make.height.mas_equalTo(XScaleHeight(2));
     }];
-//
 }
 
 
@@ -237,4 +240,55 @@
 
     
 }
+
+
+
+#pragma mark ------------------------UITextFieldDelegate---------------------------
+
+
+-(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+    if (textField==self.PhoenNum) {
+        NSInteger strLength = textField.text.length - range.length + string.length;
+        if (strLength > 11){
+            return NO;
+        }
+        NSString *text = nil;
+        //如果string为空，表示删除
+        if (string.length > 0) {
+            text = [NSString stringWithFormat:@"%@%@",textField.text,string];
+        }else{
+            text = [textField.text substringToIndex:range.location];
+        }
+//        if ([self isMobile:text]) {
+//            [btnVeriy setEnabled:YES];
+//        }else{
+//            [btnVeriy setEnabled:NO];
+//        }
+    }
+    return YES;
+}
+//
+//- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+//{
+//    //密码限制(长度16)
+//    if (textField == self.mimaField) {
+//        if (self.mimaField.text.length > 15 && string.length > 0) {
+//            return NO;
+//        }
+//    }
+//    //账号限制
+//    if(textField==self.PhoenNum)
+//    {
+//        if (self.PhoenNum.text.length > 10 && string.length > 0) {
+//            return NO;
+//        }
+//        if ([string isEqualToString:@""]) {
+//            self.passwordField.text = nil;
+//        }
+//    }
+//    return YES;
+//}
+//
+
 @end

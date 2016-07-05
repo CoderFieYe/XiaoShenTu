@@ -7,6 +7,7 @@
 //
 
 #import "STRegister.h"
+#import "JKCountDownButton.h"
 
 #import "UILabel+Utility.h"
 #import "UIButton+Utility.h"
@@ -29,13 +30,11 @@
 @property (nonatomic, weak) UITextField *yanzhengNum;
 @property (nonatomic, weak) UITextField *mimaField;
 
+//@property (nonatomic, weak) JKCountDownButton *yanzBtn;
 
-@property (nonatomic, weak) UIButton *yanzBtn;
 
 
 @property (nonatomic, weak) UIButton *loginBtn;
-//@property (nonatomic, weak) UIButton *messageBtn;
-//@property (nonatomic, weak) UIButton *forgetBtn;
 
 
 
@@ -93,17 +92,17 @@
     
     UITextField *phoneNum  = [[UITextField alloc]init];
     phoneNum.placeholder = @"手机号";
-    //    phoneNum.leftView = (UIView *)self.PhoenImg;
-    //    phoneNum.leftViewMode = UITextFieldViewModeAlways;
     self.PhoenNum = phoneNum;
+    self.PhoenNum.delegate = self;
+    self.PhoenNum.keyboardType = UIKeyboardTypeDecimalPad;
     [self addSubview:phoneNum];
     
     
     UITextField *yanzhengNum  = [[UITextField alloc]init];
     yanzhengNum.placeholder = @"手机验证码";
-    //    phoneNum.leftView = (UIView *)self.PhoenImg;
-    //    phoneNum.leftViewMode = UITextFieldViewModeAlways;
     self.yanzhengNum = yanzhengNum;
+    self.yanzhengNum.delegate = self;
+    self.yanzhengNum.keyboardType = UIKeyboardTypeDecimalPad;
     [self addSubview:yanzhengNum];
     
     
@@ -122,18 +121,15 @@
     
     
     
-    
-    UIButton *yanzBtn = [[UIButton alloc]init];
-    [yanzBtn setBackgroundImage:[UIImage imageNamed:@"yanzhengm"] forState:UIControlStateNormal];
+#pragma  mark ---  验证码 按钮
+    JKCountDownButton *yanzBtn = [JKCountDownButton buttonWithType:UIButtonTypeCustom];
+    yanzBtn.backgroundColor = [UIColor orangeColor];
+    yanzBtn.layer.cornerRadius = 6;
+    yanzBtn.clipsToBounds = YES;
+    [yanzBtn setTitle:@"获取验证码" forState:UIControlStateNormal];
     [yanzBtn addTarget:self action:@selector(yanzBtnClick) forControlEvents:UIControlEventTouchUpInside];
     self.yanzBtn = yanzBtn;
     [self addSubview:yanzBtn];
-    
-    
-//    UIImageView *yanzmImg = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"yanzhengm"]];
-//    self.yanZMImg = yanzmImg;
-//    [self addSubview:yanzmImg];
-    
     
     
 }
@@ -176,16 +172,18 @@
         
         make.top.mas_equalTo(self.mas_top).mas_equalTo(XScaleHeight(510));
         make.left.mas_equalTo(self.mas_left).mas_equalTo(XScaleWidth(40));
+        make.width.mas_equalTo(XScaleWidth(670));
+        make.height.mas_equalTo(XScaleHeight(84));
         
     }];
 
 
     [self.view1 mas_makeConstraints:^(MASConstraintMaker *make) {
         
-        make.top.mas_equalTo(self.PhoenNum.mas_top);
+        make.top.mas_equalTo(self.PhoenNum.mas_top).mas_offset(XScaleHeight(2));
         make.centerX.equalTo(self.mas_centerX);
         make.width.mas_equalTo(XScreenW);
-        make.height.mas_equalTo(XScaleHeight(1));
+        make.height.mas_equalTo(XScaleHeight(2));
         
     }];
     
@@ -200,7 +198,7 @@
     
         [self.view2 mas_makeConstraints:^(MASConstraintMaker *make) {
     
-            make.top.mas_equalTo(self.PhoenNum.mas_bottom).mas_offset(1);
+            make.top.mas_equalTo(self.PhoenNum.mas_bottom).mas_offset(XScaleHeight(2));
             make.centerX.equalTo(self.mas_centerX);
     
             make.width.mas_equalTo(XScreenW);
@@ -211,7 +209,7 @@
        
         make.top.mas_equalTo(self.view2.mas_bottom).mas_offset(XScaleHeight(8));
         make.right.mas_equalTo(self.mas_right).mas_offset(XScaleWidth(-30));
-        make.width.mas_equalTo(XScaleWidth(154));
+        make.width.mas_equalTo(XScaleWidth(254));
         make.height.mas_equalTo(XScaleHeight(70));
    
         
@@ -227,11 +225,11 @@
     }];
     
     [self.view3 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self.yanzhengNum.mas_bottom).mas_offset(XScaleHeight(2));
+        make.centerX.equalTo(self.mas_centerX);
+        make.width.mas_equalTo(XScreenW);
+        make.height.mas_equalTo(XScaleHeight(2));
         
-                make.top.mas_equalTo(self.yanzhengNum.mas_bottom).mas_equalTo(1);
-                make.centerX.equalTo(self.mas_centerX);
-                make.width.mas_equalTo(XScreenW);
-                make.height.mas_equalTo(XScaleHeight(2));
     }];
 
     [self.mimaImg mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -245,7 +243,7 @@
     
     [self.view4 mas_makeConstraints:^(MASConstraintMaker *make) {
         
-        make.top.mas_equalTo(self.mimaField.mas_bottom);
+        make.top.mas_equalTo(self.mimaField.mas_bottom).mas_offset(XScaleHeight(2));
         make.centerX.equalTo(self.mas_centerX);
         make.width.mas_equalTo(XScreenW);
         make.height.mas_equalTo(XScaleHeight(2));
@@ -269,5 +267,30 @@
 }
 
 
+#pragma mark ------------------------UITextFieldDelegate---------------------------
+
+
+-(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+    if (textField==self.PhoenNum) {
+        NSInteger strLength = textField.text.length - range.length + string.length;
+        if (strLength > 11){
+            return NO;
+        }
+        NSString *text = nil;
+        //如果string为空，表示删除
+        if (string.length > 0) {
+            text = [NSString stringWithFormat:@"%@%@",textField.text,string];
+        }else{
+            text = [textField.text substringToIndex:range.location];
+        }
+        //        if ([self isMobile:text]) {
+        //            [btnVeriy setEnabled:YES];
+        //        }else{
+        //            [btnVeriy setEnabled:NO];
+        //        }
+    }
+    return YES;
+}
 
 @end
