@@ -34,7 +34,6 @@
          STchatCell *cell=[tableView dequeueReusableCellWithIdentifier:identifier];
          if (cell==nil) {
                  //如何让创建的cell加个戳
-                 //对于加载的xib文件，可以到xib视图的属性选择器中进行设置
              cell = [[STchatCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
                  NSLog(@"创建了一个cell");
             }
