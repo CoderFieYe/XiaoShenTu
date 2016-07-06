@@ -32,8 +32,7 @@
 + (void)post:(NSString *)url params:(NSDictionary *)params success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure
 {
     // 1.创建请求管理者
-    
-    
+
     AFHTTPSessionManager *mgr = [AFHTTPSessionManager manager];
     
     [mgr POST:url parameters:params progress:^(NSProgress * _Nonnull uploadProgress) {

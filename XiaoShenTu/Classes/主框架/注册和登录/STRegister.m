@@ -92,6 +92,8 @@
     UITextField *phoneNum  = [[UITextField alloc]init];
     phoneNum.placeholder = @"手机号";
     self.PhoenNum = phoneNum;
+    self.PhoenNum.clearButtonMode = UITextFieldViewModeWhileEditing; //编辑时会出现个修改X
+    self.PhoenNum.delegate = self;
     self.PhoenNum.keyboardType = UIKeyboardTypeDecimalPad;
     [self addSubview:phoneNum];
     
@@ -99,13 +101,14 @@
     UITextField *yanzhengNum  = [[UITextField alloc]init];
     yanzhengNum.placeholder = @"手机验证码";
     self.yanzhengNum = yanzhengNum;
+    self.yanzhengNum.delegate = self;
     self.yanzhengNum.keyboardType = UIKeyboardTypeDecimalPad;
     [self addSubview:yanzhengNum];
     
     
     UITextField *mimaField  = [[UITextField alloc]init];
     mimaField.placeholder = @"请输入密码";
-
+    self.mimaField.delegate = self;
     self.mimaField = mimaField;
     [self addSubview:mimaField];
     
@@ -249,35 +252,54 @@
 
 
 
-////验证手机号
-//+ (BOOL)checkMobileString:(NSString *)string;
-
 #pragma mark ------------------------UITextFieldDelegate---------------------------
 
 
-//-(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
-//{
-//    if (textField==self.PhoenNum) {
-//        NSInteger strLength = textField.text.length - range.length + string.length;
-//        if (strLength > 11){
-//            return NO;
-//        }
-////        NSString *text = nil;
-////        //如果string为空，表示删除
-////        if (string.length > 0) {
-////            text = [NSString stringWithFormat:@"%@%@",textField.text,string];
-////        }else{
-////            text = [textField.text substringToIndex:range.location];
-////        }
-//        //        if ([self isMobile:text]) {
-//        //            [btnVeriy setEnabled:YES];
-//        //        }else{
-//        //            [btnVeriy setEnabled:NO];
-//        //        }
-//    }
-//    return YES;
-//}
-
+-(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+    
+    if (textField==self.PhoenNum) {
+        NSInteger strLength = textField.text.length - range.length + string.length;
+        if (strLength > 11){
+            return NO;
+        }
+        NSString *text = nil;
+        //      如果string为空，表示删除
+        if (string.length > 0) {
+            text = [NSString stringWithFormat:@"%@%@",textField.text,string];
+            NSLog(@"输入框输入的内容  %@",text);
+            
+        }else{
+            text = [textField.text substringToIndex:range.location];
+        }
+        
+    }
+    //验证码限制(长度6)
+    if (textField == self.yanzhengNum) {
+        if (self.yanzhengNum.text.length > 5 && string.length > 0) {
+            return NO;
+        }
+    }
+    
+    
+    //密码限制(长度16)
+    if (textField == self.mimaField) {
+        if (self.mimaField.text.length > 15 && string.length > 0) {
+            return NO;
+        }
+    }
+    //账号限制
+    if(textField==self.PhoenNum)
+    {
+        if (self.PhoenNum.text.length > 10 && string.length > 0) {
+            return NO;
+        }
+        if ([string isEqualToString:@""]) {
+            self.mimaField.text = nil;
+        }
+    }
+    return YES;
+}
 
 
 
