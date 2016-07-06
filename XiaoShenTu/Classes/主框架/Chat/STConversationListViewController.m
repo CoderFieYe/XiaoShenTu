@@ -17,6 +17,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+//    self.navigationItem.rightBarButtonItem = [UINavigationBar alloc]
+    
     [self setDisplayConversationTypes:@[@(ConversationType_PRIVATE),
                                         @(ConversationType_DISCUSSION),
                                         @(ConversationType_CHATROOM),

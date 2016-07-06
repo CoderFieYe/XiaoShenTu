@@ -21,7 +21,7 @@
 #import "UIBarButtonItem+STExtension.h"
 #import "NSDate+STExtension.h"
 #import "NSObject+STBasicColor.h"
-
+#import "UIImageView+WebCache.h"
 #import <RongIMKit/RongIMKit.h>
 
 #import "NSString+STExtension.h"

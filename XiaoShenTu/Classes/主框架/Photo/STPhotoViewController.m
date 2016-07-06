@@ -10,10 +10,12 @@
 #import "UIView+Extend.h"
 #import "STPhoto.h"
 #import "STphotoCell.h"
+#import "LCBannerView.h"
 
 @interface STPhotoViewController ()
 @property (nonatomic)UIView *topView;
 @property (nonatomic,strong)NSMutableArray *stArr;
+@property (nonatomic,strong)UIScrollView *scrollView;
 @end
 
 @implementation STPhotoViewController
@@ -26,6 +28,10 @@
     
     
     self.view.backgroundColor = [UIColor whiteColor];
+    
+    _scrollView = [[UIScrollView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    _scrollView.contentSize = CGSizeMake(0, [UIScreen mainScreen].bounds.size.height + 300.0f);
+    [self.view addSubview:_scrollView];
     
     [self settingNavigationItem];
     [self creatUI];
@@ -54,6 +60,23 @@
     [_topView addSubview:moneyLab];
     
     UIImageView *nearby = [[UIImageView alloc] initWithFrame:CGRectMake(9, babyLab.bottom+14, SCREEN_WIDTH-18, 100)];
+//    
+//    [_scrollView addSubview:({
+//        
+//        LCBannerView *bannerView = [[LCBannerView alloc] initWithFrame:CGRectMake(0, 20.0f, [UIScreen mainScreen].bounds.size.width, 200.0f)
+//                                                              delegate:self
+//                                                             imageName:@"banner"
+//                                                                 count:3
+//                                                         timerInterval:3.0f
+//                                         currentPageIndicatorTintColor:[UIColor orangeColor]
+//                                                pageIndicatorTintColor:[UIColor whiteColor]];
+//        bannerView.pageDistance = 20.0f;
+//        //        bannerView.notScrolling = YES;
+//        bannerView;
+//    })];
+    
+    
+    
     [nearby setImage:[UIImage imageNamed:@"bg"]];
     [_topView addSubview:nearby];
     
