@@ -15,6 +15,7 @@
 @property (nonatomic, weak) UITextField *PhoenNum;
 @property (nonatomic, weak) UITextField *yanzhengNum;
 @property (nonatomic, weak) UITextField *mimaField;
+@property (nonatomic, weak) UITextField *mimaField2;
 
 
 @property (nonatomic, weak) JKCountDownButton *yanzBtn;

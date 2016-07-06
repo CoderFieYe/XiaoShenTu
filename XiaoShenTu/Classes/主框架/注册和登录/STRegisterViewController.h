@@ -10,4 +10,13 @@
 
 @interface STRegisterViewController : UIViewController
 
+
+@property (nonatomic,strong) NSString * primobile;
+@property (nonatomic,strong) NSString * nickName;
+@property (nonatomic,strong) NSString * content;
+@property (nonatomic, strong) NSString * area_id;
+@property (nonatomic, strong) NSString * city_id;
+@property (nonatomic) BOOL  sex ;
+
+
 @end

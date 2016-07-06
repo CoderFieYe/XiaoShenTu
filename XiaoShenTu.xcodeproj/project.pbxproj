@@ -28,6 +28,7 @@
 		015E3D5B1D211ED20014A991 /* UIView+STExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 015E3D581D211ED20014A991 /* UIView+STExtension.m */; };
 		015E3D5C1D211ED20014A991 /* NSDate+STExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 015E3D5A1D211ED20014A991 /* NSDate+STExtension.m */; };
 		C7146FF376D10D087865999B /* libPods-XiaoShenTu.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A5A334EB665E4F83E579D62 /* libPods-XiaoShenTu.a */; };
+		DB0132941D2D22E1009185C2 /* STHeadImage.m in Sources */ = {isa = PBXBuildFile; fileRef = DB0132931D2D22E1009185C2 /* STHeadImage.m */; };
 		DB06DC6A1D2528C30042B9F9 /* UIView+Extend.m in Sources */ = {isa = PBXBuildFile; fileRef = DB06DC691D2528C30042B9F9 /* UIView+Extend.m */; };
 		DB1F38DD1D2C975F00CD442A /* NSString+Check.m in Sources */ = {isa = PBXBuildFile; fileRef = DB1F38DC1D2C975F00CD442A /* NSString+Check.m */; };
 		DB4E71671D2A12B800B5938B /* STHoneyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB4E71571D2A12B800B5938B /* STHoneyViewController.m */; };
@@ -106,6 +107,8 @@
 		2A5A334EB665E4F83E579D62 /* libPods-XiaoShenTu.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XiaoShenTu.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		347511030CF39749603F7E5C /* Pods-XiaoShenTu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XiaoShenTu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XiaoShenTu/Pods-XiaoShenTu.debug.xcconfig"; sourceTree = "<group>"; };
 		9045304AECE7243577F10411 /* Pods-XiaoShenTu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XiaoShenTu.release.xcconfig"; path = "Pods/Target Support Files/Pods-XiaoShenTu/Pods-XiaoShenTu.release.xcconfig"; sourceTree = "<group>"; };
+		DB0132921D2D22E1009185C2 /* STHeadImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = STHeadImage.h; path = "../../注册和登录/STHeadImage.h"; sourceTree = "<group>"; };
+		DB0132931D2D22E1009185C2 /* STHeadImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = STHeadImage.m; path = "../../注册和登录/STHeadImage.m"; sourceTree = "<group>"; };
 		DB06DC681D2528C30042B9F9 /* UIView+Extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extend.h"; sourceTree = "<group>"; };
 		DB06DC691D2528C30042B9F9 /* UIView+Extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extend.m"; sourceTree = "<group>"; };
 		DB1F38DB1D2C975F00CD442A /* NSString+Check.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Check.h"; sourceTree = "<group>"; };
@@ -315,6 +318,7 @@
 		015E3D311D2113420014A991 /* 主框架 */ = {
 			isa = PBXGroup;
 			children = (
+				E797D80B1D2D236E00CC65B6 /* 融云 */,
 				DBAD7D9C1D2B4BC00095A311 /* 注册和登录 */,
 				015E3D0F1D2113420014A991 /* Guide(引导界面) */,
 				DB4E71531D2A12B800B5938B /* Honey */,
@@ -437,6 +441,8 @@
 				DB4E716F1D2A139900B5938B /* STHongBaoAnnotation.m */,
 				DB4E71701D2A139900B5938B /* STHPersonMessage.h */,
 				DB4E71711D2A139900B5938B /* STHPersonMessage.m */,
+				DB0132921D2D22E1009185C2 /* STHeadImage.h */,
+				DB0132931D2D22E1009185C2 /* STHeadImage.m */,
 			);
 			path = MapView;
 			sourceTree = "<group>";
@@ -589,6 +595,29 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		E797D80B1D2D236E00CC65B6 /* 融云 */ = {
+			isa = PBXGroup;
+			children = (
+				E797D80C1D2D23F600CC65B6 /* ViewController */,
+			);
+			name = "融云";
+			sourceTree = "<group>";
+		};
+		E797D80C1D2D23F600CC65B6 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E797D80D1D2D244300CC65B6 /* Login */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		E797D80D1D2D244300CC65B6 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -625,10 +654,14 @@
 					DBA5A87A1D1FAA9C00FCF0B1 = {
 						CreatedOnToolsVersion = 7.2;
 
+
 						DevelopmentTeam = HWXYBYLA8G;
 
 						DevelopmentTeam = 97XLV239ZP;
 
+
+
+						DevelopmentTeam = R5CEXDT2NE;
 
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -767,6 +800,7 @@
 				DBAD7DA21D2B5E000095A311 /* STLoginView.m in Sources */,
 				015E3D3A1D2113420014A991 /* AppDelegate.m in Sources */,
 				005818891D2B8C4E00EE4421 /* NSString+STExtension.m in Sources */,
+				DB0132941D2D22E1009185C2 /* STHeadImage.m in Sources */,
 				DB4E71731D2A139900B5938B /* STHPersonMessage.m in Sources */,
 				E750DB0B1D2CEEAD009AE814 /* STHttpTool.m in Sources */,
 			);
@@ -896,9 +930,13 @@
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
 
+
 				PRODUCT_BUNDLE_IDENTIFIER = abc.com.XiaoShenTus;
 
 				PRODUCT_BUNDLE_IDENTIFIER = abc.com.XiaoShenTusss;
+
+
+				PRODUCT_BUNDLE_IDENTIFIER = abc.com.XiaoShenTu;
 
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -925,9 +963,13 @@
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
 
+
 				PRODUCT_BUNDLE_IDENTIFIER = abc.com.XiaoShenTus;
 
 				PRODUCT_BUNDLE_IDENTIFIER = abc.com.XiaoShenTusss;
+
+
+				PRODUCT_BUNDLE_IDENTIFIER = abc.com.XiaoShenTu;
 
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

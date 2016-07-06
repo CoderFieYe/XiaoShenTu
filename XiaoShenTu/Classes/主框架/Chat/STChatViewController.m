@@ -7,141 +7,24 @@
 //
 
 #import "STChatViewController.h"
-#import "STchat.h"
-#import "STchatCell.h"
-#import "UIView+Extend.h"
-#import "STConversationViewController.h"
-//#import "RCConversationViewController.h"
-@interface STChatViewController ()<UITableViewDelegate,UITableViewDataSource>
-@property (nonatomic)UIView *topView;
-@property (nonatomic,strong)NSMutableArray *stArr;
-@end
-
+#import "STConversationListViewController.h"
 @implementation STChatViewController
 
-- (void)viewDidLoad {
-
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    
-    
-    
-     _topView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 300)];
-    
-    self.tableView.tableHeaderView = _topView;
-    
-    
-    self.view.backgroundColor = [UIColor whiteColor];
-    
-//    [self settingNavigationItem];
-    [self creatUI];
-
+    UIButton *login = [[UIButton alloc]init];
+    [login setTitle:@"登录" forState:UIControlStateNormal];
+    login.frame = CGRectMake(100, 100, 100, 100);
+    [login addTarget:self action:@selector(login) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:login];
 }
-
-
-- (void)settingNavigationItem
+- (void)login
 {
     
-    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithImage:@"Personal" highImage:@"Personal" target:self action:@selector(friendsearch)];
-
-    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithImage:@"tabBar_essence_icon" highImage:@"tabBar_essence_icon" target:self action:@selector(pop)];
-
-//        self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithImage:@"tongxun" highImage:@"tongxun" target:self action:@selector(pop)];
-
+    
+    
+    STConversationListViewController *conversationVC = [[STConversationListViewController alloc]init];
+    [self.navigationController pushViewController:conversationVC animated:YES];
 }
-
-
--(void)creatUI{
- 
-    UILabel *lab = [[UILabel alloc] initWithFrame:CGRectMake(13, 23, 100, 16)];
-    lab.text = @"公益活动";
-    lab.textColor = [UIColor colorWithHexString:@"#83817d"];
-    [_topView addSubview:lab];
-    
-    UIImageView *nearby = [[UIImageView alloc] initWithFrame:CGRectMake(9, lab.bottom+14, SCREEN_WIDTH-18, 100)];
-    [nearby setImage:[UIImage imageNamed:@"bg"]];
-    [_topView addSubview:nearby];
-    
-    UILabel *chatLab = [[UILabel alloc] initWithFrame:CGRectMake(14, nearby.bottom+23, 34, 16)];
-    chatLab.text = @"微聊";
-    chatLab.textColor = [UIColor colorWithHexString:@"#83817d"];
-    [_topView addSubview:chatLab];
-    
-    UILabel *messageLab = [[UILabel alloc] initWithFrame:CGRectMake(chatLab.right+2, nearby.bottom+25, 100, 12)];
-    messageLab.text = @"(你有2条消息)";
-    messageLab.textColor = [UIColor colorWithHexString:@"#83817d"];
-    messageLab.font = [UIFont systemFontOfSize:12];
-    [_topView addSubview:messageLab];
-    
-    UIImageView *line = [[UIImageView alloc] initWithFrame:CGRectMake(35,chatLab.bottom+24 ,SCREEN_WIDTH-70, 1)];
-    [line setImage:[UIImage imageNamed:@"xian"]];
-    [_topView addSubview:line];
-    
-    
- 
-    
-    [self.tableView reloadData];
-}
--(NSArray *)stArr
-{
-        if (_stArr==nil) {
-
-        NSMutableArray *arrayM =[NSMutableArray arrayWithCapacity:20];
-            
-            for (int i = 0; i < 20; i++) {
-                
-                //设置子控件数据
-                STchat *chatModel = [[STchat alloc] init];
-                chatModel.icon = @"dsadas";
-                chatModel.name = @"董强";
-                chatModel.content = @"6666666";
-                chatModel.time = @"1分钟前";
-                
-                [arrayM addObject:chatModel];
-                
-            }
-            _stArr = arrayM;
-        }
-    return _stArr;
-
-}
-
-//多少行
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return 2;
-}
- #pragma mark设置每组每行
- -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-        //1.创建cell
-       STchatCell *cell=[STchatCell stcellWithTableView:tableView];
-    
-        //2.获取当前行的模型,设置cell的数据
-         STchat *st =self.stArr[indexPath.row];
-         cell.chat=st;
-    
-        //3.返回cell
-        return cell;
-
- }
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    STConversationViewController *RCConversationVC = [[STConversationViewController alloc]init];
-    RCConversationVC.conversationType = ConversationType_PRIVATE;
-    RCConversationVC.targetId = @"2301";
-    RCConversationVC.title = @"在和2301聊天中";
-    [self.navigationController pushViewController:RCConversationVC animated:YES];
-    
-
-
-}
-
-- (void)friendsearch{
-
-}
-
-- (void)pop{
-
-}
-
 @end

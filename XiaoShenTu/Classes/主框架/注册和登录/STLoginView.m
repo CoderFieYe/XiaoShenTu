@@ -13,7 +13,7 @@
 #import "UIButton+Utility.h"
 #import "Masonry.h"
 
-@interface STLoginView ()
+@interface STLoginView ()<UITextFieldDelegate>
 
 
 @property (nonatomic, weak) UILabel *label;
@@ -61,7 +61,6 @@
     [self addSubview:view3];
     
     UIImageView *headImg = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"admin"]];
-//    headImg.size = CGSizeMake(XScaleWidth(<#width#>), <#CGFloat height#>)
     self.headImg = headImg;
     [self addSubview:headImg];
     
@@ -75,6 +74,7 @@
     UITextField *phoneNum  = [[UITextField alloc]init];
     phoneNum.placeholder = @"手机号";
     self.PhoenNum = phoneNum;
+    self.PhoenNum.clearButtonMode = UITextFieldViewModeWhileEditing;
     self.PhoenNum.delegate = self;
     self.PhoenNum.keyboardType = UIKeyboardTypeDecimalPad;
     
@@ -86,7 +86,6 @@
     UITextField *mimaField  = [[UITextField alloc]init];
     mimaField.placeholder = @"密码";
     self.mimaField = mimaField;
-    
     self.mimaField.secureTextEntry = YES;
     self.mimaField.delegate = self;
     [self addSubview:mimaField];
@@ -193,8 +192,7 @@
         make.height.mas_equalTo(XScaleHeight(35));
         
     }];
-    
-    
+ 
  
     [self.view2 mas_makeConstraints:^(MASConstraintMaker *make) {
         
@@ -216,8 +214,6 @@
 
 
 
-
-
 -(void)messageBtnClick{
 
     NSLog(@"短信验证");
@@ -231,15 +227,10 @@
     
 }
 
-
-
 #pragma mark ------------------------UITextFieldDelegate---------------------------
-
 
 -(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
-    
-    
     
     if (textField==self.PhoenNum) {
         NSInteger strLength = textField.text.length - range.length + string.length;
@@ -250,41 +241,33 @@
 //      如果string为空，表示删除
         if (string.length > 0) {
             text = [NSString stringWithFormat:@"%@%@",textField.text,string];
+            NSLog(@"输入框输入的内容  %@",text);
+            
         }else{
             text = [textField.text substringToIndex:range.location];
         }
-//        if ([self isMobile:text]) {
-//            [btnVeriy setEnabled:YES];
-//        }else{
-//            [btnVeriy setEnabled:NO];
-//        }
+        
+       }
+ 
+    //密码限制(长度16)
+    if (textField == self.mimaField) {
+        if (self.mimaField.text.length > 15 && string.length > 0) {
+            return NO;
+        }
+    }
+    //账号限制
+    if(textField==self.PhoenNum)
+    {
+        if (self.PhoenNum.text.length > 10 && string.length > 0) {
+            return NO;
+        }
+        if ([string isEqualToString:@""]) {
+            self.mimaField.text = nil;
+        }
     }
     return YES;
 }
 
 
-
-//
-//- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
-//{
-//    //密码限制(长度16)
-//    if (textField == self.mimaField) {
-//        if (self.mimaField.text.length > 15 && string.length > 0) {
-//            return NO;
-//        }
-//    }
-//    //账号限制
-//    if(textField==self.PhoenNum)
-//    {
-//        if (self.PhoenNum.text.length > 10 && string.length > 0) {
-//            return NO;
-//        }
-//        if ([string isEqualToString:@""]) {
-//            self.passwordField.text = nil;
-//        }
-//    }
-//    return YES;
-//}
-//
 
 @end

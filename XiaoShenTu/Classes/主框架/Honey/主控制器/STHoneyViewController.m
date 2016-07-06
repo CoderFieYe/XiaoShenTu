@@ -10,6 +10,7 @@
 
 #import "STLoginViewController.h"
 
+#import "STHeadImage.h"
 
 
 #import "STHoneyViewController.h"
@@ -332,8 +333,15 @@ static CGFloat  KHeight136  = 136;
                                                           reuseIdentifier:reuseIndetifier];
         }
         
+//        头像大头针
+//        STHeadImage *headImg = [[STHeadImage alloc]init];
+//        annotationView = (UIImageView *)headImg;
         
-        annotationView.image = [UIImage imageNamed:@"dingwei"];
+        UIImage *headImg = [UIImage imageNamed:@"dingwei"];
+        
+        
+        
+        annotationView.image = headImg;
         //设置中心点偏移，使得标注底部中间点成为经纬度对应点
         annotationView.centerOffset = CGPointMake(0, -18);
         annotationView.canShowCallout= YES;       //设置气泡可以弹出，默认为NO

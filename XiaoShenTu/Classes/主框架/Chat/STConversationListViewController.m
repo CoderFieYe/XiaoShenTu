@@ -18,7 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-//    self.navigationItem.rightBarButtonItem = [UINavigationBar alloc]
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"添加好友" style:UIBarButtonItemStylePlain target:self action:@selector(add)];
     
     [self setDisplayConversationTypes:@[@(ConversationType_PRIVATE),
                                         @(ConversationType_DISCUSSION),
@@ -36,5 +36,8 @@
     [self.navigationController pushViewController:RCConversationVC animated:YES];
 }
 
-
+- (void)add
+{
+    
+}
 @end
