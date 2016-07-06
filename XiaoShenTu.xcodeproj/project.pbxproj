@@ -312,6 +312,7 @@
 		015E3D311D2113420014A991 /* 主框架 */ = {
 			isa = PBXGroup;
 			children = (
+				E797D80B1D2D236E00CC65B6 /* 融云 */,
 				DBAD7D9C1D2B4BC00095A311 /* 注册和登录 */,
 				015E3D0F1D2113420014A991 /* Guide(引导界面) */,
 				DB4E71531D2A12B800B5938B /* Honey */,
@@ -582,6 +583,29 @@
 				E797D8091D2D03D200CC65B6 /* LCBannerView.m */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		E797D80B1D2D236E00CC65B6 /* 融云 */ = {
+			isa = PBXGroup;
+			children = (
+				E797D80C1D2D23F600CC65B6 /* ViewController */,
+			);
+			name = "融云";
+			sourceTree = "<group>";
+		};
+		E797D80C1D2D23F600CC65B6 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E797D80D1D2D244300CC65B6 /* Login */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		E797D80D1D2D244300CC65B6 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
