@@ -254,7 +254,7 @@
             return NO;
         }
         NSString *text = nil;
-        //如果string为空，表示删除
+//      如果string为空，表示删除
         if (string.length > 0) {
             text = [NSString stringWithFormat:@"%@%@",textField.text,string];
         }else{
@@ -268,6 +268,9 @@
     }
     return YES;
 }
+
+
+
 //
 //- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 //{

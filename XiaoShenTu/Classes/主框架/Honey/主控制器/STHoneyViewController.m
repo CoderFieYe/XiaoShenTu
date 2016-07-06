@@ -253,9 +253,9 @@ static CGFloat  KHeight136  = 136;
 //                                                                                       radius:200.0
 //                                                                                   identifier:@"circleRegion200"];
    
-//    可以设置围栏圈的大小  圆圈半径3km
+//    可以设置围栏圈的大小  圆圈半径5km
     AMapLocationCircleRegion *cirRegion300 = [[AMapLocationCircleRegion alloc] initWithCenter:coordinate
-                                                                                       radius:3000.0
+                                                                                       radius:5000.0
                                                                                    identifier:@"circleRegion300"];
     
     //添加地理围栏
@@ -268,7 +268,7 @@ static CGFloat  KHeight136  = 136;
     
     //添加Overlay
 //    MACircle *circle200 = [MACircle circleWithCenterCoordinate:coordinate radius:200.0];
-    MACircle *circle300 = [MACircle circleWithCenterCoordinate:coordinate radius:3000.0];
+    MACircle *circle300 = [MACircle circleWithCenterCoordinate:coordinate radius:5000.0];
 //    [self.mapView addOverlay:circle200];
     [self.mapView addOverlay:circle300];
     
