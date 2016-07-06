@@ -69,7 +69,7 @@
         NSLog(@"token 错误");
     }];
     
-<<<<<<< HEAD
+
     
 
 //    NSLog(@" XScaleHeight  %f", XScaleHeight(100));
@@ -83,8 +83,8 @@
 //    
 
     
-=======
->>>>>>> 6065aaa5760d359fe089f48be3add5f469a9a842
+
+
 //    1.创建窗口
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     
