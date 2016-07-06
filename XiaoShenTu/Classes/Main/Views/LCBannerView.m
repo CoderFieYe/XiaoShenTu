@@ -8,7 +8,8 @@
 //  V 1.0.0
 
 #import "LCBannerView.h"
-#import "UIImageView+EMWebCache.h"
+//#import "UIImageView+EMWebCache.h"
+
 
 static CGFloat LCPageDistance = 10.0f;      // pageControl 到底部的距离
 
