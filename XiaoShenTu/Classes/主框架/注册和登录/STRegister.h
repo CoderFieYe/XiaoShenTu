@@ -12,5 +12,14 @@
 @interface STRegister : UIView
 
 
+@property (nonatomic, weak) UITextField *PhoenNum;
+@property (nonatomic, weak) UITextField *yanzhengNum;
+@property (nonatomic, weak) UITextField *mimaField;
+
+
 @property (nonatomic, weak) JKCountDownButton *yanzBtn;
+@property (nonatomic, weak) UIButton *registerBtn;
+
+
+//@property (nonatomic, assign) BOOL PhoneRight;
 @end

@@ -74,10 +74,10 @@
 //    NSLog(@" XScaleHeight  %f", XScaleHeight(100));
 //    
 //    NSLog(@"XScaleWidth %f",XScaleWidth(100));
-//
-    NSLog(@" Height  %f",  [UIScreen mainScreen].bounds.size.height);
-    NSLog(@" XScaleHeight  %f", XScaleHeight(68 * 2));
-//
+////
+//    NSLog(@" Height  %f",  [UIScreen mainScreen].bounds.size.height);
+//    NSLog(@" XScaleHeight  %f", XScaleHeight(68 * 2));
+////
 //    NSLog(@"XScaleWidth %f",XScaleWidth(100));
 //    
 
@@ -117,9 +117,9 @@
     application.statusBarStyle = UIStatusBarStyleLightContent;
     
     //    UUID
-    NSString *str =  [self UUID];
-    NSLog(@"  UUID 是  %@",str);
-    
+//    NSString *str =  [self UUID];
+//    NSLog(@"  UUID 是  %@",str);
+//    
     return YES;
     
 }

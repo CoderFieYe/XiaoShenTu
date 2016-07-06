@@ -28,6 +28,7 @@
 		015E3D5C1D211ED20014A991 /* NSDate+STExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 015E3D5A1D211ED20014A991 /* NSDate+STExtension.m */; };
 		C7146FF376D10D087865999B /* libPods-XiaoShenTu.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A5A334EB665E4F83E579D62 /* libPods-XiaoShenTu.a */; };
 		DB06DC6A1D2528C30042B9F9 /* UIView+Extend.m in Sources */ = {isa = PBXBuildFile; fileRef = DB06DC691D2528C30042B9F9 /* UIView+Extend.m */; };
+		DB1F38DD1D2C975F00CD442A /* NSString+Check.m in Sources */ = {isa = PBXBuildFile; fileRef = DB1F38DC1D2C975F00CD442A /* NSString+Check.m */; };
 		DB4E71671D2A12B800B5938B /* STHoneyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB4E71571D2A12B800B5938B /* STHoneyViewController.m */; };
 		DB4E71681D2A12B800B5938B /* STRedAndHomeView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB4E715A1D2A12B800B5938B /* STRedAndHomeView.m */; };
 		DB4E71691D2A12B800B5938B /* STHInfomation.m in Sources */ = {isa = PBXBuildFile; fileRef = DB4E715D1D2A12B800B5938B /* STHInfomation.m */; };
@@ -102,6 +103,8 @@
 		9045304AECE7243577F10411 /* Pods-XiaoShenTu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XiaoShenTu.release.xcconfig"; path = "Pods/Target Support Files/Pods-XiaoShenTu/Pods-XiaoShenTu.release.xcconfig"; sourceTree = "<group>"; };
 		DB06DC681D2528C30042B9F9 /* UIView+Extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extend.h"; sourceTree = "<group>"; };
 		DB06DC691D2528C30042B9F9 /* UIView+Extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extend.m"; sourceTree = "<group>"; };
+		DB1F38DB1D2C975F00CD442A /* NSString+Check.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Check.h"; sourceTree = "<group>"; };
+		DB1F38DC1D2C975F00CD442A /* NSString+Check.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Check.m"; sourceTree = "<group>"; };
 		DB4E71561D2A12B800B5938B /* STHoneyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STHoneyViewController.h; sourceTree = "<group>"; };
 		DB4E71571D2A12B800B5938B /* STHoneyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STHoneyViewController.m; sourceTree = "<group>"; };
 		DB4E71591D2A12B800B5938B /* STRedAndHomeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRedAndHomeView.h; sourceTree = "<group>"; };
@@ -260,6 +263,7 @@
 		015E3D181D2113420014A991 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				DB1F38D91D2C975F00CD442A /* Common */,
 				DBAD7DA91D2BB9000095A311 /* JKCountDownButton */,
 				DBE3DF911D26596A0001FEE5 /* security */,
 				DBAF32121D23C2A200D3CADC /* Utility */,
@@ -391,6 +395,23 @@
 				2A5A334EB665E4F83E579D62 /* libPods-XiaoShenTu.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DB1F38D91D2C975F00CD442A /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				DB1F38DA1D2C975F00CD442A /* Others */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		DB1F38DA1D2C975F00CD442A /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				DB1F38DB1D2C975F00CD442A /* NSString+Check.h */,
+				DB1F38DC1D2C975F00CD442A /* NSString+Check.m */,
+			);
+			path = Others;
 			sourceTree = "<group>";
 		};
 		DB4E71531D2A12B800B5938B /* Honey */ = {
@@ -706,6 +727,7 @@
 				DBAF32171D23C2CB00D3CADC /* UIButton+Utility.m in Sources */,
 				E7681E111D2B651F00A3B94E /* STConversationListViewController.m in Sources */,
 				DBAD7DAC1D2BB9000095A311 /* JKCountDownButton.m in Sources */,
+				DB1F38DD1D2C975F00CD442A /* NSString+Check.m in Sources */,
 				0037672E1D29FF6A0064A5EB /* STChatViewController.m in Sources */,
 				015E3D391D2113420014A991 /* STGuideCell.m in Sources */,
 				015E3D381D2113420014A991 /* STGuideController.m in Sources */,
