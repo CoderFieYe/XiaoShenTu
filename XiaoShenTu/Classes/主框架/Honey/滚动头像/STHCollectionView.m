@@ -25,7 +25,7 @@
     if (!_ImgNameArrs) {
 //        _ImgNameArrs = [NSMutableArray array];
     
-        _ImgNameArrs = [NSMutableArray arrayWithObjects:@"touxiang",@"touxiang",@"touxiang",@"touxiang",@"touxiang",@"touxiang",@"touxiang",@"touxiang",@"touxiang",@"touxiang",@"jiaren", nil];
+        _ImgNameArrs = [NSMutableArray arrayWithObjects:@"touxiang1",@"touxiang1",@"touxiang1",@"touxiang1",@"touxiang1",@"touxiang1",@"touxiang1",@"touxiang1",@"touxiang1",@"touxiang1",@"jiaren", nil];
     }
     
     return _ImgNameArrs;
