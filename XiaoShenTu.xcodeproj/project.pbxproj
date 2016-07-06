@@ -60,6 +60,7 @@
 		E7681E0E1D2B616400A3B94E /* STConversationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7681E0D1D2B616400A3B94E /* STConversationViewController.m */; };
 		E7681E111D2B651F00A3B94E /* STConversationListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7681E101D2B651F00A3B94E /* STConversationListViewController.m */; };
 		E778DF131D2A002A00FA5B7A /* HP_NString.m in Sources */ = {isa = PBXBuildFile; fileRef = E778DF111D2A002A00FA5B7A /* HP_NString.m */; };
+		E797D80A1D2D03D200CC65B6 /* LCBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = E797D8091D2D03D200CC65B6 /* LCBannerView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -170,6 +171,8 @@
 		E778DF101D2A002A00FA5B7A /* HP_NString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HP_NString.h; sourceTree = "<group>"; };
 		E778DF111D2A002A00FA5B7A /* HP_NString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HP_NString.m; sourceTree = "<group>"; };
 		E778DF141D2A017300FA5B7A /* Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
+		E797D8081D2D03D200CC65B6 /* LCBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCBannerView.h; sourceTree = "<group>"; };
+		E797D8091D2D03D200CC65B6 /* LCBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCBannerView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -276,8 +279,8 @@
 				015E3D0C1D2113420014A991 /* Category */,
 				015E3D1B1D2113420014A991 /* Controllers */,
 				015E3D201D2113420014A991 /* Models */,
+				E797D8071D2D03AC00CC65B6 /* Views */,
 				015E3D211D2113420014A991 /* Others */,
-				015E3D221D2113420014A991 /* Views */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -309,16 +312,10 @@
 			path = Others;
 			sourceTree = "<group>";
 		};
-		015E3D221D2113420014A991 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		015E3D311D2113420014A991 /* 主框架 */ = {
 			isa = PBXGroup;
 			children = (
+				E797D80B1D2D236E00CC65B6 /* 融云 */,
 				DBAD7D9C1D2B4BC00095A311 /* 注册和登录 */,
 				015E3D0F1D2113420014A991 /* Guide(引导界面) */,
 				DB4E71531D2A12B800B5938B /* Honey */,
@@ -584,6 +581,38 @@
 			name = ImageResource;
 			sourceTree = "<group>";
 		};
+		E797D8071D2D03AC00CC65B6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E797D8081D2D03D200CC65B6 /* LCBannerView.h */,
+				E797D8091D2D03D200CC65B6 /* LCBannerView.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E797D80B1D2D236E00CC65B6 /* 融云 */ = {
+			isa = PBXGroup;
+			children = (
+				E797D80C1D2D23F600CC65B6 /* ViewController */,
+			);
+			name = "融云";
+			sourceTree = "<group>";
+		};
+		E797D80C1D2D23F600CC65B6 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E797D80D1D2D244300CC65B6 /* Login */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		E797D80D1D2D244300CC65B6 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -743,6 +772,7 @@
 				015E3D381D2113420014A991 /* STGuideController.m in Sources */,
 				015E3D561D211EAD0014A991 /* UIBarButtonItem+STExtension.m in Sources */,
 				003767311D2A3E680064A5EB /* STPhoto.m in Sources */,
+				E797D80A1D2D03D200CC65B6 /* LCBannerView.m in Sources */,
 				DBAF32181D23C2CB00D3CADC /* UILabel+Utility.m in Sources */,
 				DB4E716D1D2A12B800B5938B /* STHCollectionViewCell.m in Sources */,
 				DBA5A8801D1FAA9C00FCF0B1 /* main.m in Sources */,

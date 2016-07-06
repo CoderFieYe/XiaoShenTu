@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface STChatViewController : UITableViewController
+@interface STChatViewController : UIViewController
 
 @end
