@@ -69,6 +69,22 @@
         NSLog(@"token 错误");
     }];
     
+
+    
+
+//    NSLog(@" XScaleHeight  %f", XScaleHeight(100));
+//    
+//    NSLog(@"XScaleWidth %f",XScaleWidth(100));
+////
+//    NSLog(@" Height  %f",  [UIScreen mainScreen].bounds.size.height);
+//    NSLog(@" XScaleHeight  %f", XScaleHeight(68 * 2));
+////
+//    NSLog(@"XScaleWidth %f",XScaleWidth(100));
+//    
+
+    
+
+
 //    1.创建窗口
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     
@@ -82,9 +98,9 @@
     application.statusBarStyle = UIStatusBarStyleLightContent;
     
     //    UUID
-    NSString *str =  [self UUID];
-    NSLog(@"  UUID 是  %@",str);
-    
+//    NSString *str =  [self UUID];
+//    NSLog(@"  UUID 是  %@",str);
+//    
     return YES;
     
 }

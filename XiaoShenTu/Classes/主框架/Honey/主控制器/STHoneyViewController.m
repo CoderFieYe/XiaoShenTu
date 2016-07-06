@@ -470,19 +470,12 @@ updatingLocation:(BOOL)updatingLocation
 // cell 的点击方法
 - (void)CellClick {
 
-
+//    self.detailView = nil;
     if (self.detailView == nil) {
         self.detailView = [[STHInfomationView alloc]initWithFrame: CGRectMake(0,self.mapView.height - 49, XScreenW, XScaleHeight(KHeight136))];
 
-    
-    
-    if (   self.collectionView.y >  self.mapView.height - 49  - XScaleHeight(82 * 2) - XScaleHeight(KHeight136)) {
-
+        if ( self.collectionView.y >  self.mapView.height - 49  - XScaleHeight(82 * 2) - XScaleHeight(KHeight136)) {
         
-        
-//        if (self.detailView == nil) {
-        
-
         [UIView animateWithDuration:0.5 animations:^{
             self.detailView.hidden = NO;
             self.redAndHomeView.y = self.mapView.height -  49 - XScaleHeight(235) -XScaleHeight(KHeight136);
@@ -504,14 +497,8 @@ updatingLocation:(BOOL)updatingLocation
                 
                 self.detailView.y = self.mapView.height - 49 - XScaleHeight(KHeight136);
             }];
-
             
-        
-//    }
-
-
-        
-    }
+        }
     
 }
 

@@ -181,7 +181,6 @@ static CGFloat KHeadH35  =  35 * 2;
 
 -(void)dealloc{
     NSLog(@"小详情被销毁");
-
 }
 
 @end
