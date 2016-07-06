@@ -79,20 +79,41 @@
 -(void)loginBtnClick{
     
     NSLog(@"登录按钮点击 666 %@, %@", self.PhoenNum.text, self.mimaField.text);
- 
+// 检测账号和密码
+    [self judgeAccountAndPassword];
     
-    if (![HP_NString checkMobileString:_PhoenNum.text] && [_PhoenNum.text length] != 11){
+    
+    
+}
+
+-(void)judgeAccountAndPassword{
+
+    if ([_PhoenNum.text length] != 11) {
         
         UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil    message:@"手机号码不正确!"  preferredStyle:UIAlertControllerStyleAlert];
-    
-        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
         
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            
         }];
         
         [alertController addAction:cancelAction];
         
         [self presentViewController:alertController animated:YES completion:nil];
-
+        
+    }
+    
+    if (![HP_NString checkMobileString:_PhoenNum.text]) {
+        
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil    message:@"手机号码不正确!"  preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            
+        }];
+        
+        [alertController addAction:cancelAction];
+        
+        [self presentViewController:alertController animated:YES completion:nil];
+        
     }
     
     
@@ -123,10 +144,10 @@
         [self presentViewController:alertController animated:YES completion:nil];
         return;
     }
-
+    
     NSRange range = [_mimaField.text rangeOfString:@" "];
     if (range.location != NSNotFound) {
- //        [MobClick event:@"passwordSetting_pw_isNul"];
+        //        [MobClick event:@"passwordSetting_pw_isNul"];
         UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil    message:@"密码中不可包含空格!"  preferredStyle:UIAlertControllerStyleAlert];
         
         UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
@@ -140,11 +161,7 @@
         
     }
     
-    
-    
 }
-
-
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     

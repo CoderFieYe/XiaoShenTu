@@ -114,13 +114,15 @@
     mimaField.placeholder = @"请输入密码";
     self.mimaField = mimaField;
     self.mimaField.delegate = self;
+    self.mimaField.keyboardType = UIKeyboardTypeDefault;
     self.mimaField.secureTextEntry = YES;
     [self addSubview:mimaField];
     
     UITextField *mimaField2  = [[UITextField alloc]init];
-    mimaField2.placeholder = @"请输入确认密码";
+    mimaField2.placeholder = @"请再次输入密码";
     self.mimaField2 = mimaField2;
     self.mimaField2.delegate = self;
+    self.mimaField2.keyboardType = UIKeyboardTypeDefault;
     self.mimaField2.secureTextEntry = YES;
     [self addSubview:mimaField2];
     
