@@ -878,7 +878,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = abc.com.XiaoShenTusss;
+				PRODUCT_BUNDLE_IDENTIFIER = abc.com.XiaoShenTu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -903,7 +903,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = abc.com.XiaoShenTusss;
+				PRODUCT_BUNDLE_IDENTIFIER = abc.com.XiaoShenTu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

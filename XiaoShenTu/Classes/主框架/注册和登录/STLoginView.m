@@ -13,7 +13,7 @@
 #import "UIButton+Utility.h"
 #import "Masonry.h"
 
-@interface STLoginView ()
+@interface STLoginView ()<UITextFieldDelegate>
 
 
 @property (nonatomic, weak) UILabel *label;
@@ -87,7 +87,7 @@
     mimaField.placeholder = @"密码";
     self.mimaField = mimaField;
     self.mimaField.secureTextEntry = YES;
-//    self.mimaField.delegate = self;
+    self.mimaField.delegate = self;
     [self addSubview:mimaField];
     
     
@@ -211,8 +211,6 @@
         make.height.mas_equalTo(XScaleHeight(2));
     }];
 }
-
-
 
 
 
