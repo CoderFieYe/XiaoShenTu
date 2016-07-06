@@ -25,7 +25,8 @@
 #import <RongIMKit/RongIMKit.h>
 
 #import "NSString+STExtension.h"
-
+#import "AFNetworking.h"
+#import "STHttpTool.h"
 
 
 #endif
