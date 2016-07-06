@@ -25,7 +25,7 @@
 #import <RongIMKit/RongIMKit.h>
 
 #import "NSString+STExtension.h"
-
+#import "AFNetworking.h"
 
 
 #endif

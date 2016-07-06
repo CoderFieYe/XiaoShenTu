@@ -54,6 +54,7 @@
 		DBDB52F91D2A6C3600B6EAB8 /* STWarningView.m in Sources */ = {isa = PBXBuildFile; fileRef = DBDB52F81D2A6C3600B6EAB8 /* STWarningView.m */; };
 		DBE3DF901D2659340001FEE5 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBE3DF8F1D2659340001FEE5 /* Security.framework */; };
 		DBE3DF941D26596A0001FEE5 /* SFHFKeychainUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = DBE3DF931D26596A0001FEE5 /* SFHFKeychainUtils.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		E750DB0B1D2CEEAD009AE814 /* STHttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E750DB0A1D2CEEAD009AE814 /* STHttpTool.m */; };
 		E7681E0E1D2B616400A3B94E /* STConversationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7681E0D1D2B616400A3B94E /* STConversationViewController.m */; };
 		E7681E111D2B651F00A3B94E /* STConversationListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7681E101D2B651F00A3B94E /* STConversationListViewController.m */; };
 		E778DF131D2A002A00FA5B7A /* HP_NString.m in Sources */ = {isa = PBXBuildFile; fileRef = E778DF111D2A002A00FA5B7A /* HP_NString.m */; };
@@ -153,6 +154,8 @@
 		DBE3DF8F1D2659340001FEE5 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		DBE3DF921D26596A0001FEE5 /* SFHFKeychainUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFHFKeychainUtils.h; sourceTree = "<group>"; };
 		DBE3DF931D26596A0001FEE5 /* SFHFKeychainUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFHFKeychainUtils.m; sourceTree = "<group>"; };
+		E750DB091D2CEEAD009AE814 /* STHttpTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STHttpTool.h; sourceTree = "<group>"; };
+		E750DB0A1D2CEEAD009AE814 /* STHttpTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STHttpTool.m; sourceTree = "<group>"; };
 		E7681E0C1D2B616400A3B94E /* STConversationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STConversationViewController.h; sourceTree = "<group>"; };
 		E7681E0D1D2B616400A3B94E /* STConversationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STConversationViewController.m; sourceTree = "<group>"; };
 		E7681E0F1D2B651F00A3B94E /* STConversationListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STConversationListViewController.h; sourceTree = "<group>"; };
@@ -530,6 +533,8 @@
 		DBAF32121D23C2A200D3CADC /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				E750DB091D2CEEAD009AE814 /* STHttpTool.h */,
+				E750DB0A1D2CEEAD009AE814 /* STHttpTool.m */,
 			);
 			name = Utility;
 			path = ../Utility;
@@ -588,7 +593,7 @@
 				TargetAttributes = {
 					DBA5A87A1D1FAA9C00FCF0B1 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = R5CEXDT2NE;
+						DevelopmentTeam = 97XLV239ZP;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -724,6 +729,7 @@
 				015E3D3A1D2113420014A991 /* AppDelegate.m in Sources */,
 				005818891D2B8C4E00EE4421 /* NSString+STExtension.m in Sources */,
 				DB4E71731D2A139900B5938B /* STHPersonMessage.m in Sources */,
+				E750DB0B1D2CEEAD009AE814 /* STHttpTool.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -850,7 +856,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = abc.com.XiaoShenTu;
+				PRODUCT_BUNDLE_IDENTIFIER = abc.com.XiaoShenTusss;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -875,7 +881,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = abc.com.XiaoShenTu;
+				PRODUCT_BUNDLE_IDENTIFIER = abc.com.XiaoShenTusss;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
