@@ -15,6 +15,7 @@
 		003767311D2A3E680064A5EB /* STPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 003767301D2A3E680064A5EB /* STPhoto.m */; };
 		003767341D2A3FAC0064A5EB /* STphotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 003767331D2A3FAC0064A5EB /* STphotoCell.m */; };
 		005818891D2B8C4E00EE4421 /* NSString+STExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 005818881D2B8C4E00EE4421 /* NSString+STExtension.m */; };
+		0058188C1D2CD95800EE4421 /* STcommentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0058188B1D2CD95800EE4421 /* STcommentView.m */; };
 		015E3D381D2113420014A991 /* STGuideController.m in Sources */ = {isa = PBXBuildFile; fileRef = 015E3D121D2113420014A991 /* STGuideController.m */; };
 		015E3D391D2113420014A991 /* STGuideCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 015E3D171D2113420014A991 /* STGuideCell.m */; };
 		015E3D3A1D2113420014A991 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 015E3D1A1D2113420014A991 /* AppDelegate.m */; };
@@ -75,6 +76,8 @@
 		003767331D2A3FAC0064A5EB /* STphotoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STphotoCell.m; sourceTree = "<group>"; };
 		005818871D2B8C4E00EE4421 /* NSString+STExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+STExtension.h"; sourceTree = "<group>"; };
 		005818881D2B8C4E00EE4421 /* NSString+STExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+STExtension.m"; sourceTree = "<group>"; };
+		0058188A1D2CD95800EE4421 /* STcommentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STcommentView.h; sourceTree = "<group>"; };
+		0058188B1D2CD95800EE4421 /* STcommentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STcommentView.m; sourceTree = "<group>"; };
 		015E3D111D2113420014A991 /* STGuideController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STGuideController.h; sourceTree = "<group>"; };
 		015E3D121D2113420014A991 /* STGuideController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STGuideController.m; sourceTree = "<group>"; };
 		015E3D161D2113420014A991 /* STGuideCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STGuideCell.h; sourceTree = "<group>"; };
@@ -356,6 +359,8 @@
 				003767301D2A3E680064A5EB /* STPhoto.m */,
 				003767321D2A3FAC0064A5EB /* STphotoCell.h */,
 				003767331D2A3FAC0064A5EB /* STphotoCell.m */,
+				0058188A1D2CD95800EE4421 /* STcommentView.h */,
+				0058188B1D2CD95800EE4421 /* STcommentView.m */,
 			);
 			path = Photo;
 			sourceTree = "<group>";
@@ -588,7 +593,7 @@
 				TargetAttributes = {
 					DBA5A87A1D1FAA9C00FCF0B1 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = R5CEXDT2NE;
+						DevelopmentTeam = HWXYBYLA8G;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -720,6 +725,7 @@
 				E7681E0E1D2B616400A3B94E /* STConversationViewController.m in Sources */,
 				DB4E71671D2A12B800B5938B /* STHoneyViewController.m in Sources */,
 				DB4E71681D2A12B800B5938B /* STRedAndHomeView.m in Sources */,
+				0058188C1D2CD95800EE4421 /* STcommentView.m in Sources */,
 				DBAD7DA21D2B5E000095A311 /* STLoginView.m in Sources */,
 				015E3D3A1D2113420014A991 /* AppDelegate.m in Sources */,
 				005818891D2B8C4E00EE4421 /* NSString+STExtension.m in Sources */,
@@ -850,7 +856,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = abc.com.XiaoShenTu;
+				PRODUCT_BUNDLE_IDENTIFIER = abc.com.XiaoShenTus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -875,7 +881,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = abc.com.XiaoShenTu;
+				PRODUCT_BUNDLE_IDENTIFIER = abc.com.XiaoShenTus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
