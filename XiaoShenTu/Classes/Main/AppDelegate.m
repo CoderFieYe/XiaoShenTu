@@ -57,7 +57,7 @@
     // 融云
     [[RCIM sharedRCIM]initWithAppKey:@"sfci50a7c7a8i"];
     
-    [[RCIM sharedRCIM] connectWithToken:@"/nfxDWyiVyfOfH1mYuz+ZuiloZdM//845nNMEgWAaz0KIQcCG9NzQo1S1Zq5k4Qej1/m7bQecXCoR8XU73yKuQ==" success:^(NSString *userId) {
+    [[RCIM sharedRCIM] connectWithToken:@"Ejvlk8NE/9bJdecJJ+t7ruXA2IsoRSDysSHt8ABRtNUfuxsUWNzTMy3B4+9qIhr+WQlTUJP9O39mt9wOW6CO1g==" success:^(NSString *userId) {
         
         //设置用户信息提供者,页面展现的用户头像及昵称都会从此代理取
         [[RCIM sharedRCIM] setUserInfoDataSource:self];
@@ -69,46 +69,27 @@
         NSLog(@"token 错误");
     }];
     
+
     
 
 //    NSLog(@" XScaleHeight  %f", XScaleHeight(100));
 //    
 //    NSLog(@"XScaleWidth %f",XScaleWidth(100));
-//
-    NSLog(@" Height  %f",  [UIScreen mainScreen].bounds.size.height);
-    NSLog(@" XScaleHeight  %f", XScaleHeight(68 * 2));
-//
+////
+//    NSLog(@" Height  %f",  [UIScreen mainScreen].bounds.size.height);
+//    NSLog(@" XScaleHeight  %f", XScaleHeight(68 * 2));
+////
 //    NSLog(@"XScaleWidth %f",XScaleWidth(100));
 //    
 
     
+
+
 //    1.创建窗口
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     
      self.window.rootViewController = [[STTabBarController alloc] init];
-//    2.创建控制器
-//    3.设置窗口的根控制器
-////    3.1 如果为旧版本直接为标签控制器
-//    if(![self isNewVersion]){
-//    
-//        self.window.rootViewController = [[STTabBarController alloc] init];
-//
-//    }else{
-//    
-//        NSLog(@"新特性控制器");
-////        创建新特性控制器
-//        STGuideController *guideVc = [[STGuideController alloc] init];
-//        
-////        显示新特性控制器
-//        self.window.rootViewController = guideVc;
-//    
-//    }
-    
-//    //        创建新特性控制器
-//            STGuideController *guideVc = [[STGuideController alloc] init];
-//    
-//    //        显示新特性控制器
-//            self.window.rootViewController = guideVc;
+
 //    4.作为主窗口并显示
     [self.window makeKeyAndVisible];
     
@@ -117,12 +98,13 @@
     application.statusBarStyle = UIStatusBarStyleLightContent;
     
     //    UUID
-    NSString *str =  [self UUID];
-    NSLog(@"  UUID 是  %@",str);
-    
+//    NSString *str =  [self UUID];
+//    NSLog(@"  UUID 是  %@",str);
+//    
     return YES;
     
 }
+
 
 /**
  *此方法中要提供给融云用户的信息，建议缓存到本地，然后改方法每次从您的缓存返回
@@ -130,13 +112,13 @@
 - (void)getUserInfoWithUserId:(NSString *)userId completion:(void(^)(RCUserInfo* userInfo))completion
 {
     //此处为了演示写了一个用户信息
-    if ([@"001" isEqual:userId]) {
+    if ([@"2302" isEqual:userId]) {
         RCUserInfo *user = [[RCUserInfo alloc]init];
-        user.userId = @"001";
-        user.name = @"test1";
+        user.userId = @"2302";
+        user.name = @"小神兔2";
         user.portraitUri = @"https://ss0.baidu.com/73t1bjeh1BF3odCf/it/u=1756054607,4047938258&fm=96&s=94D712D20AA1875519EB37BE0300C008";
         
-        completion(user);
+        return completion(user);
     }else if([@"2301" isEqual:userId]) {
         RCUserInfo *user = [[RCUserInfo alloc]init];
         user.userId = @"2301";

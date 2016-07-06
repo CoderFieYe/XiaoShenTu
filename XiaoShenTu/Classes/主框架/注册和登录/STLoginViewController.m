@@ -12,7 +12,12 @@
 
 @interface STLoginViewController ()
 
+@property (nonatomic, weak) UITextField *PhoenNum;
+@property (nonatomic, weak) UITextField *mimaField;
 
+@property (nonatomic, weak) UIButton *loginBtn;
+@property (nonatomic, weak) UIButton *messageBtn;
+@property (nonatomic, weak) UIButton *forgetBtn;
 
 @end
 
@@ -23,12 +28,18 @@
 
     self.view.backgroundColor = [UIColor whiteColor];
   
-    STLoginView *view  = [[STLoginView alloc]initWithFrame:CGRectMake(0, 0, XScreenW,self.view.height)];
-    [self.view addSubview:view];
+    STLoginView *LoginView  = [[STLoginView alloc]initWithFrame:CGRectMake(0, 0, XScreenW,self.view.height)];
+    self.PhoenNum = LoginView.PhoenNum;
+    self.mimaField = LoginView.mimaField;
     
+    
+    self.loginBtn = LoginView.loginBtn;
+    [self.view addSubview:LoginView];
     
     [self  setNavgationBar];
     
+    
+    [self.loginBtn addTarget:self action:@selector(loginBtnClick) forControlEvents:UIControlEventTouchUpInside];
     
 }
 
@@ -46,35 +57,46 @@
     UIBarButtonItem *leftItem = [[UIBarButtonItem alloc]initWithCustomView:leftButton];
     self.navigationItem.leftBarButtonItem= leftItem;
     
-    UIBarButtonItem *rightBarItem = [[UIBarButtonItem alloc]initWithTitle:@"注册" style: UIBarButtonItemStylePlain target:self action:@selector(zhuce)];
+    UIBarButtonItem *rightBarItem = [[UIBarButtonItem alloc]initWithTitle:@"注册" style: UIBarButtonItemStylePlain target:self action:@selector(zhuceBarItemClick)];
     rightBarItem.tintColor = [UIColor whiteColor];
     self.navigationItem.rightBarButtonItem = rightBarItem;
     
 }
 
-
-
-
 - (void)leftButtonClick {
 
-    
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
--(void)zhuce{
+-(void)zhuceBarItemClick{
 
     STRegisterViewController *registerVc = [[STRegisterViewController alloc]init];
     [self.navigationController pushViewController:registerVc animated:YES];
 
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+
+-(void)loginBtnClick{
+    
+    NSLog(@"登录666");
+ 
+    
+    if (![HP_NString checkMobileString:_PhoenNum.text] && [_PhoenNum.text length] != 11){
+        
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil    message:@"手机号码不正确!"  preferredStyle:UIAlertControllerStyleAlert];
+    
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        
+        }];
+        
+        [alertController addAction:cancelAction];
+        
+        [self presentViewController:alertController animated:YES completion:nil];
+
+    }
+    
 }
-*/
+
+
 
 @end

@@ -17,16 +17,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setDisplayConversationTypes:@[
-                                        @(ConversationType_PRIVATE)
-                                        ]];
+    [self setDisplayConversationTypes:@[@(ConversationType_PRIVATE),
+                                        @(ConversationType_DISCUSSION),
+                                        @(ConversationType_CHATROOM),
+                                        @(ConversationType_GROUP),
+                                        @(ConversationType_APPSERVICE),
+                                        @(ConversationType_SYSTEM)]];
 }
 - (void)onSelectedTableRow:(RCConversationModelType)conversationModelType conversationModel:(RCConversationModel *)model atIndexPath:(NSIndexPath *)indexPath
 {
     STConversationViewController *RCConversationVC = [[STConversationViewController alloc]init];
     RCConversationVC.conversationType = model.conversationType;
-    RCConversationVC.targetId = @"2301";
-    RCConversationVC.title = @"自问自答";
+    RCConversationVC.targetId = model.targetId;
+    RCConversationVC.title = model.conversationTitle;
     [self.navigationController pushViewController:RCConversationVC animated:YES];
 }
 

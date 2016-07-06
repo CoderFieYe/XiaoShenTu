@@ -253,9 +253,9 @@ static CGFloat  KHeight136  = 136;
 //                                                                                       radius:200.0
 //                                                                                   identifier:@"circleRegion200"];
    
-//    可以设置围栏圈的大小  圆圈半径3km
+//    可以设置围栏圈的大小  圆圈半径5km
     AMapLocationCircleRegion *cirRegion300 = [[AMapLocationCircleRegion alloc] initWithCenter:coordinate
-                                                                                       radius:3000.0
+                                                                                       radius:5000.0
                                                                                    identifier:@"circleRegion300"];
     
     //添加地理围栏
@@ -268,7 +268,7 @@ static CGFloat  KHeight136  = 136;
     
     //添加Overlay
 //    MACircle *circle200 = [MACircle circleWithCenterCoordinate:coordinate radius:200.0];
-    MACircle *circle300 = [MACircle circleWithCenterCoordinate:coordinate radius:3000.0];
+    MACircle *circle300 = [MACircle circleWithCenterCoordinate:coordinate radius:5000.0];
 //    [self.mapView addOverlay:circle200];
     [self.mapView addOverlay:circle300];
     
@@ -470,19 +470,12 @@ updatingLocation:(BOOL)updatingLocation
 // cell 的点击方法
 - (void)CellClick {
 
-
+//    self.detailView = nil;
     if (self.detailView == nil) {
         self.detailView = [[STHInfomationView alloc]initWithFrame: CGRectMake(0,self.mapView.height - 49, XScreenW, XScaleHeight(KHeight136))];
 
-    
-    
-    if (   self.collectionView.y >  self.mapView.height - 49  - XScaleHeight(82 * 2) - XScaleHeight(KHeight136)) {
-
+        if ( self.collectionView.y >  self.mapView.height - 49  - XScaleHeight(82 * 2) - XScaleHeight(KHeight136)) {
         
-        
-//        if (self.detailView == nil) {
-        
-
         [UIView animateWithDuration:0.5 animations:^{
             self.detailView.hidden = NO;
             self.redAndHomeView.y = self.mapView.height -  49 - XScaleHeight(235) -XScaleHeight(KHeight136);
@@ -504,14 +497,8 @@ updatingLocation:(BOOL)updatingLocation
                 
                 self.detailView.y = self.mapView.height - 49 - XScaleHeight(KHeight136);
             }];
-
             
-        
-//    }
-
-
-        
-    }
+        }
     
 }
 

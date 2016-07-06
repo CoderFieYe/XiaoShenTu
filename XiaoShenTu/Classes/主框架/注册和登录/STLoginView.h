@@ -10,4 +10,13 @@
 
 @interface STLoginView : UIView
 
+
+@property (nonatomic, weak) UITextField *PhoenNum;
+@property (nonatomic, weak) UITextField *mimaField;
+
+@property (nonatomic, weak) UIButton *loginBtn;
+@property (nonatomic, weak) UIButton *messageBtn;
+@property (nonatomic, weak) UIButton *forgetBtn;
+
+
 @end

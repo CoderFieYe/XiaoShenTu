@@ -29,6 +29,7 @@
 		015E3D5C1D211ED20014A991 /* NSDate+STExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 015E3D5A1D211ED20014A991 /* NSDate+STExtension.m */; };
 		C7146FF376D10D087865999B /* libPods-XiaoShenTu.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A5A334EB665E4F83E579D62 /* libPods-XiaoShenTu.a */; };
 		DB06DC6A1D2528C30042B9F9 /* UIView+Extend.m in Sources */ = {isa = PBXBuildFile; fileRef = DB06DC691D2528C30042B9F9 /* UIView+Extend.m */; };
+		DB1F38DD1D2C975F00CD442A /* NSString+Check.m in Sources */ = {isa = PBXBuildFile; fileRef = DB1F38DC1D2C975F00CD442A /* NSString+Check.m */; };
 		DB4E71671D2A12B800B5938B /* STHoneyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB4E71571D2A12B800B5938B /* STHoneyViewController.m */; };
 		DB4E71681D2A12B800B5938B /* STRedAndHomeView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB4E715A1D2A12B800B5938B /* STRedAndHomeView.m */; };
 		DB4E71691D2A12B800B5938B /* STHInfomation.m in Sources */ = {isa = PBXBuildFile; fileRef = DB4E715D1D2A12B800B5938B /* STHInfomation.m */; };
@@ -55,9 +56,11 @@
 		DBDB52F91D2A6C3600B6EAB8 /* STWarningView.m in Sources */ = {isa = PBXBuildFile; fileRef = DBDB52F81D2A6C3600B6EAB8 /* STWarningView.m */; };
 		DBE3DF901D2659340001FEE5 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBE3DF8F1D2659340001FEE5 /* Security.framework */; };
 		DBE3DF941D26596A0001FEE5 /* SFHFKeychainUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = DBE3DF931D26596A0001FEE5 /* SFHFKeychainUtils.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		E750DB0B1D2CEEAD009AE814 /* STHttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E750DB0A1D2CEEAD009AE814 /* STHttpTool.m */; };
 		E7681E0E1D2B616400A3B94E /* STConversationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7681E0D1D2B616400A3B94E /* STConversationViewController.m */; };
 		E7681E111D2B651F00A3B94E /* STConversationListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7681E101D2B651F00A3B94E /* STConversationListViewController.m */; };
 		E778DF131D2A002A00FA5B7A /* HP_NString.m in Sources */ = {isa = PBXBuildFile; fileRef = E778DF111D2A002A00FA5B7A /* HP_NString.m */; };
+		E797D80A1D2D03D200CC65B6 /* LCBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = E797D8091D2D03D200CC65B6 /* LCBannerView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -105,6 +108,8 @@
 		9045304AECE7243577F10411 /* Pods-XiaoShenTu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XiaoShenTu.release.xcconfig"; path = "Pods/Target Support Files/Pods-XiaoShenTu/Pods-XiaoShenTu.release.xcconfig"; sourceTree = "<group>"; };
 		DB06DC681D2528C30042B9F9 /* UIView+Extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extend.h"; sourceTree = "<group>"; };
 		DB06DC691D2528C30042B9F9 /* UIView+Extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extend.m"; sourceTree = "<group>"; };
+		DB1F38DB1D2C975F00CD442A /* NSString+Check.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Check.h"; sourceTree = "<group>"; };
+		DB1F38DC1D2C975F00CD442A /* NSString+Check.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Check.m"; sourceTree = "<group>"; };
 		DB4E71561D2A12B800B5938B /* STHoneyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STHoneyViewController.h; sourceTree = "<group>"; };
 		DB4E71571D2A12B800B5938B /* STHoneyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STHoneyViewController.m; sourceTree = "<group>"; };
 		DB4E71591D2A12B800B5938B /* STRedAndHomeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRedAndHomeView.h; sourceTree = "<group>"; };
@@ -156,6 +161,8 @@
 		DBE3DF8F1D2659340001FEE5 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		DBE3DF921D26596A0001FEE5 /* SFHFKeychainUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFHFKeychainUtils.h; sourceTree = "<group>"; };
 		DBE3DF931D26596A0001FEE5 /* SFHFKeychainUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFHFKeychainUtils.m; sourceTree = "<group>"; };
+		E750DB091D2CEEAD009AE814 /* STHttpTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STHttpTool.h; sourceTree = "<group>"; };
+		E750DB0A1D2CEEAD009AE814 /* STHttpTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STHttpTool.m; sourceTree = "<group>"; };
 		E7681E0C1D2B616400A3B94E /* STConversationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STConversationViewController.h; sourceTree = "<group>"; };
 		E7681E0D1D2B616400A3B94E /* STConversationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STConversationViewController.m; sourceTree = "<group>"; };
 		E7681E0F1D2B651F00A3B94E /* STConversationListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STConversationListViewController.h; sourceTree = "<group>"; };
@@ -164,6 +171,8 @@
 		E778DF101D2A002A00FA5B7A /* HP_NString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HP_NString.h; sourceTree = "<group>"; };
 		E778DF111D2A002A00FA5B7A /* HP_NString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HP_NString.m; sourceTree = "<group>"; };
 		E778DF141D2A017300FA5B7A /* Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
+		E797D8081D2D03D200CC65B6 /* LCBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCBannerView.h; sourceTree = "<group>"; };
+		E797D8091D2D03D200CC65B6 /* LCBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCBannerView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -263,14 +272,15 @@
 		015E3D181D2113420014A991 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				DB1F38D91D2C975F00CD442A /* Common */,
 				DBAD7DA91D2BB9000095A311 /* JKCountDownButton */,
 				DBE3DF911D26596A0001FEE5 /* security */,
 				DBAF32121D23C2A200D3CADC /* Utility */,
 				015E3D0C1D2113420014A991 /* Category */,
 				015E3D1B1D2113420014A991 /* Controllers */,
 				015E3D201D2113420014A991 /* Models */,
+				E797D8071D2D03AC00CC65B6 /* Views */,
 				015E3D211D2113420014A991 /* Others */,
-				015E3D221D2113420014A991 /* Views */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -300,13 +310,6 @@
 			children = (
 			);
 			path = Others;
-			sourceTree = "<group>";
-		};
-		015E3D221D2113420014A991 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		015E3D311D2113420014A991 /* 主框架 */ = {
@@ -396,6 +399,23 @@
 				2A5A334EB665E4F83E579D62 /* libPods-XiaoShenTu.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DB1F38D91D2C975F00CD442A /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				DB1F38DA1D2C975F00CD442A /* Others */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		DB1F38DA1D2C975F00CD442A /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				DB1F38DB1D2C975F00CD442A /* NSString+Check.h */,
+				DB1F38DC1D2C975F00CD442A /* NSString+Check.m */,
+			);
+			path = Others;
 			sourceTree = "<group>";
 		};
 		DB4E71531D2A12B800B5938B /* Honey */ = {
@@ -535,6 +555,8 @@
 		DBAF32121D23C2A200D3CADC /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				E750DB091D2CEEAD009AE814 /* STHttpTool.h */,
+				E750DB0A1D2CEEAD009AE814 /* STHttpTool.m */,
 			);
 			name = Utility;
 			path = ../Utility;
@@ -556,6 +578,15 @@
 				DBA5A88A1D1FAA9C00FCF0B1 /* Assets.xcassets */,
 			);
 			name = ImageResource;
+			sourceTree = "<group>";
+		};
+		E797D8071D2D03AC00CC65B6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E797D8081D2D03D200CC65B6 /* LCBannerView.h */,
+				E797D8091D2D03D200CC65B6 /* LCBannerView.m */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -593,7 +624,12 @@
 				TargetAttributes = {
 					DBA5A87A1D1FAA9C00FCF0B1 = {
 						CreatedOnToolsVersion = 7.2;
+
 						DevelopmentTeam = HWXYBYLA8G;
+
+						DevelopmentTeam = 97XLV239ZP;
+
+
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -711,11 +747,13 @@
 				DBAF32171D23C2CB00D3CADC /* UIButton+Utility.m in Sources */,
 				E7681E111D2B651F00A3B94E /* STConversationListViewController.m in Sources */,
 				DBAD7DAC1D2BB9000095A311 /* JKCountDownButton.m in Sources */,
+				DB1F38DD1D2C975F00CD442A /* NSString+Check.m in Sources */,
 				0037672E1D29FF6A0064A5EB /* STChatViewController.m in Sources */,
 				015E3D391D2113420014A991 /* STGuideCell.m in Sources */,
 				015E3D381D2113420014A991 /* STGuideController.m in Sources */,
 				015E3D561D211EAD0014A991 /* UIBarButtonItem+STExtension.m in Sources */,
 				003767311D2A3E680064A5EB /* STPhoto.m in Sources */,
+				E797D80A1D2D03D200CC65B6 /* LCBannerView.m in Sources */,
 				DBAF32181D23C2CB00D3CADC /* UILabel+Utility.m in Sources */,
 				DB4E716D1D2A12B800B5938B /* STHCollectionViewCell.m in Sources */,
 				DBA5A8801D1FAA9C00FCF0B1 /* main.m in Sources */,
@@ -730,6 +768,7 @@
 				015E3D3A1D2113420014A991 /* AppDelegate.m in Sources */,
 				005818891D2B8C4E00EE4421 /* NSString+STExtension.m in Sources */,
 				DB4E71731D2A139900B5938B /* STHPersonMessage.m in Sources */,
+				E750DB0B1D2CEEAD009AE814 /* STHttpTool.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -856,7 +895,11 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
+
 				PRODUCT_BUNDLE_IDENTIFIER = abc.com.XiaoShenTus;
+
+				PRODUCT_BUNDLE_IDENTIFIER = abc.com.XiaoShenTusss;
+
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -881,7 +924,11 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
+
 				PRODUCT_BUNDLE_IDENTIFIER = abc.com.XiaoShenTus;
+
+				PRODUCT_BUNDLE_IDENTIFIER = abc.com.XiaoShenTusss;
+
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

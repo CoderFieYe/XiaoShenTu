@@ -23,13 +23,6 @@
 @property (nonatomic, weak) UIView *view3;
 @property (nonatomic, weak) UIImageView *headImg;
 @property (nonatomic, weak) UIImageView *passImg;
-@property (nonatomic, weak) UITextField *PhoenNum;
-@property (nonatomic, weak) UITextField *mimaField;
-
-@property (nonatomic, weak) UIButton *loginBtn;
-@property (nonatomic, weak) UIButton *messageBtn;
-@property (nonatomic, weak) UIButton *forgetBtn;
-
 
 
 @end
@@ -102,7 +95,7 @@
     
     UIButton *loginBtn = [[UIButton alloc]init];
     [loginBtn setImage:[UIImage imageNamed:@"denglu"] forState:UIControlStateNormal];
-    [loginBtn addTarget:self action:@selector(loginBtnClick) forControlEvents:UIControlEventTouchUpInside];
+
     self.loginBtn = loginBtn;
     [self addSubview:loginBtn];
     
@@ -222,11 +215,8 @@
 }
 
 
--(void)loginBtnClick{
 
-    NSLog(@"登录");
 
-}
 
 -(void)messageBtnClick{
 
@@ -248,13 +238,16 @@
 
 -(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
+    
+    
+    
     if (textField==self.PhoenNum) {
         NSInteger strLength = textField.text.length - range.length + string.length;
         if (strLength > 11){
             return NO;
         }
         NSString *text = nil;
-        //如果string为空，表示删除
+//      如果string为空，表示删除
         if (string.length > 0) {
             text = [NSString stringWithFormat:@"%@%@",textField.text,string];
         }else{
@@ -268,6 +261,9 @@
     }
     return YES;
 }
+
+
+
 //
 //- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 //{

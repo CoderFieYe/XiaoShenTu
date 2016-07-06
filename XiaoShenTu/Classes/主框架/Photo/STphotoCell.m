@@ -78,7 +78,7 @@
     
     self.comment.width = 120;
     self.comment.height = 25;
-    self.comment.x = self.shareButton.x - self.comment.width-2 ;
+    self.comment.x = self.shareButton.x - self.comment.width ;
     self.comment.y = self.shareButton.y - 10;
 }
 +(instancetype)stcellWithTableView:(UITableView *)tableView
